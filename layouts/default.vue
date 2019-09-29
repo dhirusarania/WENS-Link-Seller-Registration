@@ -2,7 +2,7 @@
   <div>
     <!-- <TopNav v-if="$nuxt.$route.name != 'index'"/> -->
     <client-only>
-      <NavBar v-if="$nuxt.$route.name != 'index'" />
+      <NavBar v-if="$nuxt.$route.name != 'index' && $nuxt.$route.name != 'register'" />
       <nuxt />
       <!-- <Footer v-if="$nuxt.$route.name != 'index'" /> -->
     </client-only>
@@ -108,6 +108,16 @@ body {
   background-color: #e91e63;
 }
 
+.btn-green {
+  background-color: #46e0cc;
+}
+
+.btn-green:hover {
+    background-color: #49d0be!important;
+    border-color: #49d0be!important;
+    color: black!important
+}
+
 .btn {
   height: 40px;
 }
@@ -144,16 +154,6 @@ body {
   text-align: right;
 }
 
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: white;
-}
-
 h3 {
   font-size: 24px;
 }
@@ -166,7 +166,7 @@ h3 {
   color: #ffeb3b;
 }
 
-input,
+/* input,
 textarea {
   border-radius: 4px;
   background-color: #262c49 !important;
@@ -178,7 +178,7 @@ input:focus,
 textarea:focus {
   background-color: #262c49 !important;
   border: 1px solid #7367f0 !important;
-}
+} */
 
 .btn-primary {
   color: #fff;
@@ -314,6 +314,7 @@ table .col {
 ol,
 ul {
   margin-bottom: 0 !important;
+  padding-inline-start: 15px;
 }
 
 /*
