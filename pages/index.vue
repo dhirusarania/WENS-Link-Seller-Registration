@@ -11,7 +11,7 @@
       <div class="section verify___mobile" v-if="useractivity == 0">
         <h1>Register and Start Selling</h1>
         <p>Please have the following ready before you begin:</p>
-        <ul class="padding-top-10 padding-bottom-10">
+        <ul class="padding-top-15 padding-bottom-30">
           <li>Your bank account details for receiving payments from WENSLink</li>
           <li>Tax (GST/PAN) details of your business</li>
         </ul>
