@@ -4,19 +4,21 @@
       <div class="header">
         <div class="center-align">
           <img src="~static/dashboard-icon-black.svg" class="company_logo" />
-          <p>WENSLink Seller Registration</p>
+          <p class="margin-top-10">WENSLink Seller Registration</p>
         </div>
       </div>
 
       <div class="section verify___mobile" v-if="useractivity == 0">
-        <h1>Register and Start Selling</h1>
+        <h1 style="colror:#03A9F4">Register and Start Selling</h1>
         <p>Please have the following ready before you begin:</p>
-        <ul class="padding-top-15 padding-bottom-30">
+        <ul class="padding-top-15 padding-bottom-10">
           <li>Your bank account details for receiving payments from WENSLink</li>
           <li>Tax (GST/PAN) details of your business</li>
         </ul>
 
-        <p>Please ensure that all the information you submit is accurate:</p>
+        <p class="light-text">Please ensure that all the information you submit is accurate</p>
+
+         <h4 class="margin-top-30" style="colror:#03A9F4">Enter details below to continue registration</h4>
 
         <form class="form-body">
           <div class="form-group margin-top-25">
@@ -29,7 +31,7 @@
               maxlength="50"
               autocomplete="anyrandomstring"
             />
-            <span class="font-12">Enter the company/business name as registered in GST/PAN</span>
+            <span class="font-12 light-text">Enter the company/business name as registered in GST/PAN</span>
           </div>
         </form>
 
@@ -55,7 +57,7 @@
           class="btn btn-green white-text loginButton"
         >Continue</button>
         <p
-          class="padding-top-20 font-12"
+          class="padding-top-20 font-12 light-text"
         >By creating an account or logging in, you agree to WENSLink's Conditions of Use and Privacy Policy</p>
       </div>
 
@@ -120,7 +122,7 @@
           @click="useractivity = 2"
           class="btn btn-green white-text loginButton"
         >Continue</button>
-        <p class="padding-top-20">Already have an account? Sign In</p>
+        <p class="padding-top-20">Already have an account?</p> <nuxt-link to="/login">Sign In</nuxt-link>
       </div>
       <div class="section verify___mobile" v-if="useractivity == 2">
         <h1>Verify Mobile Number</h1>
@@ -142,6 +144,7 @@
 
         <button
           type="submit"
+          @click="goToRegister"
           class="btn btn-green white-text loginButton"
         >Create your WENSLink account</button>
         <p
@@ -162,6 +165,11 @@ export default {
       checkbox: true,
       useractivity: 0
     }
+  },
+  methods:{
+      goToRegister: function(){
+          this.$router.push('/register')
+      }
   }
 }
 </script>
@@ -251,5 +259,9 @@ textarea:focus {
 
 .btn {
   width: 100%;
+}
+
+.light-text{
+    color: #9b9b9b
 }
 </style>

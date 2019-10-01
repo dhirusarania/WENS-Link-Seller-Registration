@@ -2,7 +2,7 @@
   <div>
     <!-- <TopNav v-if="$nuxt.$route.name != 'index'"/> -->
     <client-only>
-      <NavBar v-if="$nuxt.$route.name != 'index' && $nuxt.$route.name != 'register'" />
+      <NavBar v-if="$nuxt.$route.name != 'index' && $nuxt.$route.name != 'register' && $nuxt.$route.name != 'login'" />
       <nuxt />
       <!-- <Footer v-if="$nuxt.$route.name != 'index'" /> -->
     </client-only>

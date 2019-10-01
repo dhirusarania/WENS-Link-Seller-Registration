@@ -8,32 +8,32 @@
         </div>
       </div>
     </div>
-    <div class="tabbed-layout" style="background-color: #4caf50;overflow: auto;">
+    <div class="tabbed-layout" style="overflow: auto;">
       <div class="flex container justify-between" style="height: 63px;align-items: center;">
         <div class="flex">
-          <i data-feather="circle"></i>
-          <p class="padding-left-10">Phone Verification</p>
+          <i data-feather="check-circle"></i>
+          <p class="padding-left-10 verified">Phone Verification</p>
         </div>
-        <div class="flex">
+        <div v-bind:class="{'selected': currentOption == 1}" class="flex" @click="selectThis(1)">
           <i data-feather="circle"></i>
           <p class="padding-left-10">Seller Information</p>
         </div>
-        <div class="flex">
+        <div v-bind:class="{'selected': currentOption == 2}" class="flex" @click="selectThis(2)">
           <i data-feather="circle"></i>
           <p class="padding-left-10">Tax Details</p>
         </div>
-        <div class="flex">
+        <div v-bind:class="{'selected': currentOption == 3}" class="flex" @click="selectThis(3)">
           <i data-feather="circle"></i>
           <p class="padding-left-10">Seller Interview</p>
         </div>
-        <div class="flex">
+        <div v-bind:class="{'selected': currentOption == 4}" class="flex" @click="selectThis(4)">
           <i data-feather="circle"></i>
           <p class="padding-left-10">Dashboard</p>
         </div>
       </div>
     </div>
 
-    <div class="container section seller___interview hide">
+    <div class="container section seller___interview" v-if="currentOption == 1">
       <h1>Tell us about your business</h1>
 
       <div class="row">
@@ -143,7 +143,7 @@
       </div>
     </div>
 
-    <div class="container section tax_details hide">
+    <div class="container section tax_details" v-if="currentOption == 2">
       <h1>Update your Tax Details</h1>
 
       <div class="row">
@@ -214,26 +214,50 @@
       </div>
     </div>
 
-    <div class="container section seller___interview">
+    <div class="container section seller___interview" v-if="currentOption == 3">
       <h1>Choose categories you wish to sell</h1>
-      <p>Choose categories you wish to sell</p>
 
-      <div class="row">
+        <div class="container">
         <div class="col-12 col-sm-4" v-for="p in interview_data" :key="p.id">
+          <div class="row">
+            <div class="col-12">
+              <p class="interview_title">{{p.name}}</p>
+              <ul class="selector__section">
+                <li v-for="q in p.data" :key="q.id">
+                  <label class="checkcontainer">
+                    <p>{{q.name}}</p>
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        </div>
+       
+        <div class="col-12 col-sm-4">
           <div class="col-12">
-            <p class="interview_title">{{p.name}}</p>
+            <p class="interview_title">Where do you get products from?</p>
             <ul class="selector__section">
-              <li v-for="q in p.data" :key="q.id">
+              <li>
                 <label class="checkcontainer">
-                  <p>{{q.name}}</p>
+                  <p>I manufacture them</p>
+                  <input type="checkbox" />
+                  <span class="checkmark"></span>
+                </label>
+              </li>
+              <li>
+                <label class="checkcontainer">
+                  <p>I import them</p>
                   <input type="checkbox" />
                   <span class="checkmark"></span>
                 </label>
               </li>
             </ul>
           </div>
-        </div>
       </div>
+
     </div>
   </div>
 </template>
@@ -243,44 +267,145 @@
 export default {
   data: function() {
     return {
-      email: "",
+      email: '',
+      currentOption: 3,
       product_cat: 0,
       product_category: [
         {
           id: 1,
-          name: 'Home and Garden'
+          name: 'Automotive'
         },
         {
           id: 2,
-          name: 'Industrial and Scientific Supply'
+          name: 'Baby Products'
         },
         {
           id: 3,
-          name: 'Jewelry'
+          name: 'Books'
         },
         {
           id: 4,
-          name: 'Kitchen'
+          name: 'Camera and Accessories'
         },
         {
           id: 5,
-          name: 'Luggage and Travel Accessories'
+          name: 'Clothing and Accessories'
         },
         {
           id: 6,
-          name: 'Mobile and Accessories'
+          name: 'Computer and Accessories'
         },
         {
           id: 7,
-          name: 'Movies and DVD'
+          name: 'Consumer and Electronics'
         },
         {
           id: 8,
-          name: 'Music'
+          name: 'Everything Else'
         },
         {
           id: 9,
+          name: 'Fine Art'
+        },
+        {
+          id: 10,
+          name: 'Furniture'
+        },
+        {
+          id: 11,
+          name: 'Gift Card'
+        },
+        {
+          id: 12,
+          name: 'Grocery and Gourmet Food'
+        },
+        {
+          id: 13,
+          name: 'Handbags'
+        },
+        {
+          id: 14,
+          name: 'Health and Personal Care'
+        },
+        {
+          id: 15,
+          name: 'Home and Garden'
+        },
+        {
+          id: 16,
+          name: 'Industrial and Scientific Supply'
+        },
+        {
+          id: 17,
+          name: 'Jewelry'
+        },
+        {
+          id: 18,
+          name: 'Kindle Accessories'
+        },
+        {
+          id: 19,
+          name: 'Kitchen'
+        },
+        {
+          id: 20,
+          name: 'Luggage and Travel Accessories'
+        },
+        {
+          id: 21,
+          name: 'Mobiles and Accessories'
+        },
+        {
+          id: 22,
+          name: 'Movies and DVD'
+        },
+        {
+          id: 23,
+          name: 'Music'
+        },
+        {
+          id: 24,
           name: 'Musical Instruments'
+        },
+        {
+          id: 25,
+          name: 'Office Products'
+        },
+        {
+          id: 26,
+          name: 'Pet Products'
+        },
+        {
+          id: 27,
+          name: 'Shoes'
+        },
+        {
+          id: 28,
+          name: 'Software'
+        },
+        {
+          id: 29,
+          name: 'Sports and Outdoor'
+        },
+        {
+          id: 30,
+          name: 'Sunglasses and Eyewear'
+        },
+        {
+          id: 31,
+          name: 'Tools and Home Improvement'
+        },
+        {
+          id: 32,
+          name: 'Toys and Games'
+        },
+        {
+          id: 33,
+          name: 'Video Games'
+        },
+        {
+          id: 34,
+          name: 'Watches'
         }
       ],
       GST_selection: '1',
@@ -297,9 +422,21 @@ export default {
               id: 2,
               name: 'Movies'
             },
+            {
+              id: 3,
+              name: 'Muscial Instruments'
+            },
+            {
+              id: 4,
+              name: 'Music'
+            },
+            {
+              id: 5,
+              name: 'Video Games'
+            }
           ]
         },
-         {
+        {
           id: 2,
           name: 'Clothing, Shoes & Jewelry',
           data: [
@@ -311,15 +448,147 @@ export default {
               id: 2,
               name: 'Shoes'
             },
+            {
+              id: 3,
+              name: 'Watches'
+            },
+            {
+              id: 4,
+              name: 'Jewelery'
+            },
+            {
+              id: 5,
+              name: 'Luggage'
+            }
           ]
-        }
+        },
+        {
+          id: 3,
+          name: 'Home, Garden & Tools, Furniture',
+          data: [
+            {
+              id: 1,
+              name: 'Home'
+            },
+            {
+              id: 2,
+              name: 'Large Appliances'
+            },
+            {
+              id: 3,
+              name: 'Pet Supplies'
+            },
+            {
+              id: 4,
+              name: 'Kitchen'
+            },
+            {
+              id: 5,
+              name: 'Furniture'
+            }
+          ]
+        },
+        {
+          id: 4,
+          name: 'Beauty, Health & Grocceries',
+          data: [
+            {
+              id: 1,
+              name: 'Beauty'
+            },
+            {
+              id: 2,
+              name: 'Grocery'
+            },
+            {
+              id: 3,
+              name: 'Health'
+            },
+            {
+              id: 4,
+              name: 'Personal Care Appliances'
+            }
+          ]
+        },
+        {
+          id: 5,
+          name: 'Electronics & Computers',
+          data: [
+            {
+              id: 1,
+              name: 'Consumer Electronics'
+            },
+            {
+              id: 2,
+              name: 'Mobile Phones'
+            },
+            {
+              id: 3,
+              name: 'Personal Computers'
+            },
+            {
+              id: 4,
+              name: 'Office Products'
+            },
+            {
+              id: 5,
+              name: 'Software'
+            }
+          ]
+        },
+        {
+          id: 6,
+          name: 'Toys & Baby, Sports',
+          data: [
+            {
+              id: 1,
+              name: 'Baby'
+            },
+            {
+              id: 2,
+              name: 'Toys'
+            },
+            {
+              id: 3,
+              name: 'Sporting Goods'
+            }
+          ]
+        },
+        {
+          id: 7,
+          name: 'Automotive and Industrial Suppy',
+          data: [
+            {
+              id: 1,
+              name: 'Automotive'
+            },
+            {
+              id: 2,
+              name: 'Industrial Supply'
+            }
+          ]
+        },
+        {
+          id: 8,
+          name: 'Other',
+          data: [
+            {
+              id: 1,
+              name: 'My Category is not listed here'
+            },
+          ]
+        },
       ]
     }
   },
   mounted() {
-    feather.replace({ color: 'white' })
+    feather.replace({ color: '#009688' })
   },
-
+  methods: {
+    selectThis: function(id) {
+      this.currentOption = id
+    }
+  }
 }
 </script>
 
@@ -329,13 +598,26 @@ export default {
   display: flex;
   width: 100%;
   height: 60px;
-  background-color: #4caf50;
+  background-color: #009688;
   color: white !important;
-  box-shadow: 0px 8px 10px #1e1e1e38;
+}
+
+.selected {
+  background-color: #ff9800;
+  /* color: white; */
+}
+
+.selected svg,
+.selected p {
+  color: white !important;
 }
 
 .flex {
+  height: 63px;
   display: flex;
+  align-items: center;
+
+  padding: 0 15px;
 }
 
 .subtitle {
@@ -374,8 +656,20 @@ ul {
   width: 33px;
 }
 
+.verified {
+  color: #009688 !important;
+  font-weight: bold;
+}
+
+.tabbed-layout {
+  border-bottom: 1px solid #dfdfdf;
+}
 .tabbed-layout p {
-  color: white;
+  color: black;
+}
+
+.tabbed-layout .flex {
+  cursor: pointer;
 }
 
 .w-100 {
