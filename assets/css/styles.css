@@ -361,8 +361,8 @@ h5.over-title {
     text-align: center;
   }
   .container{
-    padding-right: 0!important;
-    padding-left: 0!important
+    /* padding-right: 0!important;
+    padding-left: 0!important */
   }
 }
 
