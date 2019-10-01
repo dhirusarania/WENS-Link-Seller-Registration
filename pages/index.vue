@@ -3,7 +3,7 @@
     <div style="max-width: 400px;margin: auto">
       <div class="header">
         <div class="center-align">
-          <img src="~static/dashboard-icon-black.svg" class="company_logo" />
+          <img src="~static/dashboard-icon-black.png" class="company_logo" />
           <p class="margin-top-10">WENSLink Seller Registration</p>
         </div>
       </div>

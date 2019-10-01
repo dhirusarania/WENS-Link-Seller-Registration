@@ -91,7 +91,7 @@ module.exports = {
   },
 
   router: {
-    base: '/admin/'
+    base: '/wenslink/seller/'
   },
 
   /*

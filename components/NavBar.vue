@@ -39,7 +39,7 @@
 
     <perfect-scrollbar id="mySidenav" class="sidenav hidden-xs hidden-sm padding-bottom-30">
       <div class="flex align-item logo-section">
-        <img src="~static/dashboard-icon-black.svg" class="sideNav__Logo" />
+        <img src="~static/dashboard-icon-black.png" class="sideNav__Logo" />
         <h1 style="color: black; font-size: 12px">Dashboard</h1>
         <!-- <div style="cursor:pointer" class="hidden-lg" @click="toggleSidenav">
           <i data-feather="x"></i>
