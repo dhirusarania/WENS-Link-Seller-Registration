@@ -8,7 +8,60 @@
         </div>
       </div>
 
-      <div class="section create___account" v-if="useractivity == 0">
+      <div class="section verify___mobile" v-if="useractivity == 0">
+        <h1 style="colror:#03A9F4">Tell us about your previous online stores</h1>
+        <p>Please have the following ready before you begin:</p>
+        <ul class="padding-top-15 padding-bottom-10">
+          <li>Your bank account details for receiving payments from WENSLink</li>
+          <li>Tax (GST/PAN) details of your business</li>
+        </ul>
+
+        <p class="light-text">Please ensure that all the information you submit is accurate</p>
+
+         <h4 class="margin-top-30" style="colror:#03A9F4">Enter details below to continue registration</h4>
+
+        <form class="form-body">
+          <div class="form-group margin-top-25">
+            <label class="control-label noselect">Flipkart</label>
+            <input
+              id="email"
+              type="email"
+              v-model="email"
+              class="form-control"
+              maxlength="50"
+              autocomplete="anyrandomstring"
+            />
+            <span class="font-12 light-text">Enter the company/business name as registered in GST/PAN</span>
+          </div>
+        </form>
+
+        <div>
+          <form class="form-body">
+            <div class="form-group margin-top-25">
+              <input
+                id="email"
+                type="checkbox"
+                v-model="checkbox"
+                class
+                maxlength="50"
+                autocomplete="anyrandomstring"
+              />
+              I have read and agree to comply with and/or be bound by the terms and conditions of WENSLink Terms and Conditions
+            </div>
+          </form>
+        </div>
+
+        <button
+          type="submit"
+          @click="useractivity = 1"
+          class="btn btn-green white-text loginButton"
+        >Continue</button>
+        <p
+          class="padding-top-20 font-12 light-text"
+        >By creating an account or logging in, you agree to WENSLink's Conditions of Use and Privacy Policy</p>
+      </div>
+
+      <div class="section create___account" v-if="useractivity == 1">
         <h1>Create Account</h1>
         <!-- <p>A text with a One Time Password (OTP) has been sent to your mobile number: 89282672828</p> -->
 
@@ -69,68 +122,8 @@
           @click="useractivity = 2"
           class="btn btn-green white-text loginButton"
         >Continue</button>
-        <p class="padding-top-20">Already have an account?</p>
-        <nuxt-link to="/login">Sign In</nuxt-link>
+        <p class="padding-top-20">Already have an account?</p> <nuxt-link to="/login">Sign In</nuxt-link>
       </div>
-
-      <div class="section verify___mobile" v-if="useractivity == 1">
-        <h1 style="colror:#03A9F4">Register and Start Selling</h1>
-        <p>Please have the following ready before you begin:</p>
-        <ul class="padding-top-15 padding-bottom-10">
-          <li>Your bank account details for receiving payments from WENSLink</li>
-          <li>Tax (GST/PAN) details of your business</li>
-        </ul>
-
-        <p class="light-text">Please ensure that all the information you submit is accurate</p>
-
-        <h4
-          class="margin-top-30"
-          style="colror:#03A9F4"
-        >Enter details below to continue registration</h4>
-
-        <form class="form-body">
-          <div class="form-group margin-top-25">
-            <label class="control-label noselect">Company / Business Name</label>
-            <input
-              id="email"
-              type="email"
-              v-model="email"
-              class="form-control"
-              maxlength="50"
-              autocomplete="anyrandomstring"
-            />
-            <span
-              class="font-12 light-text"
-            >Enter the company/business name as registered in GST/PAN</span>
-          </div>
-        </form>
-
-        <div>
-          <form class="form-body">
-            <div class="form-group margin-top-25">
-              <input
-                id="email"
-                type="checkbox"
-                v-model="checkbox"
-                class
-                maxlength="50"
-                autocomplete="anyrandomstring"
-              />
-              I have read and agree to comply with and/or be bound by the terms and conditions of WENSLink Terms and Conditions
-            </div>
-          </form>
-        </div>
-
-        <button
-          type="submit"
-          @click="useractivity = 1"
-          class="btn btn-green white-text loginButton"
-        >Continue</button>
-        <p
-          class="padding-top-20 font-12 light-text"
-        >By creating an account or logging in, you agree to WENSLink's Conditions of Use and Privacy Policy</p>
-      </div>
-
       <div class="section verify___mobile" v-if="useractivity == 2">
         <h1>Verify Mobile Number</h1>
         <p>A text with a One Time Password (OTP) has been sent to your mobile number: {{phone_number}}</p>
@@ -173,10 +166,10 @@ export default {
       useractivity: 0
     }
   },
-  methods: {
-    goToRegister: function() {
-      this.$router.push('/register')
-    }
+  methods:{
+      goToRegister: function(){
+          this.$router.push('/register')
+      }
   }
 }
 </script>
@@ -268,7 +261,7 @@ textarea:focus {
   width: 100%;
 }
 
-.light-text {
-  color: #9b9b9b;
+.light-text{
+    color: #9b9b9b
 }
 </style>
