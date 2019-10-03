@@ -1,9 +1,3 @@
-
-// var url = "https://moovafrica.com/api/api";
-
-
-console.log(process.env.NODE_ENV)
-
 var url
 
 if(process.env.NODE_ENV == "development"){
@@ -12,7 +6,7 @@ if(process.env.NODE_ENV == "development"){
 
 }else{
 
-    var url = "http://13.127.31.3/backend/api/";
+    var url = "/backend/api/";
 
 }
 
@@ -23,48 +17,9 @@ export const state = () => ({
 
 
 
-    login: url + "login/",
+    login: url + "/",
 
-    imageUpload: url + "products/upload/image",
-
-    allProducts : url + "products/",
-
-    singleProduct : url + "products/single/",
-
-    getCategory : url + "products/product/category",
-
-    getsubCategory : url + "products/product/subcategory",
-
-    getBrand : url + "products/product/brand",
-
-    getAllOrder : url + "orders",
-
-    getAllAuction : url + "auction",
-    
-    getAllCompletedAuction : url + "auction/completed/",
-
-    getAllOngoingAuction : url + "auction/ongoing/",
-
-    addProduct : url + "products/create/product",
-
-    addAuction : url + "auction/create",
-
-    deleteProduct : url + "products/delete/",
-
-    deleteCategory : url + "products/product/category/delete/",
-
-    deleteSubCategory : url + "products/product/subcategory/delete/",
-
-    deleteBrand : url + "products/product/brand/delete/",
-
-
+    otp: "http://weberleads.in/http-jsonapi.php?",
 
 
 })
-
-
-export const getters = {
-    // getLoginAPI(state) {
-    //     return state.login
-    // }
-}
