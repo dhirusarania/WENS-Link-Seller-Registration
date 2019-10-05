@@ -1,432 +1,207 @@
 <template>
-  <section id="login">
-    <div class="login container">
-      <div class="row login-row">
-        <!-- <div class="col backgroundcolor hidden-md hidden-xs hidden-sm">
-          <div class="login-texts flex justify-center flex-column">
-            <img src="logo_side.png" style="object-fit:contain">
+  <div>
+    <div id="a-page">
+      <div class="a-section a-padding-medium auth-workflow">
+        <div class="a-section a-spacing-none auth-navbar">
+          <div class="a-section a-spacing-medium a-text-center">
+            <img
+              src=""
+            />
           </div>
-        </div>-->
-        <div class="col login-col">
-          <div class="login-texts flex flex-column">
-            <h3 class="white-text">Admin</h3>
-            <p class="white-text">Welcome Back, Please login to your account</p>
-            <form class="form-body">
-              <div class="form-group margin-top-25">
-                <input
-                  id="email"
-                  type="email"
-                  v-model="email"
-                  class="form-control material-input"
-                  maxlength="50"
-                  placeholder="sdsdsd"
-                  autocomplete="anyrandomstring"
-                />
-                <label class="control-label noselect material-input">Email</label>
-              </div>
+        </div>
 
-              <div class="form-group">
-                <div v-show="isPasswordVisible == 0" @click="togglePassword(1)">
-                  <i data-feather="eye" class="ispassword"></i>
-                </div>
-                <div v-show="isPasswordVisible == 1" @click="togglePassword(0)">
-                  <i data-feather="eye-off" class="ispassword"></i>
-                </div>
-                <input
-                  id="password"
-                  type="password"
-                  class="form-control material-input"
-                  maxlength="25"
-                  placeholder="sdsdsd"
-                  v-model="password"
-                />
-                <label class="control-label noselect material-input">Password</label>
-                <p class="white-text padding-top-15">Forgot Password</p>
-              </div>
-            </form>
-            <div class="row">
-              <div class="col-xs-6">
-                <!-- <button
-                  type="submit"
-                  class="btn white-text loginButton"
-                  style="border: 1px solid grey"
-                >Join</button>-->
-              </div>
+        <div id="authportal-center-section" class="a-section">
+          <div id="authportal-main-section" class="a-section">
 
-              <div class="col-xs-6 col-12 right">
-                <button
-                  @click="login"
-                  type="submit"
-                  class="btn btn-red white-text loginButton"
-                >Login</button>
+
+            <div class="a-section auth-pagelet-container">
+              <!-- Set cross domain sso variables to be used for making Ajax calls to central Identity domain -->
+
+              <!-- Set cross domain sso variables to be used for making Ajax calls to central Identity domain -->
+
+              <!-- show a warning modal dialog when the third party account is connected with WENS Link -->
+
+              <div class="a-section a-spacing-base">
+                <div class="a-section">
+                  <form
+                    name="signIn"
+                    method="post"
+                    novalidate
+                    action="https://sellercentral.WENS Link.in/ap/signin"
+                    class="a-spacing-none fwcim-form"
+                    data-fwcim-id="dd379249"
+                  >
+
+                    <div class="a-section">
+                      <div class="a-box">
+                        <div class="a-box-inner a-padding-extra-large">
+                          <h1 class="a-spacing-small">Login</h1>
+                          <!-- optional subheading element -->
+
+                          <div class="a-row a-spacing-base">
+                            <label for="ap_email" class="a-form-label">Email or mobile phone number</label>
+
+                            <input
+                              type="email"
+                              maxlength="128"
+                              id="ap_email"
+                              name="email"
+                              tabindex="1"
+                              class="a-input-text a-span12 auth-autofocus auth-required-field"
+                            />
+
+                            <div
+                              id="auth-email-missing-alert"
+                              class="a-box a-alert-inline a-alert-inline-error auth-inlined-error-message a-spacing-top-mini"
+                              aria-live="assertive"
+                              role="alert"
+                            >
+                              <div class="a-box-inner a-alert-container">
+                                <i class="a-icon a-icon-alert"></i>
+                                <div class="a-alert-content">Enter your email or mobile phone number</div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <input type="hidden" name="create" value="0" />
+
+                          <div class="a-section a-spacing-large">
+                            <div class="a-row">
+                              <div class="a-column a-span5">
+                                <label for="ap_password" class="a-form-label">Password</label>
+                              </div>
+
+                              <div class="a-column a-span7 a-text-right a-span-last">
+                                <a
+                                  id="auth-fpp-link-bottom"
+                                  class="a-link-normal"
+                                  tabindex="3"
+                                  href="https://sellercentral.WENS Link.in/ap/forgotpassword?showRememberMe=true&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;marketPlaceId=A21TJRUUN4KGV&amp;pageId=amzn_sw_signup_in&amp;openid.return_to=https%3A%2F%2Fsellercentral.WENS Link.in%2Fsw%2Fin%2FINSSR%2Fstep%2FSignUp%3Fpassthrough%252Faccount%3Dsoa%26passthrough%252FsuperSource%3DOAR%26ref_%3Das_in_soa_hp%26passthrough%252FmarketplaceID%3DA21TJRUUN4KGV%26passthrough%252F%26productTier%3DSILVER%26productType%3DSellOnWENS Link%26marketplaceId%3DA21TJRUUN4KGV%26passthrough%252Ftag%3DREDIRECTT1%26redirectAP%3D1&amp;prevRID=CYNRM35MQCJC1BR99Y6D&amp;openid.assoc_handle=amzn_sw_signup_in&amp;openid.mode=checkid_setup&amp;prepopulatedLoginId=&amp;failedSignInCount=0&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0"
+                                >Forgot Password</a>
+                              </div>
+                            </div>
+
+                            <input
+                              type="password"
+                              maxlength="1024"
+                              id="ap_password"
+                              name="password"
+                              tabindex="2"
+                              class="a-input-text a-span12 auth-required-field"
+                            />
+
+                            <div
+                              id="auth-password-missing-alert"
+                              class="a-box a-alert-inline a-alert-inline-error auth-inlined-error-message a-spacing-top-mini"
+                              aria-live="assertive"
+                              role="alert"
+                            >
+                              <div class="a-box-inner a-alert-container">
+                                <i class="a-icon a-icon-alert"></i>
+                                <div class="a-alert-content">Enter your password</div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="a-section a-spacing-extra-large">
+                            <span class="a-button a-button-span12 a-button-primary" id="a-autoid-0">
+                              <span class="a-button-inner">
+                                <input
+                                  id="signInSubmit"
+                                  tabindex="5"
+                                  class="a-button-input"
+                                  type="submit"
+                                  aria-labelledby="a-autoid-0-announce"
+                                />
+                                <span
+                                  class="a-button-text"
+                                  aria-hidden="true"
+                                  id="a-autoid-0-announce"
+                                >Login</span>
+                              </span>
+                            </span>
+
+                            <div id="legalTextRow" class="a-row a-spacing-top-medium a-size-small"></div>
+                            <div class="a-row a-spacing-top-medium">
+                              <div class="a-section a-text-left">
+                                <label for="auth-remember-me" class="a-form-label">
+                                  <div data-a-input-name="rememberMe" class="a-checkbox">
+                                    <label>
+                                      <input
+                                        type="checkbox"
+                                        name="rememberMe"
+                                        value="true"
+                                        tabindex="4"
+                                      />
+                                      <i class="a-icon a-icon-checkbox"></i>
+                                      <span class="a-label a-checkbox-label">
+                                        Keep me signed in.
+                                        <span
+                                          class="a-declarative"
+                                          data-action="a-popover"
+                                          data-a-popover="{&quot;activate&quot;:&quot;onclick&quot;,&quot;header&quot;:&quot;\&quot;Keep Me Signed In\&quot; Checkbox&quot;,&quot;inlineContent&quot;:&quot;\u003cp>Choosing \&quot;Keep me signed in\&quot; reduces the number of times you're asked to Sign-In on this device.\u003c\/p>\n\u003cp>To keep your account secure, use this option only on your personal devices.\u003c\/p>&quot;}"
+                                        >
+                                          <a
+                                            id="remember_me_learn_more_link"
+                                            href="javascript:void(0)"
+                                            class="a-popover-trigger a-declarative"
+                                          >
+                                            Details
+                                            <i class="a-icon a-icon-popover"></i>
+                                          </a>
+                                        </span>
+                                      </span>
+                                    </label>
+                                  </div>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="a-divider a-divider-break">
+                            <h5>New to WENS Link?</h5>
+                          </div>
+                          <span
+                            id="auth-create-account-link"
+                            class="a-button a-button-span12 a-button-base"
+                          >
+                            <span class="a-button-inner">
+                              <nuxt-link to="/register_account" class="a-button-text"
+                              >Create your WENS Link account</nuxt-link>
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
+        <div id="right-2"></div>
+
+        <div class="a-section a-spacing-top-extra-large auth-footer">
+          <div class="a-divider a-divider-section">
+            <div class="a-divider-inner"></div>
+          </div>
+
+          <div class="a-section a-spacing-small a-text-center a-size-mini">
+            <span class="auth-footer-seperator"></span>
+          </div>
+
+          <div class="a-section a-spacing-none a-text-center">
+            <span
+              class="a-size-mini a-color-secondary"
+            >© 1996-2019, WENS Link.com, Inc. or its affiliates</span>
+          </div>
+        </div>
       </div>
+
+      <div id="auth-external-javascript" class="auth-external-javascript" data-external-javascripts></div>
+
+      <!-- cache slot rendered -->
     </div>
-  </section>
+  </div>
 </template>
-
-<script>
-import axios from 'axios'
-axios.defaults.withCredentials = false
-
-export default {
-  name: 'login',
-  data() {
-    return {
-      jokes: [],
-      loading: false,
-      email: '',
-      password: '',
-      isPasswordVisible: 0
-    }
-  },
-
-  updated: function() {
-    // `this` points to the view model instance
-  },
-
-  mounted() {
-    feather.replace({ color: 'black' })
-  },
-  watch: {},
-  beforeMount() {
-    console.log('hahah')
-    console.log(
-      $('input')
-        .eq(0)
-        .val()
-    )
-  },
-  methods: {
-    togglePassword: function(val) {
-
-
-            this.isPasswordVisible = val
-
-
-      if (this.isPasswordVisible == 1) {
-        $('#password').prop('type', 'text')
-      } else {
-        $('#password').prop('type', 'password')
-      }
-      
-    },
-    login: function() {
-      this.$vs.loading()
-
-      var bodyFormData = new FormData()
-
-      bodyFormData.append('email', document.getElementById('email').value)
-      bodyFormData.append('password', document.getElementById('password').value)
-
-      axios({
-        method: 'POST',
-        url: this.$store.state.api.login,
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        },
-        data: bodyFormData
-      })
-        .then(res => {
-          console.log('res', res)
-          console.log('response')
-          this.$vs.notify({
-            title: 'Success',
-            text: 'Login Successfully',
-            color: 'success',
-            time: 5000
-          })
-          this.$cookies.set('access_token', res.data.access, {
-            path: '/',
-            // httpOnly : true,
-            // secure: true,
-            maxAge: 60 * 60 * 24 * 7
-          })
-          this.$cookies.set('email', res.data.user_info.email, {
-            path: '/',
-            // httpOnly : true,
-            // secure: true,
-            maxAge: 60 * 60 * 24 * 7
-          })
-
-          this.$cookies.set('user_id', res.data.user_info.id, {
-            path: '/',
-            // httpOnly : true,
-            // secure: true,
-            maxAge: 60 * 60 * 24 * 7
-          })
-
-          localStorage.setItem('currentUserName', res.data.access)
-          localStorage.setItem('currentUserEmail', res.data.user_info.email)
-          localStorage.setItem('currentUserID', res.data.user_info.id)
-
-          // this.$router.push('gateway')
-          this.$vs.loading.close()
-          // this.$store.dispatch('saveCurrentLoggedInUser', res)
-          // this.jokes = res
-          this.$router.push('/products/all')
-        })
-        .catch(err => {
-          console.log(err)
-          console.log('error in request1', err.response)
-          this.$vs.loading.close()
-          this.$vs.notify({
-            title: 'Login Failed',
-            text: err.response.data.message,
-            color: 'danger',
-            time: 5000
-          })
-        })
-    }
-  }
-}
-</script>
-
-
-<style scoped>
-.loginButton {
-  width: 100px;
-}
-
-.backgroundcolor {
-  background-color: white;
-  border-radius: 5px 0 0 5px;
-}
-
-.form-body .form-group:not(:last-child) {
-  margin-bottom: 25px;
-}
-
-input,
-textarea {
-  border-radius: 4px;
-  background-color: #e8f0fe !important;
-  border: 0 !important;
-  color: black !important;
-}
-
-input:focus,
-textarea:focus {
-  background-color: #e8f0fe !important;
-  border: 1px solid #7367f0 !important;
-}
-
-.h1,
-.h2,
-.h3,
-h1,
-h2,
-h3 {
-  margin-top: 5px;
-}
-
-.btn {
-  border-radius: 3px;
-}
-
-.btn-red:hover {
-  color: white;
-  background-color: #ff0057 !important;
-  border-color: #ff0057 !important;
-}
-
-.control-label {
-  color: #4e4e4e;
-}
-
-.login-texts {
-  height: 100%;
-  padding: 0 5px;
-}
-
-.underline {
-  line-height: 1;
-  position: relative;
-  display: block;
-  margin: 1em 0;
-  font-weight: bold;
-  line-height: 1.4;
-  padding-bottom: 10px;
-}
-
-.underline::before {
-  background-color: white;
-  content: '';
-  position: absolute;
-  z-index: 1;
-  color: red;
-  bottom: 0;
-  left: 0;
-  width: 35%;
-  height: 5px;
-  opacity: 1;
-  border-radius: 10px;
-}
-
-.login_icons {
-  position: absolute;
-  top: 5px;
-  left: 10px;
-  width: 18px;
-  color: #0c1013;
-}
-
-.input-icon > input {
-  padding-left: 40px !important;
-  font-size: 13px;
-}
-
-@media screen and (max-width: 600px) {
-  .login-row {
-    height: 100%;
-  }
-
-  .login-col {
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-bottom: 40px;
-    padding-top: 20px;
-  }
-
-  #login {
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-    background-color: #0c1013;
-  }
-
-  .loginButton {
-    width: 100%;
-    height: 50px;
-  }
-}
-
-@media screen and (min-width: 601px) {
-  .login-row {
-    height: 365px;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    max-width: 500px;
-  }
-
-  .login-col {
-    padding: 40px;
-    border-radius: 5px;
-    background-color: #0c1013;
-    box-shadow: 0px 9px 15px 0px rgba(13, 22, 75, 0.27);
-  }
-
-  #login {
-    background-image: url('~static/login_bg.jpg');
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-  }
-}
-
-.form-control {
-  padding: 16px 20px 0;
-  height: 50px;
-  line-height: 50px;
-}
-label.material-input {
-  order: -1;
-  padding-left: 20px;
-  transition: all 0.1s ease-in;
-  transform: translateY(15px);
-  pointer-events: none;
-  position: absolute;
-  top: 0;
-}
-label.added {
-  transform: translateY(10px);
-  font-size: 10px;
-}
-
-.ispassword {
-  position: absolute;
-  right: 18px;
-  width: 18px;
-  top: 14px;
-  cursor: pointer;
-}
-
-/**
-* Make the field a flex-container, reverse the order so label is on top.
-*/
-
-.field {
-  display: flex;
-  flex-flow: column-reverse;
-  margin-bottom: 1em;
-}
-/**
-* Add a transition to the label and input.
-* I'm not even sure that touch-action: manipulation works on
-* inputs, but hey, it's new and cool and could remove the 
-* pesky delay.
-*/
-label.material-input,
-input.material-input {
-  transition: all 0.2s;
-  touch-action: manipulation;
-}
-
-/**
-* Translate down and scale the label up to cover the placeholder,
-* when following an input (with placeholder-shown support).
-* Also make sure the label is only on one row, at max 2/3rds of the
-* field—to make sure it scales properly and doesn't wrap.
-*/
-input.material-input:placeholder-shown + label {
-  /* transform: translate(0, 2.125rem) scale(1.5); */
-}
-/**
-* By default, the placeholder should be transparent. Also, it should 
-* inherit the transition.
-*/
-::-webkit-input-placeholder {
-  opacity: 0;
-  transition: inherit;
-}
-/**
-* Show the placeholder when the input is focused.
-*/
-input.material-input:focus::-webkit-input-placeholder {
-  opacity: 1;
-}
-/**
-* When the element is focused, remove the label transform.
-* Also, do this when the placeholder is _not_ shown, i.e. when 
-* there's something in the input at all.
-*/
-input.material-input:not(:placeholder-shown) + label.material-input,
-input.material-input:focus + label.material-input {
-  transform: translateY(7px);
-  font-size: 10px;
-}
-
-.form-label-group input.material-input:-webkit-autofill ~ label.material-input {
-  /* CSS property  */
-  transform: translateY(7px);
-  font-size: 10px;
-}
-
-.noselect {
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Opera and Firefox */
-}
-</style>
-

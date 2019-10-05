@@ -1,14 +1,77 @@
 <template>
   <div>
-    <div class="header">
-      <div class="container section">
-        <div style="display: flex; align-items: center">
-          <img src="~static/dashboard-icon-white.png" class="company_logo" />
-          <p class="padding-left-10">WENSLink Seller Registration</p>
-        </div>
+<div data-ng-controller="in-ssr-header-controller" data-ng-init="init('Header_BC_a1r2j3u4-n5s6-b7h8-a9r0-a1d2w3a4j567')" class="ng-scope">
+    
+        
+  
+<div class="a-section">
+    <div class="a-box a-box-normal a-color-offset-background"><div class="a-box-inner a-padding-base">
+        <a data-ng-href="" class="a-link-normal" href="#">
+            <img class="header-logo" ng-src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/sc-unified._V360962423_.png" src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/sc-unified._V360962423_.png">
+        </a>
+        <ul data-ng-mouseout="offFocus()" data-ng-mouseover="onFocus('settings')" class="a-unordered-list a-nostyle a-vertical header-settings-tab">
+           <a class="a-link-normal ng-binding" href="/gp/sign-in/logout.html">Logout</a>
+      
+        </ul>
+    </div></div>
+</div>
+            
+        
+    
+</div>
+
+
+<div class="a-box a-box-normal page-nav"><div class="a-box-inner a-padding-base">
+  <div class="stepRow">
+    <!-- ngRepeat: step in navigation.Steps --><div ng-class="['step', getStepClass(step.currentStep ,step.stepCompletionStatus)]" ng-repeat="step in navigation.Steps" class="ng-scope step stepCompleted">
+
+
+      <div data-ng-hide="isLinkAllowed(step)" class="stepLinkBox" title="Phone Verification">
+        <img class="stepImg" ng-src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/completedStepA._CB295853638_.png" src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/completedStepA._CB295853638_.png">
+        <span class="step-text ng-binding">Phone Verification</span>
       </div>
-    </div>
-    <div class="tabbed-layout" style="overflow: auto;">
+
+    </div><!-- end ngRepeat: step in navigation.Steps --><div ng-class="['step', getStepClass(step.currentStep ,step.stepCompletionStatus)]" ng-repeat="step in navigation.Steps" class="ng-scope step stepActive">
+
+
+
+      <div data-ng-hide="isLinkAllowed(step)" class="stepLinkBox" title="Seller Information">
+        <img class="stepImg" ng-src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/currentStepA._CB295853638_.png" src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/currentStepA._CB295853638_.png">
+        <span class="step-text ng-binding">Seller Information</span>
+      </div>
+
+    </div><!-- end ngRepeat: step in navigation.Steps --><div ng-class="['step', getStepClass(step.currentStep ,step.stepCompletionStatus)]" ng-repeat="step in navigation.Steps" class="ng-scope step stepNotReady">
+
+
+
+      <div data-ng-hide="isLinkAllowed(step)" class="stepLinkBox" title="Tax Details">
+        <img class="stepImg" ng-src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/notReadyStep._CB295853632_.png" src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/notReadyStep._CB295853632_.png">
+        <span class="step-text ng-binding">Tax Details</span>
+      </div>
+
+    </div><!-- end ngRepeat: step in navigation.Steps --><div ng-class="['step', getStepClass(step.currentStep ,step.stepCompletionStatus)]" ng-repeat="step in navigation.Steps" class="ng-scope step stepNotReady">
+
+
+
+      <div data-ng-hide="isLinkAllowed(step)" class="stepLinkBox" title="Seller Interview">
+        <img class="stepImg" ng-src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/notReadyStep._CB295853632_.png" src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/notReadyStep._CB295853632_.png">
+        <span class="step-text ng-binding">Seller Interview</span>
+      </div>
+
+    </div><!-- end ngRepeat: step in navigation.Steps --><div ng-class="['step', getStepClass(step.currentStep ,step.stepCompletionStatus)]" ng-repeat="step in navigation.Steps" class="ng-scope step stepNotReady">
+
+   
+
+      <div data-ng-hide="isLinkAllowed(step)" class="stepLinkBox" title="Dashboard">
+        <img class="stepImg" ng-src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/notReadyStep._CB295853632_.png" src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/notReadyStep._CB295853632_.png">
+        <span class="step-text ng-binding">Dashboard</span>
+      </div>
+
+    </div><!-- end ngRepeat: step in navigation.Steps -->
+  </div>
+</div></div>
+
+    <!-- <div class="tabbed-layout" style="overflow: auto;">
       <div class="flex container justify-between" style="height: 63px;align-items: center;">
         <div class="flex">
           <i data-feather="check-circle"></i>
@@ -31,116 +94,338 @@
           <p class="padding-left-10">Dashboard</p>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="container section seller___interview" v-if="currentOption == 1">
-      <h1>Tell us about your business</h1>
-
-      <div class="row">
-        <div class="col-12 col-sm-12 col-md-6 col-lg-4">
-          <form class="form-body">
-            <div class="form-group margin-top-20">
-              <label class="control-label noselect">Store Name</label>
-              <input
-                id="email"
-                type="email"
-                v-model="email"
-                class="form-control"
-                maxlength="50"
-                autocomplete="anyrandomstring"
-              />
+      <div class="a-section main">
+        <div class="a-section a-spacing-base a-spacing-top-base">
+          <form>
+            <div
+              data-ng-controller="display-name-fragment-controller"
+              data-ng-init="init('Store_Name_BC_67635828-f378-41af-bc81-b6c1b3b8b032')"
+              class="a-section ng-scope"
+            >
+              <div class="a-section a-text-left dn_completeDiv">
+                <!-- ngIf: fragmentData.dn_fragment_heading.visibility -->
+                <div
+                  data-ng-if="fragmentData.dn_fragment_heading.visibility"
+                  class="a-section a-spacing-none ng-scope"
+                >
+                  <span class="a-text-bold ng-binding">
+                    Store Name
+                  </span>
+                </div>
+                <!-- end ngIf: fragmentData.dn_fragment_heading.visibility -->
+                <!-- ngIf: fragmentData.dn_fragment_display_name.visibility -->
+                <div
+                  data-ng-if="fragmentData.dn_fragment_display_name.visibility"
+                  class="a-section a-spacing-none ng-scope"
+                >
+                  <input
+                    type="text"
+                    maxlength="50"
+                    autocomplete="off"
+                    placeholder
+                    name="displayNameField"
+                    class="a-input-text dn_inputTextbox celwidget ng-scope ng-pristine ng-invalid ng-invalid-required"
+                    data-ng-blur="validateDisplayName()"
+                    data-ng-class="{'a-form-error':fragmentData.dn_fragment_display_name.error,'a-form-disabled':fragmentData.dn_fragment_display_name.disabled}"
+                    data-ng-disabled="fragmentData.dn_fragment_display_name.disabled"
+                    data-ng-focus="clearDisplayNameError()"
+                    data-ng-model="fragmentData.dn_fragment_display_name.value"
+                    data-ng-required="true"
+                    required="required"
+                  />
+                  <!-- ngIf: fragmentData.dn_fragment_verify.visibility && !fragmentData.dn_fragment_display_name.disabled -->
+                  <span
+                    data-ng-if="fragmentData.dn_fragment_verify.visibility &amp;&amp; !fragmentData.dn_fragment_display_name.disabled"
+                    class="dn_verifyLinkDiv celwidget ng-scope"
+                  >
+                    <span
+                      data-ng-click="checkDisplayName()"
+                      class="a-color-link dn_verifyLink ng-binding"
+                    >Check Availability</span>
+                  </span>
+                  <div class="dn_messageDiv"></div>
+                </div>
+                <!-- end ngIf: fragmentData.dn_fragment_display_name.visibility -->
+              </div>
             </div>
+          </form>
+        </div>
+
+        <div class="a-section a-spacing-base a-spacing-top-base">
+          <div
+            data-ng-controller="primary-category-fragment-controller"
+            data-ng-init="init('Primary_Category_BC_67635828-f378-41af-bc81-b6c1b3b8b032')"
+            class="a-section primary-category-fragment ng-scope"
+          >
+            <p class="a-spacing-none a-text-bold ng-binding">Select Product Category</p>
+
             <div class="form-group margin-top-20">
-              <label class="control-label noselect">Select Product Category</label>
-              <select class="form-control" v-model="product_cat">
+              <select class="form-control" v-model="product_cat" style="width: 280px;">
                 <option v-for="p in product_category" :key="p.id" :value="p.id">{{p.name}}</option>
               </select>
             </div>
 
-            <hr />
+          </div>
+        </div>
 
-            <h4 class="subtitle">Enter your address</h4>
+        <div class="a-section a-spacing-base a-spacing-top-base">
+          <div
+            data-ng-controller="address-fragment-controller"
+            data-ng-init="init('Business_Address_BC_67635828-f378-41af-bc81-b6c1b3b8b032')"
+            class="a-section a-spacing-none ng-scope"
+          >
+            <form name="addressFragment" class="ng-dirty ng-invalid ng-invalid-required">
+              <div
+                data-ng-show="fragmentData.enabledOnPageLoad.value"
+                class="a-section address-col2"
+              >
+                <hr class="a-divider-normal address-divider" />
+                <div class="a-section address-noBorder address-pv_box" role="form">
+                  <!-- ngIf: fragmentData.pv_fragment_heading.visibility -->
+                  <div
+                    data-ng-if="fragmentData.pv_fragment_heading.visibility"
+                    class="a-section a-spacing-small celwidget ng-scope"
+                  >
+                    <h4
+                      class="a-spacing-mini a-spacing-top-small a-color-tertiary ng-binding"
+                      role="banner"
+                    >Enter your address</h4>
+                  </div>
+                  <!-- end ngIf: fragmentData.pv_fragment_heading.visibility -->
 
-            <div class="form-group margin-top-20">
-              <label class="control-label noselect">Pincode</label>
-              <input
-                id="email"
-                type="email"
-                v-model="email"
-                class="form-control"
-                maxlength="50"
-                autocomplete="anyrandomstring"
-              />
-            </div>
+                  <div
+                    data-ng-hide="fragmentData.addressFieldsDisable"
+                    data-ng-show="!fragmentData.addressFieldsDisable || enableEasyshipAddressForm"
+                    class="a-section"
+                  >
+                    <!-- ngIf: fragmentData.pincode.visibility -->
+                    <div
+                      data-cel_widget_id="PV_PincodeInput"
+                      data-ng-if="fragmentData.pincode.visibility"
+                      class="a-section a-spacing-small celwidget ng-scope"
+                    >
+                      <div class="a-section a-spacing-none address-inputName ng-binding">Pincode</div>
+                      <input
+                        type="text"
+                        maxlength="6"
+                        autocomplete="off"
+                        name="pincode"
+                        class="a-input-text address-textbox ng-scope ng-pristine ng-valid-pattern ng-animate ng-valid-remove ng-invalid-add ng-valid-required-remove ng-valid-remove-active ng-invalid ng-invalid-add-active ng-valid-required-remove-active ng-invalid-required"
+                        data-ng-blur="populateAddressData()"
+                        data-ng-class="{'a-form-error': fragmentData.errors.pincode}"
+                        data-ng-disabled="addressDisable||pincodeDisabled||fragmentData.editDisable"
+                        data-ng-focus="clearError('pincode')"
+                        data-ng-model="fragmentData.address.pincode"
+                        data-ng-pattern="pincodeRegex"
+                        data-ng-required="true"
+                        required="required"
+                        style
+                      />
+                      <div
+                        data-ng-show="fragmentData.errors.pincode"
+                        class="a-box a-alert-inline a-alert-inline-error a-spacing-top-mini ng-hide"
+                        aria-live="assertive"
+                        role="alert"
+                      >
+                      </div>
+                    </div>
+                    <!-- end ngIf: fragmentData.pincode.visibility -->
+                    <!-- ngIf: fragmentData.name.visibility -->
+                    <div
+                      data-cel_widget_id="PV_PincodeInput"
+                      data-ng-show="fragmentData.address_line1.visibility"
+                      class="a-section a-spacing-small celwidget"
+                    >
+                      <div
+                        class="a-section a-spacing-none address-inputName ng-binding"
+                      >Address Line 1</div>
+                      <input
+                        type="text"
+                        maxlength="60"
+                        value
+                        autocomplete="off"
+                        name="address_line1"
+                        class="a-input-text address-textbox ng-scope ng-pristine ng-animate ng-valid-remove ng-invalid-add ng-valid-required-remove ng-valid-remove-active ng-invalid ng-invalid-add-active ng-valid-required-remove-active ng-invalid-required"
+                        data-ng-class="{'a-form-error': fragmentData.errors.address_line1}"
+                        data-ng-disabled="addressDisable||fragmentData.editDisable"
+                        data-ng-focus="clearError('address_line1')"
+                        data-ng-model="fragmentData.address.address_line1"
+                        data-ng-required="true"
+                        required="required"
+                        style
+                      />
+                      <div
+                        data-ng-show="fragmentData.errors.address_line1"
+                        class="a-box a-alert-inline a-alert-inline-error a-spacing-top-mini ng-hide"
+                        aria-live="assertive"
+                        role="alert"
+                      >
+                      </div>
+                    </div>
+                    <div
+                      data-cel_widget_id="PV_PincodeInput"
+                      data-ng-show="fragmentData.address_line2.visibility"
+                      class="a-section a-spacing-small celwidget"
+                    >
+                      <div
+                        class="a-section a-spacing-none address-inputName ng-binding"
+                      >Address Line 2</div>
+                      <input
+                        type="text"
+                        maxlength="60"
+                        value
+                        autocomplete="off"
+                        name="address_line2"
+                        class="a-input-text address-textbox ng-scope ng-pristine ng-valid"
+                        data-ng-class="{'a-form-error': fragmentData.errors.address_line2}"
+                        data-ng-disabled="addressDisable||fragmentData.editDisable"
+                        data-ng-focus="clearError('address_line2')"
+                        data-ng-model="fragmentData.address.address_line2"
+                      />
+                      <div
+                        data-ng-show="fragmentData.errors.address_line2"
+                        class="a-box a-alert-inline a-alert-inline-error a-spacing-top-mini ng-hide"
+                        aria-live="assertive"
+                        role="alert"
+                      >
+                      </div>
+                    </div>
+                    <div
+                      data-cel_widget_id="PV_CityInput"
+                      data-ng-show="fragmentData.city.visibility"
+                      class="a-section a-spacing-small celwidget"
+                    >
+                      <div class="a-section a-spacing-none address-inputName ng-binding">City</div>
+                      <input
+                        type="text"
+                        maxlength="50"
+                        value
+                        autocomplete="off"
+                        name="city"
+                        class="a-input-text address-textbox ng-scope ng-pristine ng-animate ng-valid-remove ng-invalid-add ng-valid-required-remove ng-valid-remove-active ng-invalid ng-invalid-add-active ng-valid-required-remove-active ng-invalid-required"
+                        data-ng-class="{'a-form-error': fragmentData.errors.city}"
+                        data-ng-disabled="addressDisable||fragmentData.editDisable"
+                        data-ng-focus="clearError('city')"
+                        data-ng-model="fragmentData.address.city"
+                        data-ng-required="true"
+                        required="required"
+                        style
+                      />
+                    </div>
+                    <div
+                      data-cel_widget_id="PV_StateInput"
+                      data-ng-show="fragmentData.state.visibility"
+                      class="a-section a-spacing-small celwidget"
+                    >
+                      <div class="a-section a-spacing-none address-inputName ng-binding">State</div>
+                      <div
+                        data-ng-class="{'a-form-error': fragmentData.errors.state,'dropdown-disabled': addressDisable}"
+                        class="a-section a-spacing-none address-dropdown"
+                      >
+                        <select
+                          class="address-dropdown-select ng-pristine ng-animate ng-valid-remove ng-invalid-add ng-valid-required-remove ng-valid-remove-active ng-invalid ng-invalid-add-active ng-valid-required-remove-active ng-invalid-required"
+                          name="state"
+                          data-ng-focus="clearError('state')"
+                          ng-model="fragmentData.address.state"
+                          ng-options="key as key for key in stateList"
+                          data-ng-required="true"
+                          data-ng-disabled="addressDisable||fragmentData.editDisable"
+                          required="required"
+                          style
+                        >
+                          <option class value>Select State</option>
+                          <option value="0">MAHARASHTRA</option>
+                          <option value="1">GOA</option>
+                          <option value="2">KERALA</option>
+                          <option value="3">LAKSHADWEEP</option>
+                          <option value="4">DADRA &amp; NAGAR HAVELI</option>
+                          <option value="5">HIMACHAL PRADESH</option>
+                          <option value="6">ANDAMAN &amp; NICOBAR ISLANDS</option>
+                          <option value="7">ANDHRA PRADESH</option>
+                          <option value="8">UTTAR PRADESH</option>
+                          <option value="9">HARYANA</option>
+                          <option value="10" selected="selected">ASSAM</option>
+                          <option value="11">ODISHA</option>
+                          <option value="12">CHANDIGARH</option>
+                          <option value="13">MADHYA PRADESH</option>
+                          <option value="14">WEST BENGAL</option>
+                          <option value="15">MEGHALAYA</option>
+                          <option value="16">PUDUCHERRY</option>
+                          <option value="17">RAJASTHAN</option>
+                          <option value="18">NAGALAND</option>
+                          <option value="19">SIKKIM</option>
+                          <option value="20">GUJARAT</option>
+                          <option value="21">KARNATAKA</option>
+                          <option value="22">MIZORAM</option>
+                          <option value="23">DAMAN &amp; DIU</option>
+                          <option value="24">ARUNACHAL PRADESH</option>
+                          <option value="25">BIHAR</option>
+                          <option value="26">CHHATTISGARH</option>
+                          <option value="27">PUNJAB</option>
+                          <option value="28">JAMMU &amp; KASHMIR</option>
+                          <option value="29">TAMIL NADU</option>
+                          <option value="30">UTTARAKHAND</option>
+                          <option value="31">DELHI</option>
+                          <option value="32">JHARKHAND</option>
+                          <option value="33">MANIPUR</option>
+                          <option value="34">TRIPURA</option>
+                          <option value="35">TELANGANA</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div
+                      data-cel_widget_id="PV_CountryInput"
+                      data-ng-show="fragmentData.country.visibility"
+                      class="a-section a-spacing-small celwidget"
+                    >
+                      <div
+                        class="a-section a-spacing-none address-inputName ng-binding"
+                      >Country/Region</div>
+                      <div
+                        data-ng-class="{'a-form-error': fragmentData.country.error,'dropdown-disabled': addressDisable}"
+                        class="a-section a-spacing-none address-dropdown"
+                      >
+                        <select
+                          class="address-dropdown-select ng-pristine ng-valid ng-valid-required"
+                          name="country"
+                          ng-model="fragmentData.address.country"
+                          ng-options="value as key for (key,value) in countryMap"
+                          data-ng-required="true"
+                          data-ng-disabled="true"
+                          required="required"
+                          disabled="disabled"
+                        >
+                          <option value="India" selected="selected">India</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
 
-            <div class="form-group margin-top-20">
-              <label class="control-label noselect">Address Line 1</label>
-              <input
-                id="email"
-                type="email"
-                v-model="email"
-                class="form-control"
-                maxlength="50"
-                autocomplete="anyrandomstring"
-              />
-            </div>
-
-            <div class="form-group margin-top-20">
-              <label class="control-label noselect">Address Line 2</label>
-              <input
-                id="email"
-                type="email"
-                v-model="email"
-                class="form-control"
-                maxlength="50"
-                autocomplete="anyrandomstring"
-              />
-            </div>
-
-            <div class="form-group margin-top-20">
-              <label class="control-label noselect">City</label>
-              <input
-                id="email"
-                type="email"
-                v-model="email"
-                class="form-control"
-                maxlength="50"
-                autocomplete="anyrandomstring"
-              />
-            </div>
-
-            <div class="form-group margin-top-20">
-              <label class="control-label noselect">State</label>
-              <input
-                id="email"
-                type="email"
-                v-model="email"
-                class="form-control"
-                maxlength="50"
-                autocomplete="anyrandomstring"
-              />
-            </div>
-
-            <div class="form-group margin-top-20">
-              <label class="control-label noselect">Country</label>
-              <input
-                id="email"
-                type="email"
-                disabled
-                value="India"
-                class="form-control"
-                maxlength="50"
-                autocomplete="anyrandomstring"
-              />
-            </div>
-
-            <button
-              type="submit"
-              class="btn btn-green white-text loginButton margin-top-20"
-            >Continue</button>
-          </form>
+                  <!-- ngIf: fragmentData.submitButton.visibility -->
+                  <div
+                    data-ng-if="fragmentData.submitButton.visibility"
+                    class="a-section a-spacing-small a-spacing-top-large ng-scope"
+                  >
+                    <span
+                      class="a-button a-spacing-small a-spacing-top-base a-button-primary address-textbox"
+                      id="a-autoid-1"
+                    >
+                      <span class="a-button-inner">
+                        <nuxt-link class="a-button-text" to="/launch/tax-details">Continue</nuxt-link>
+                      </span>
+                    </span>
+                  </div>
+                  <!-- end ngIf: fragmentData.submitButton.visibility -->
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
+      <Aside/>
     </div>
 
     <div class="container section tax_details" v-if="currentOption == 2">
@@ -217,7 +502,7 @@
     <div class="container section seller___interview" v-if="currentOption == 3">
       <h1>Choose categories you wish to sell</h1>
 
-        <div class="container">
+      <div class="container">
         <div class="col-12 col-sm-4" v-for="p in interview_data" :key="p.id">
           <div class="row">
             <div class="col-12">
@@ -234,41 +519,43 @@
             </div>
           </div>
         </div>
-        </div>
-       
-        <div class="col-12 col-sm-4">
-          <div class="col-12">
-            <p class="interview_title">Where do you get products from?</p>
-            <ul class="selector__section">
-              <li>
-                <label class="checkcontainer">
-                  <p>I manufacture them</p>
-                  <input type="checkbox" />
-                  <span class="checkmark"></span>
-                </label>
-              </li>
-              <li>
-                <label class="checkcontainer">
-                  <p>I import them</p>
-                  <input type="checkbox" />
-                  <span class="checkmark"></span>
-                </label>
-              </li>
-            </ul>
-          </div>
       </div>
 
+      <div class="col-12 col-sm-4">
+        <div class="col-12">
+          <p class="interview_title">Where do you get products from?</p>
+          <ul class="selector__section">
+            <li>
+              <label class="checkcontainer">
+                <p>I manufacture them</p>
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+              </label>
+            </li>
+            <li>
+              <label class="checkcontainer">
+                <p>I import them</p>
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 
 <script>
+
+import Aside from '@/components/aside'
+
 export default {
   data: function() {
     return {
       email: '',
-      currentOption: 3,
+      currentOption: 1,
       product_cat: 0,
       product_category: [
         {
@@ -575,11 +862,14 @@ export default {
             {
               id: 1,
               name: 'My Category is not listed here'
-            },
+            }
           ]
-        },
+        }
       ]
     }
+  },
+  components:{
+    Aside
   },
   mounted() {
     feather.replace({ color: '#009688' })

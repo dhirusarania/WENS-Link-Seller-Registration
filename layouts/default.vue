@@ -2,7 +2,7 @@
   <div>
     <!-- <TopNav v-if="$nuxt.$route.name != 'index'"/> -->
     <client-only>
-      <NavBar v-if="$nuxt.$route.name != 'index' && $nuxt.$route.name != 'register' && $nuxt.$route.name != 'login' && $nuxt.$route.name != 'previous' && $nuxt.$route.name != 'mobile_verify'" />
+      <!-- <NavBar v-if="$nuxt.$route.name != 'index' && $nuxt.$route.name != 'register' && $nuxt.$route.name != 'login' && $nuxt.$route.name != 'previous' && $nuxt.$route.name != 'mobile_verify' && $nuxt.$route.name != 'register_account'" /> -->
       <nuxt />
       <!-- <Footer v-if="$nuxt.$route.name != 'index'" /> -->
     </client-only>
@@ -37,7 +37,7 @@ export default {
 
 html,
 body {
-  font-size: 14px;
+  font-size: 13px;
   min-width: 320px;
 }
 
@@ -46,7 +46,7 @@ li {
 }
 
 body {
-  font-family: Montserrat;
+  font-family: Arial,sans-serif;
 }
 
 #__nuxt,

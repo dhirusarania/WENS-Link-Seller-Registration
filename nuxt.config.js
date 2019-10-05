@@ -54,11 +54,10 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    { src: '~assets/css/styles.css', lang: 'css' },
-    { src: '~assets/css/print.css', lang: 'css' },
     { src: '~assets/css/bootstrap.min.css', lang: 'css' },
-    { src: '~assets/css/chat.css', lang: 'css' },
-    { src: '~static/css/dark-theme.css', lang: 'css' },
+    // { src: '~static/css/dark-theme.css', lang: 'css' },
+    { src: '~static/css/amazon.css', lang: 'css' },
+    { src: '~static/css/amazon2.css', lang: 'css' },
   ],
 
   /*
