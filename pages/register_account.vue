@@ -386,7 +386,8 @@ export default {
                 .then(res => {
                     console.log(res.data)
                     console.log('response')
-                    this.$route.push('/mobile_verify')
+                    localStorage.setItem('phone' , $("#ap_phone_number").val())
+                    this.$router.push('/verification')
                 })
                 .catch(err => {
                     console.log('error in request', err)
@@ -400,3 +401,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.a-alert-inline{
+  display: none!important
+}
+</style>

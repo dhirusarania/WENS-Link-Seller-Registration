@@ -2400,7 +2400,7 @@ p {
 }
 
 .preparing-app-spinner {
-    color: #f0c14b
+    color: #89d0e2
 }
 
 .preparing-app-text {
@@ -6840,7 +6840,7 @@ only screen and (min-resolution:2dppx) {
 
 .continue_b_legal,
 .continue_b_legal #a-autoid-0-announce {
-    background: -webkit-linear-gradient(top, #f7dfa5, #f0c14b)!important
+    background: -webkit-linear-gradient(top, #f7dfa5, #89d0e2)!important
 }
 
 .link_color_legal {
@@ -10657,14 +10657,14 @@ only screen and (min-resolution:2dppx) {
         display: none
     }
     .a-button-primary {
-        background: #f0c14b;
+        background: #89d0e2;
         border-color: #a88734 #9c7e31 #846a29;
         color: #111
     }
     .a-button-primary .a-button-inner {
-        background: #f3d078;
-        background: -webkit-linear-gradient(top, #f7dfa5, #f0c14b);
-        background: linear-gradient(to bottom, #f7dfa5, #f0c14b)
+        background: #89d0e2;
+        background: -webkit-linear-gradient(top, #f7dfa5, #89d0e2);
+        background: linear-gradient(to bottom, #f7dfa5, #89d0e2)
     }
     .a-button-primary:hover .a-button-inner {
         background: #f1c860;
@@ -10672,7 +10672,7 @@ only screen and (min-resolution:2dppx) {
         background: linear-gradient(to bottom, #f5d78e, #eeb933)
     }
     .a-button-primary:active .a-button-inner {
-        background-color: #f0c14b;
+        background-color: #89d0e2;
         background-image: none
     }
     .a-button-primary.a-button-focus,
@@ -10709,7 +10709,7 @@ only screen and (min-resolution:2dppx) {
     .a-button-primary.a-button-pressed:hover .a-button-inner {
         background-image: none;
         box-shadow: 0 1px 3px rgba(0, 0, 0, .2) inset;
-        background-color: #f0c14b
+        background-color: #89d0e2
     }
     .a-button-primary .a-button-inner {
         box-shadow: 0 1px 0 rgba(255, 255, 255, .4) inset
@@ -21894,14 +21894,14 @@ only screen and (min-resolution:2dppx) {
         display: none
     }
     .a-button-primary {
-        background: #f0c14b;
+        background: #89d0e2;
         border-color: #a88734 #9c7e31 #846a29;
         color: #111
     }
     .a-button-primary .a-button-inner {
         background: #f4d078;
-        background: -webkit-linear-gradient(top, #f7dfa5, #f0c14b);
-        background: linear-gradient(to bottom, #f7dfa5, #f0c14b)
+        background: -webkit-linear-gradient(top, #f7dfa5, #89d0e2);
+        background: linear-gradient(to bottom, #f7dfa5, #89d0e2)
     }
     .a-button-primary:hover .a-button-inner {
         background: #f2c861;
@@ -21909,7 +21909,7 @@ only screen and (min-resolution:2dppx) {
         background: linear-gradient(to bottom, #f5d78e, #eeb933)
     }
     .a-button-primary:active .a-button-inner {
-        background-color: #f0c14b;
+        background-color: #89d0e2;
         background-image: none
     }
     .a-button-primary.a-button-focus,
@@ -21943,7 +21943,7 @@ only screen and (min-resolution:2dppx) {
     .a-button-primary.a-button-pressed:hover .a-button-inner {
         background-image: none;
         box-shadow: 0 1px 3px rgba(0, 0, 0, .2) inset;
-        background-color: #f0c14b
+        background-color: #89d0e2
     }
     .a-button-primary .a-button-inner {
         box-shadow: 0 1px 0 rgba(255, 255, 255, .4) inset
