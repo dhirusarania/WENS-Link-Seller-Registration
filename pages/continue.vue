@@ -14,7 +14,7 @@
             <p class="seller_message_p"></p>
             <p>Please have the following ready before you begin:</p>
             <ul>
-              <li>Your bank account details for receiving payments from Amazon</li>
+              <li>Your bank account details for receiving payments from WENS Link</li>
               <li>Tax (GST/PAN) details of your business</li>
             </ul>
             <br />
@@ -97,7 +97,7 @@
                           <div class="a-section a-spacing-top-micro">
                             <div class="a-checkbox a-checkbox-fancy agreementCheckbox ng-scope">
                               <label style="display:flex">
-                                <input type="checkbox" style="opacity: 1;z-index: 5" />
+                                <input type="checkbox" style="opacity: 1;z-index: 5" v-model="isSelected" />
                                 <span class="a-label a-checkbox-label">
                                   <span class="a-size-base ng-binding">
                                     I have read and agree to comply with and/or be bound by the terms and conditions of
@@ -107,21 +107,21 @@
                                     >
                                       <a
                                         target="_blank"
-                                        href="https://sellercentral.amazon.in/gp/on-board/help-content.html?ie=UTF8&amp;agreementID=&amp;hasCloseButton=1&amp;hasPrintButton=1&amp;helpNodeID=1791&amp;invitationID=&amp;isOnlineMapa=&amp;mapaAcceptanceDate=&amp;repeatButtonsAtEnd=1&amp;showTitles=1&amp;tokens=agreement.MERCHANT_SILVER&amp;marketplaceID=A21TJRUUN4KGV&amp;localizationKey=A21TJRUUN4KGV"
+                                        href="/sssl"
                                         class="ng-binding"
-                                      >Amazon Services Business Solutions Agreement</a>
+                                      >WENS Link Services Business Solutions Agreement</a>
                                       ,
                                       <a
                                         target="_blank"
-                                        href="https://sellercentral.amazon.in/gp/help/help.html/?itemID=G201439100&amp;ref_=xx_G201439100_h_r0_cont_sgsearch"
+                                        href="/sssl"
                                         class="ng-binding"
                                       >Easy Ship Service &amp; Runway Terms and Conditions</a>
                                       and
                                       <a
                                         target="_blank"
-                                        href="https://sellercentral.amazon.in/gp/help/external/G74V5YKB5ASNF3V8"
+                                        href="/sssl"
                                         class="ng-binding"
-                                      >Amazon Business (B2B) Terms &amp; Conditions</a>
+                                      >WENS Link Terms &amp; Conditions</a>
                                     </span>
                                   </span>
                                 </span>
@@ -144,12 +144,13 @@
               <div class="a-section">
                 <span class="a-button continue_b_legal" id="a-autoid-0">
                   <span class="a-button-inner">
-                    <nuxt-link
-                      to="/register"
+                    <div
+                      @click="changeCompany"
+                      :disabled="!isSelected"
                       id="auth-continue-announce"
                       class="a-button-text"
                       aria-hidden="true"
-                    >Continue</nuxt-link>
+                    >Continue</div>
                   </span>
                 </span>
               </div>
@@ -162,13 +163,13 @@
             >
               <div class="a-section a-spacing-medium a-spacing-top-large text-left ng-binding">
                 Like to create new account?
-                <a
+                <nuxt-link
                   class="a-size-base-plus a-link-normal link_color_legal ng-binding"
                   target="_blank"
                   rel="noopener"
                   title="Click here"
-                  href="https://sellercentral.amazon.in/ap/register?openid.return_to=https%3A%2F%2Fsellercentral.amazon.in%2Fsw%2Fin%2FINSSR%2Fstep%2FSignUp%3Fpassthrough%252Faccount%3Dsoa%26passthrough%252FsuperSource%3DOAR%26ref_%3Das_in_soa_hp%26passthrough%252FmarketplaceID%3DA21TJRUUN4KGV%26passthrough%252F%26productTier%3DSILVER%26productType%3DSellOnAmazon%26marketplaceId%3DA21TJRUUN4KGV%26passthrough%252Ftag%3DREDIRECTT1%26redirectAP%3D1%26%26redirectAP%3D1&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.assoc_handle=amzn_sw_signup_in&amp;openid.mode=checkid_setup&amp;marketPlaceId=A21TJRUUN4KGV&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;"
-                >Click here</a>
+                  to="/register_account"
+                >Click here</nuxt-link>
               </div>
             </div>
 
@@ -178,7 +179,7 @@
                 target="_blank"
                 rel="noopener"
                 title="Privacy Notice"
-                href="http://www.amazon.in/gp/help/customer/display.html/ref=footer_privacy?ie=UTF8&amp;nodeId=200534380&amp;ld=ASINSOADirect"
+                href="/sss"
               >Privacy Notice</a>
             </div>
           </div>
@@ -187,3 +188,56 @@
     </div>
   </div>
 </template>
+
+
+<script>
+import axios from 'axios'
+
+
+export default {
+  data(){
+    return{
+      otp: null,
+      phone_number: localStorage.getItem('phone'),
+      isSelected: false
+    }
+  },
+
+
+    methods:{
+    changeCompany: function(){
+
+
+
+     var payload = new FormData()
+
+     payload.append('phone_number', localStorage.getItem('phone_number'))
+     payload.append('company_name', $("#ln_legal_name").val())
+
+
+
+            axios({
+                method: 'PUT',
+                data: payload,
+                url: '/backend/api/vendors/company_name/',
+                contentType: 'application/json',
+                data: payload
+            })
+                .then(res => {
+                    console.log(res.data)
+                    console.log('response')
+                    localStorage.setItem('business_name',  $("#ln_legal_name").val())
+                    this.$router.push('/register')
+                })
+                .catch(err => {
+                    console.log('error in request', err)
+                })
+
+
+
+
+
+    }
+  }
+}
+</script>

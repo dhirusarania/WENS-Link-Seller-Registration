@@ -10664,7 +10664,7 @@ only screen and (min-resolution:2dppx) {
     .a-button-primary .a-button-inner {
         background: #f3d078;
         background: -webkit-linear-gradient(top, #f7dfa5, #f0c14b);
-        background: linear-gradient(to bottom, #f7dfa5, #f0c14b)
+        background: linear-gradient(to bottom, #a8f5ff, #9bd3ff)
     }
     .a-button-primary:hover .a-button-inner {
         background: #f1c860;
@@ -21901,7 +21901,7 @@ only screen and (min-resolution:2dppx) {
     .a-button-primary .a-button-inner {
         background: #f4d078;
         background: -webkit-linear-gradient(top, #f7dfa5, #f0c14b);
-        background: linear-gradient(to bottom, #f7dfa5, #f0c14b)
+        background: linear-gradient(to bottom, #a8f5ff, #9bd3ff)
     }
     .a-button-primary:hover .a-button-inner {
         background: #f2c861;

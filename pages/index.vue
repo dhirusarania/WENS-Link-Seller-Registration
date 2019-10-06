@@ -1,274 +1,261 @@
 <template>
-  <div class="container section">
-    <div style="max-width: 400px;margin: auto">
-      <div class="header">
-        <div class="center-align">
-          <img src="~static/dashboard-icon-black.png" class="company_logo" />
+  <div>
+    <div id="a-page">
+      <div class="a-section a-padding-medium auth-workflow">
+        <div class="a-section a-spacing-none auth-navbar">
+          <div class="a-section a-spacing-medium a-text-center">
+                    <div class="center-align">
+          <img src="~static/dashboard-icon-black.png" style="height: 45px;padding-bottom: 10px" class="company_logo" />
           <p class="margin-top-10">WENSLink Seller Registration</p>
         </div>
-      </div>
-
-      <div class="section create___account" v-if="useractivity == 0">
-        <h1>Create Account</h1>
-        <!-- <p>A text with a One Time Password (OTP) has been sent to your mobile number: 89282672828</p> -->
-
-        <form class="form-body">
-          <div class="form-group margin-top-20">
-            <label class="control-label noselect">Your Name</label>
-            <input
-              id="email"
-              type="email"
-              v-model="email"
-              class="form-control"
-              maxlength="50"
-              autocomplete="anyrandomstring"
-            />
           </div>
-          <div class="form-group margin-top-20 input__helper">
-            <label class="control-label noselect">Mobile Number</label>
-            <input
-              id="email"
-              type="number"
-              v-model="phone_number"
-              class="form-control"
-              maxlength="50"
-              autocomplete="anyrandomstring"
-            />
-            <span class>+91</span>
-          </div>
-          <div class="form-group margin-top-20">
-            <label class="control-label noselect">Email</label>
-            <input
-              id="email"
-              type="email"
-              v-model="email"
-              class="form-control"
-              maxlength="50"
-              autocomplete="anyrandomstring"
-            />
-          </div>
-          <div class="form-group margin-top-20">
-            <label class="control-label noselect">Password</label>
-            <input
-              id="email"
-              type="email"
-              v-model="email"
-              class="form-control"
-              maxlength="50"
-              placeholder="At least 6 characters"
-              autocomplete="anyrandomstring"
-            />
-            <span class="font-12">Password must be atleast 6 characters.</span>
-          </div>
-        </form>
-        <p
-          class="padding-bottom-20"
-        >We will send you a text to verify your phone. Message and Data rates may apply.</p>
-        <button
-          type="submit"
-          @click="useractivity = 2"
-          class="btn btn-green white-text loginButton"
-        >Continue</button>
-        <p class="padding-top-20">Already have an account?</p>
-        <nuxt-link to="/login">Sign In</nuxt-link>
-      </div>
-
-      <div class="section verify___mobile" v-if="useractivity == 1">
-        <h1 style="colror:#03A9F4">Register and Start Selling</h1>
-        <p>Please have the following ready before you begin:</p>
-        <ul class="padding-top-15 padding-bottom-10">
-          <li>Your bank account details for receiving payments from WENSLink</li>
-          <li>Tax (GST/PAN) details of your business</li>
-        </ul>
-
-        <p class="light-text">Please ensure that all the information you submit is accurate</p>
-
-        <h4
-          class="margin-top-30"
-          style="colror:#03A9F4"
-        >Enter details below to continue registration</h4>
-
-        <form class="form-body">
-          <div class="form-group margin-top-25">
-            <label class="control-label noselect">Company / Business Name</label>
-            <input
-              id="email"
-              type="email"
-              v-model="email"
-              class="form-control"
-              maxlength="50"
-              autocomplete="anyrandomstring"
-            />
-            <span
-              class="font-12 light-text"
-            >Enter the company/business name as registered in GST/PAN</span>
-          </div>
-        </form>
-
-        <div>
-          <form class="form-body">
-            <div class="form-group margin-top-25">
-              <input
-                id="email"
-                type="checkbox"
-                v-model="checkbox"
-                class
-                maxlength="50"
-                autocomplete="anyrandomstring"
-              />
-              I have read and agree to comply with and/or be bound by the terms and conditions of WENSLink Terms and Conditions
-            </div>
-          </form>
         </div>
 
-        <button
-          type="submit"
-          @click="useractivity = 1"
-          class="btn btn-green white-text loginButton"
-        >Continue</button>
-        <p
-          class="padding-top-20 font-12 light-text"
-        >By creating an account or logging in, you agree to WENSLink's Conditions of Use and Privacy Policy</p>
-      </div>
+        <div id="authportal-center-section" class="a-section">
+          <div id="authportal-main-section" class="a-section">
 
-      <div class="section verify___mobile" v-if="useractivity == 2">
-        <h1>Verify Mobile Number</h1>
-        <p>A text with a One Time Password (OTP) has been sent to your mobile number: {{phone_number}}</p>
 
-        <form class="form-body">
-          <div class="form-group margin-top-25">
-            <label class="control-label noselect">Enter OTP</label>
-            <input
-              id="email"
-              type="email"
-              v-model="email"
-              class="form-control"
-              maxlength="50"
-              autocomplete="anyrandomstring"
-            />
+            <div class="a-section auth-pagelet-container">
+              <!-- Set cross domain sso variables to be used for making Ajax calls to central Identity domain -->
+
+              <!-- Set cross domain sso variables to be used for making Ajax calls to central Identity domain -->
+
+              <!-- show a warning modal dialog when the third party account is connected with WENS Link -->
+
+              <div class="a-section a-spacing-base">
+                <div class="a-section">
+                  <form
+                    name="signIn"
+                    method="post"
+                    novalidate
+                    action="https://sellercentral.WENS Link.in/ap/signin"
+                    class="a-spacing-none fwcim-form"
+                    data-fwcim-id="dd379249"
+                  >
+
+                    <div class="a-section">
+                      <div class="a-box">
+                        <div class="a-box-inner a-padding-extra-large">
+                          <h1 class="a-spacing-small">Login</h1>
+                          <!-- optional subheading element -->
+
+                          <div class="a-row a-spacing-base">
+                            <label for="ap_email" class="a-form-label">Phone Number</label>
+
+                            <input
+                              type="email"
+                              maxlength="128"
+                              id="ap_email"
+                              name="email"
+                              tabindex="1"
+                              class="a-input-text a-span12 auth-autofocus auth-required-field"
+                            />
+
+                            <div
+                              id="auth-email-missing-alert"
+                              class="a-box a-alert-inline a-alert-inline-error auth-inlined-error-message a-spacing-top-mini"
+                              aria-live="assertive"
+                              role="alert"
+                            >
+                              <div class="a-box-inner a-alert-container">
+                                <i class="a-icon a-icon-alert"></i>
+                                <div class="a-alert-content">Enter your email or mobile phone number</div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <input type="hidden" name="create" value="0" />
+
+                          <div class="a-section a-spacing-large">
+                            <div class="a-row">
+                              <div class="a-column a-span5">
+                                <label for="ap_password" class="a-form-label">Password</label>
+                              </div>
+
+                              <div class="a-column a-span7 a-text-right a-span-last">
+                                <a
+                                  id="auth-fpp-link-bottom"
+                                  class="a-link-normal"
+                                  tabindex="3"
+                                  href="https://sellercentral.WENS Link.in/ap/forgotpassword?showRememberMe=true&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;marketPlaceId=A21TJRUUN4KGV&amp;pageId=amzn_sw_signup_in&amp;openid.return_to=https%3A%2F%2Fsellercentral.WENS Link.in%2Fsw%2Fin%2FINSSR%2Fstep%2FSignUp%3Fpassthrough%252Faccount%3Dsoa%26passthrough%252FsuperSource%3DOAR%26ref_%3Das_in_soa_hp%26passthrough%252FmarketplaceID%3DA21TJRUUN4KGV%26passthrough%252F%26productTier%3DSILVER%26productType%3DSellOnWENS Link%26marketplaceId%3DA21TJRUUN4KGV%26passthrough%252Ftag%3DREDIRECTT1%26redirectAP%3D1&amp;prevRID=CYNRM35MQCJC1BR99Y6D&amp;openid.assoc_handle=amzn_sw_signup_in&amp;openid.mode=checkid_setup&amp;prepopulatedLoginId=&amp;failedSignInCount=0&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0"
+                                >Forgot Password</a>
+                              </div>
+                            </div>
+
+                            <input
+                              type="password"
+                              maxlength="1024"
+                              id="ap_password"
+                              name="password"
+                              tabindex="2"
+                              class="a-input-text a-span12 auth-required-field"
+                            />
+
+                            <div
+                              id="auth-password-missing-alert"
+                              class="a-box a-alert-inline a-alert-inline-error auth-inlined-error-message a-spacing-top-mini"
+                              aria-live="assertive"
+                              role="alert"
+                            >
+                              <div class="a-box-inner a-alert-container">
+                                <i class="a-icon a-icon-alert"></i>
+                                <div class="a-alert-content">Enter your password</div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="a-section a-spacing-extra-large">
+                            <span @click="login" class="a-button a-button-span12 a-button-primary" id="a-autoid-0">
+                              <span class="a-button-inner">
+                                <span
+                                  class="a-button-text"
+                                  aria-hidden="true"
+                                  id="a-autoid-0-announce"
+                                >Login</span>
+                              </span>
+                            </span>
+
+                            <div id="legalTextRow" class="a-row a-spacing-top-medium a-size-small"></div>
+                            <div class="a-row a-spacing-top-medium">
+                              <div class="a-section a-text-left">
+                                <label for="auth-remember-me" class="a-form-label">
+                                  <div data-a-input-name="rememberMe" class="a-checkbox">
+                                    <label>
+                                      <input
+                                      style="bottom: 1px;"
+                                        type="checkbox"
+                                        name="rememberMe"
+                                        value="true"
+                                        tabindex="4"
+                                      />
+                                      <span class="a-label a-checkbox-label">
+                                        Keep me signed in.
+                                        <span
+                                          class="a-declarative"
+                                          data-action="a-popover"
+                                          data-a-popover="{&quot;activate&quot;:&quot;onclick&quot;,&quot;header&quot;:&quot;\&quot;Keep Me Signed In\&quot; Checkbox&quot;,&quot;inlineContent&quot;:&quot;\u003cp>Choosing \&quot;Keep me signed in\&quot; reduces the number of times you're asked to Sign-In on this device.\u003c\/p>\n\u003cp>To keep your account secure, use this option only on your personal devices.\u003c\/p>&quot;}"
+                                        >
+      
+                                        </span>
+                                      </span>
+                                    </label>
+                                  </div>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="a-divider a-divider-break">
+                            <h5>New to WENS Link?</h5>
+                          </div>
+                          <span
+                            id="auth-create-account-link"
+                            class="a-button a-button-span12 a-button-base"
+                          >
+                            <span class="a-button-inner">
+                              <nuxt-link to="/register_account" class="a-button-text"
+                              >Create your WENS Link account</nuxt-link>
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
-        </form>
+        </div>
 
-        <button
-          type="submit"
-          @click="goToRegister"
-          class="btn btn-green white-text loginButton"
-        >Create your WENSLink account</button>
-        <p
-          class="padding-top-20 font-12"
-        >By creating an account or logging in, you agree to WENSLink's Conditions of Use and Privacy Policy</p>
+        <div id="right-2"></div>
+
+        <div class="a-section a-spacing-top-extra-large auth-footer">
+          <div class="a-divider a-divider-section">
+            <div class="a-divider-inner"></div>
+          </div>
+
+          <div class="a-section a-spacing-small a-text-center a-size-mini">
+            <span class="auth-footer-seperator"></span>
+          </div>
+
+          <div class="a-section a-spacing-none a-text-center">
+            <span
+              class="a-size-mini a-color-secondary"
+            >© 1996-2019, WENS Link.com, Inc. or its affiliates</span>
+          </div>
+        </div>
       </div>
+
+      <div id="auth-external-javascript" class="auth-external-javascript" data-external-javascripts></div>
+
+      <!-- cache slot rendered -->
     </div>
   </div>
 </template>
 
 
+
+<style scoped>
+.a-alert-inline{
+  display: none!important
+}
+</style>
+
+
 <script>
+
+
+import axios from 'axios'
+
+
 export default {
-  data() {
-    return {
-      email: '',
-      phone_number: null,
-      checkbox: true,
-      useractivity: 0
-    }
-  },
-  methods: {
-    goToRegister: function() {
-      this.$router.push('/register')
+  methods:{
+    login: function(){
+
+
+
+     var payload = new FormData()
+
+     payload.append('phone_number', $("#ap_email").val())
+     payload.append('password', $("#ap_password").val())
+
+
+
+
+            axios({
+                method: 'POST',
+                data: payload,
+                url: '/backend/api/login/',
+                contentType: 'application/json',
+                data: payload
+            })
+                .then(res => {
+                    console.log(res.data)
+                    console.log('response')
+
+
+                    localStorage.setItem('phone_number', $("#ap_email").val())
+
+                    switch(res.data.user_info.step){
+                      case 0 : this.$router.push('/continue');break;
+                      case 1 : this.$router.push('/register');break;
+                      case 2 : this.$router.push('/launch/tax-details');break;
+                      case 3 : this.$router.push('/launch/seller-interview');break;
+                      case 4 : this.$router.push('/launch/dashboard');break;
+                    }
+
+
+                    this.$router.push('')
+                })
+                .catch(err => {
+                    console.log('error in request', err)
+                })
+
+
+
+
+
     }
   }
 }
 </script>
-
-<style scoped>
-.header {
-  display: flex;
-  width: 100%;
-  height: 60px;
-  text-align: center;
-}
-
-.section {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
-ul {
-  padding-inline-start: 15px;
-  padding-left: 15px;
-}
-
-li {
-  list-style: disc;
-}
-
-.center-align {
-  position: absolute;
-  left: 0;
-  right: 0;
-}
-
-.company_logo {
-  height: 100%;
-  width: 40px;
-}
-
-p {
-  color: black;
-  margin: initial;
-  line-height: 1.5 !important;
-}
-
-h1 {
-  font-weight: 900;
-  font-size: 28px;
-  line-height: 1.2;
-}
-
-.input__helper > input {
-  padding-left: 65px;
-}
-
-.input__helper > span {
-  position: absolute;
-  top: 25px;
-  border-radius: 2px 0 0 2px;
-  left: 0px;
-  background-color: #9e9e9e;
-  color: white;
-  height: 34px;
-  width: 50px;
-  border: 1px solid #878787;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-label {
-  font-weight: 600;
-  color: black;
-}
-
-input,
-textarea {
-  border-radius: 2px;
-  background-color: white !important;
-  border: 1px solid #878787 !important;
-  color: black !important;
-}
-
-input:focus,
-textarea:focus {
-  background-color: white !important;
-  border: 1px solid #7367f0 !important;
-}
-
-.btn {
-  width: 100%;
-}
-
-.light-text {
-  color: #9b9b9b;
-}
-</style>

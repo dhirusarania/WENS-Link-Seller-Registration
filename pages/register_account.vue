@@ -4,7 +4,10 @@
       <div class="a-section a-padding-medium auth-workflow">
         <div class="a-section a-spacing-none auth-navbar">
           <div class="a-section a-spacing-medium a-text-center">
-            <img src />
+                     <div class="center-align">
+          <img src="~static/dashboard-icon-black.png" style="height: 45px;padding-bottom: 10px" class="company_logo" />
+          <p class="margin-top-10">WENSLink Seller Registration</p>
+        </div>
           </div>
         </div>
 
@@ -379,14 +382,15 @@ export default {
             axios({
                 method: 'POST',
                 data: payload,
-                url: 'http://127.0.0.1:8000/backend/api/vendors/create/',
+                url: '/backend/api/vendors/create/',
                 contentType: 'application/json',
                 data: payload
             })
                 .then(res => {
                     console.log(res.data)
                     console.log('response')
-                    this.$route.push('/mobile_verify')
+                    localStorage.setItem('phone_number' , $("#ap_phone_number").val())
+                    this.$router.push('/verification')
                 })
                 .catch(err => {
                     console.log('error in request', err)
@@ -400,3 +404,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.a-alert-inline{
+  display: none!important
+}
+</style>

@@ -4,9 +4,10 @@
       <div class="a-section a-padding-medium auth-workflow">
         <div class="a-section a-spacing-none auth-navbar">
           <div class="a-section a-spacing-medium a-text-center">
-            <img
-              src=""
-            />
+                    <div class="center-align">
+          <img src="~static/dashboard-icon-black.png" style="height: 45px;padding-bottom: 10px" class="company_logo" />
+          <p class="margin-top-10">WENSLink Seller Registration</p>
+        </div>
           </div>
         </div>
 
@@ -39,7 +40,7 @@
                           <!-- optional subheading element -->
 
                           <div class="a-row a-spacing-base">
-                            <label for="ap_email" class="a-form-label">Email or mobile phone number</label>
+                            <label for="ap_email" class="a-form-label">Phone Number</label>
 
                             <input
                               type="email"
@@ -104,15 +105,8 @@
                           </div>
 
                           <div class="a-section a-spacing-extra-large">
-                            <span class="a-button a-button-span12 a-button-primary" id="a-autoid-0">
+                            <span @click="login" class="a-button a-button-span12 a-button-primary" id="a-autoid-0">
                               <span class="a-button-inner">
-                                <input
-                                  id="signInSubmit"
-                                  tabindex="5"
-                                  class="a-button-input"
-                                  type="submit"
-                                  aria-labelledby="a-autoid-0-announce"
-                                />
                                 <span
                                   class="a-button-text"
                                   aria-hidden="true"
@@ -128,12 +122,12 @@
                                   <div data-a-input-name="rememberMe" class="a-checkbox">
                                     <label>
                                       <input
+                                      style="bottom: 1px;"
                                         type="checkbox"
                                         name="rememberMe"
                                         value="true"
                                         tabindex="4"
                                       />
-                                      <i class="a-icon a-icon-checkbox"></i>
                                       <span class="a-label a-checkbox-label">
                                         Keep me signed in.
                                         <span
@@ -141,14 +135,7 @@
                                           data-action="a-popover"
                                           data-a-popover="{&quot;activate&quot;:&quot;onclick&quot;,&quot;header&quot;:&quot;\&quot;Keep Me Signed In\&quot; Checkbox&quot;,&quot;inlineContent&quot;:&quot;\u003cp>Choosing \&quot;Keep me signed in\&quot; reduces the number of times you're asked to Sign-In on this device.\u003c\/p>\n\u003cp>To keep your account secure, use this option only on your personal devices.\u003c\/p>&quot;}"
                                         >
-                                          <a
-                                            id="remember_me_learn_more_link"
-                                            href="javascript:void(0)"
-                                            class="a-popover-trigger a-declarative"
-                                          >
-                                            Details
-                                            <i class="a-icon a-icon-popover"></i>
-                                          </a>
+      
                                         </span>
                                       </span>
                                     </label>
@@ -205,3 +192,70 @@
     </div>
   </div>
 </template>
+
+
+
+<style scoped>
+.a-alert-inline{
+  display: none!important
+}
+</style>
+
+
+<script>
+
+
+import axios from 'axios'
+
+
+export default {
+  methods:{
+    login: function(){
+
+
+
+     var payload = new FormData()
+
+     payload.append('phone_number', $("#ap_email").val())
+     payload.append('password', $("#ap_password").val())
+
+
+
+
+            axios({
+                method: 'POST',
+                data: payload,
+                url: '/backend/api/login/',
+                contentType: 'application/json',
+                data: payload
+            })
+                .then(res => {
+                    console.log(res.data)
+                    console.log('response')
+
+
+                    localStorage.setItem('phone_number', $("#ap_email").val())
+
+                    switch(res.data.user_info.step){
+                      case 0 : this.$router.push('/continue');break;
+                      case 1 : this.$router.push('/register');break;
+                      case 2 : this.$router.push('/launch/tax-details');break;
+                      case 3 : this.$router.push('/launch/seller-interview');break;
+                      case 4 : this.$router.push('/launch/dashboard');break;
+                    }
+
+
+                    this.$router.push('')
+                })
+                .catch(err => {
+                    console.log('error in request', err)
+                })
+
+
+
+
+
+    }
+  }
+}
+</script>

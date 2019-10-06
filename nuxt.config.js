@@ -89,9 +89,9 @@ module.exports = {
     // See https://github.com/nuxt-community/axios-module#options
   },
 
-  router: {
-    base: '/wenslink/seller/'
-  },
+  // router: {
+  //   base: '/wenslink/seller/'
+  // },
 
   /*
   ** Build configuration

@@ -5,12 +5,19 @@
         
   
 <div class="a-section">
-    <div class="a-box a-box-normal a-color-offset-background"><div class="a-box-inner a-padding-base">
+    <div class="a-box a-box-normal a-color-offset-background"><div class="a-box-inner a-padding-base" style="    display: flex;
+    justify-content: space-between;
+    align-items: center;">
         <a data-ng-href="" class="a-link-normal" href="#">
-            <img class="header-logo" ng-src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/sc-unified._V360962423_.png" src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/sc-unified._V360962423_.png">
+           <div style="display: flex;align-items: center;">
+          <img style="height: 100%;width: 35px;"
+            src="~static/dashboard-icon-black.png"
+          />
+          <p style="margin-left: 15px;font-size:14px;font-weight: bold">WENS Link Seller Registration</p>
+        </div>
         </a>
         <ul data-ng-mouseout="offFocus()" data-ng-mouseover="onFocus('settings')" class="a-unordered-list a-nostyle a-vertical header-settings-tab">
-           <a class="a-link-normal ng-binding" href="/gp/sign-in/logout.html">Logout</a>
+         <nuxt-link class="a-link-normal ng-binding" to="/login">Logout</nuxt-link>
       
         </ul>
     </div></div>
@@ -126,6 +133,7 @@
                     maxlength="50"
                     autocomplete="off"
                     placeholder
+                    id="store_name"
                     name="displayNameField"
                     class="a-input-text dn_inputTextbox celwidget ng-scope ng-pristine ng-invalid ng-invalid-required"
                     data-ng-blur="validateDisplayName()"
@@ -141,10 +149,10 @@
                     data-ng-if="fragmentData.dn_fragment_verify.visibility &amp;&amp; !fragmentData.dn_fragment_display_name.disabled"
                     class="dn_verifyLinkDiv celwidget ng-scope"
                   >
-                    <span
+                    <!-- <span
                       data-ng-click="checkDisplayName()"
                       class="a-color-link dn_verifyLink ng-binding"
-                    >Check Availability</span>
+                    >Check Availability</span> -->
                   </span>
                   <div class="dn_messageDiv"></div>
                 </div>
@@ -164,7 +172,7 @@
 
             <div class="form-group margin-top-20">
               <select class="form-control" v-model="product_cat" style="width: 280px;">
-                <option v-for="p in product_category" :key="p.id" :value="p.id">{{p.name}}</option>
+                <option v-for="p in product_category" :key="p.id" :value="p.name">{{p.name}}</option>
               </select>
             </div>
 
@@ -212,7 +220,7 @@
                         type="text"
                         maxlength="6"
                         autocomplete="off"
-                        name="pincode"
+                        id="pincode"
                         class="a-input-text address-textbox ng-scope ng-pristine ng-valid-pattern ng-animate ng-valid-remove ng-invalid-add ng-valid-required-remove ng-valid-remove-active ng-invalid ng-invalid-add-active ng-valid-required-remove-active ng-invalid-required"
                         data-ng-blur="populateAddressData()"
                         data-ng-class="{'a-form-error': fragmentData.errors.pincode}"
@@ -247,7 +255,7 @@
                         maxlength="60"
                         value
                         autocomplete="off"
-                        name="address_line1"
+                        id="address_line1"
                         class="a-input-text address-textbox ng-scope ng-pristine ng-animate ng-valid-remove ng-invalid-add ng-valid-required-remove ng-valid-remove-active ng-invalid ng-invalid-add-active ng-valid-required-remove-active ng-invalid-required"
                         data-ng-class="{'a-form-error': fragmentData.errors.address_line1}"
                         data-ng-disabled="addressDisable||fragmentData.editDisable"
@@ -278,7 +286,7 @@
                         maxlength="60"
                         value
                         autocomplete="off"
-                        name="address_line2"
+                        id="address_line2"
                         class="a-input-text address-textbox ng-scope ng-pristine ng-valid"
                         data-ng-class="{'a-form-error': fragmentData.errors.address_line2}"
                         data-ng-disabled="addressDisable||fragmentData.editDisable"
@@ -304,7 +312,7 @@
                         maxlength="50"
                         value
                         autocomplete="off"
-                        name="city"
+                        id="city"
                         class="a-input-text address-textbox ng-scope ng-pristine ng-animate ng-valid-remove ng-invalid-add ng-valid-required-remove ng-valid-remove-active ng-invalid ng-invalid-add-active ng-valid-required-remove-active ng-invalid-required"
                         data-ng-class="{'a-form-error': fragmentData.errors.city}"
                         data-ng-disabled="addressDisable||fragmentData.editDisable"
@@ -327,7 +335,7 @@
                       >
                         <select
                           class="address-dropdown-select ng-pristine ng-animate ng-valid-remove ng-invalid-add ng-valid-required-remove ng-valid-remove-active ng-invalid ng-invalid-add-active ng-valid-required-remove-active ng-invalid-required"
-                          name="state"
+                          id="state"
                           data-ng-focus="clearError('state')"
                           ng-model="fragmentData.address.state"
                           ng-options="key as key for key in stateList"
@@ -390,7 +398,7 @@
                       >
                         <select
                           class="address-dropdown-select ng-pristine ng-valid ng-valid-required"
-                          name="country"
+                          id="country"
                           ng-model="fragmentData.address.country"
                           ng-options="value as key for (key,value) in countryMap"
                           data-ng-required="true"
@@ -414,7 +422,7 @@
                       id="a-autoid-1"
                     >
                       <span class="a-button-inner">
-                        <nuxt-link class="a-button-text" to="/launch/tax-details">Continue</nuxt-link>
+                        <div @click="changeCompany" class="a-button-text" to="/launch/tax-details">Continue</div>
                       </span>
                     </span>
                   </div>
@@ -550,6 +558,8 @@
 <script>
 
 import Aside from '@/components/aside'
+
+import axios from 'axios'
 
 export default {
   data: function() {
@@ -877,6 +887,44 @@ export default {
   methods: {
     selectThis: function(id) {
       this.currentOption = id
+    },
+        changeCompany: function(){
+
+
+
+     var payload = new FormData()
+
+     payload.append('phone_number', localStorage.getItem('phone_number'))
+     payload.append('store_name', $("#store_name").val())
+     payload.append('product_category', this.product_cat)
+     payload.append('pincode', $("#pincode").val())
+     payload.append('addressline1', $("#address_line1").val())
+     payload.append('addressline2', $("#address_line1").val())
+     payload.append('city', $("#city").val())
+     payload.append('state', $("#state").val())
+
+
+
+            axios({
+                method: 'PUT',
+                data: payload,
+                url: '/backend/api/vendors/seller_info/',
+                contentType: 'application/json',
+                data: payload
+            })
+                .then(res => {
+                    console.log(res.data)
+                    console.log('response')
+                    this.$router.push('/launch/tax-details')
+                })
+                .catch(err => {
+                    console.log('error in request', err)
+                })
+
+
+
+
+
     }
   }
 }

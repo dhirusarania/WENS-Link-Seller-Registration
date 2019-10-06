@@ -4,13 +4,20 @@
     
         
   
-<div class="a-section" style="margin:0!important">
-    <div class="a-box a-box-normal a-color-offset-background"><div class="a-box-inner a-padding-base">
+<div class="a-section">
+    <div class="a-box a-box-normal a-color-offset-background"><div class="a-box-inner a-padding-base" style="    display: flex;
+    justify-content: space-between;
+    align-items: center;">
         <a data-ng-href="" class="a-link-normal" href="#">
-            <img class="header-logo" ng-src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/sc-unified._V360962423_.png" src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/sc-unified._V360962423_.png">
+           <div style="display: flex;align-items: center;">
+          <img style="height: 100%;width: 35px;"
+            src="~static/dashboard-icon-black.png"
+          />
+          <p style="margin-left: 15px;font-size:14px;font-weight: bold">WENS Link Seller Registration</p>
+        </div>
         </a>
         <ul data-ng-mouseout="offFocus()" data-ng-mouseover="onFocus('settings')" class="a-unordered-list a-nostyle a-vertical header-settings-tab">
-           <a class="a-link-normal ng-binding" href="/gp/sign-in/logout.html">Logout</a>
+           <nuxt-link class="a-link-normal ng-binding" to="/login">Logout</nuxt-link>
       
         </ul>
     </div></div>
@@ -108,7 +115,6 @@
                     data-ng-true-value
                     class="ng-pristine ng-valid"
                   />
-                  <i class="a-icon a-icon-checkbox"></i>
                   <span class="a-label a-checkbox-label ng-binding">{{q.name}}</span>
                 </label>
               </div>
@@ -163,7 +169,6 @@
                     data-ng-model="checkboxModel[value.renderConfig.id][option.id]"
                     class="ng-pristine ng-valid"
                   />
-                  <i class="a-icon a-icon-checkbox"></i>
                   <span class="a-label a-checkbox-label ng-binding">I manufacture them</span>
                 </label>
               </div>
@@ -182,7 +187,6 @@
                     data-ng-model="checkboxModel[value.renderConfig.id][option.id]"
                     class="ng-pristine ng-valid"
                   />
-                  <i class="a-icon a-icon-checkbox"></i>
                   <span class="a-label a-checkbox-label ng-binding">I resell product that I buy</span>
                 </label>
               </div>
@@ -201,7 +205,6 @@
                     data-ng-model="checkboxModel[value.renderConfig.id][option.id]"
                     class="ng-pristine ng-valid"
                   />
-                  <i class="a-icon a-icon-checkbox"></i>
                   <span class="a-label a-checkbox-label ng-binding">I import them</span>
                 </label>
               </div>
@@ -501,7 +504,7 @@
       </div>
 
       <span class="a-button a-spacing-top-medium a-button-primary final-submit" id="a-autoid-2">
-        <span class="a-button-inner">
+        <span @click="dashboard" class="a-button-inner">
           <input
             data-ng-click="submit()"
             class="a-button-input"
@@ -518,6 +521,8 @@
 </template>
 
 <script>
+
+import axios from 'axios'
 
 
 import Aside from '@/components/aside'
@@ -701,12 +706,54 @@ data(){
           components:{
     Aside
   },
+  methods: {
+    dashboard: function(){
+
+
+      
+     var payload = new FormData()
+
+     payload.append('phone_number', localStorage.getItem('phone_number'))
+
+           axios({
+                method: 'PUT',
+                data: payload,
+                url: '/backend/api/vendors/seller_interview/',
+                contentType: 'application/json',
+                data: payload
+            })
+                .then(res => {
+                    console.log(res.data)
+                    console.log('response')
+                          this.$router.push('/launch/dashboard')
+                })
+                .catch(err => {
+                    console.log('error in request', err)
+                })
+
+
+    }
+  }
 }
 </script>
 
 
 <style scoped>
 .a-section:last-child{
-    margin-bottom: 20px!important
+    /* margin-bottom: 20px!important */
 }
+.a-alert-inline{
+  display: none!important
+}
+
+.a-checkbox.a-checkbox-fancy input, .a-radio.a-radio-fancy input{
+  opacity: 1;
+  z-index: 10;
+  top:3px
+}
+
+.a-checkbox.a-checkbox-fancy .a-label, .a-radio.a-radio-fancy .a-label{
+  margin-left: 16px;
+}
+
 </style>
