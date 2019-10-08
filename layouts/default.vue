@@ -131,6 +131,16 @@ body {
   padding-right: 50px;
 }
 
+
+.has-error {
+  box-shadow: 0 0 3px 2px rgba(244, 67, 54, 0.2) !important;
+  border: 1px solid rgb(244, 67, 54)!important;
+}
+.has-success {
+  box-shadow: 0 0 3px 2px rgba(0, 150, 136, 0.2) !important;
+  border: 1px solid rgb(0, 150, 136)!important;
+}
+
 .capital span {
   text-transform: capitalize;
 }

@@ -2400,7 +2400,7 @@ p {
 }
 
 .preparing-app-spinner {
-    color: #f0c14b
+    color: #2196F3
 }
 
 .preparing-app-text {
@@ -6840,7 +6840,7 @@ only screen and (min-resolution:2dppx) {
 
 .continue_b_legal,
 .continue_b_legal #a-autoid-0-announce {
-    background: -webkit-linear-gradient(top, #f7dfa5, #f0c14b)!important
+    background: -webkit-linear-gradient(top, #f7dfa5, #2196F3)!important
 }
 
 .link_color_legal {
@@ -7241,7 +7241,7 @@ only screen and (min-resolution:2dppx) {
     .a-color-state.a-size-extra-large,
     .a-color-state.a-size-large,
     .a-color-state.a-size-medium.a-text-bold {
-        color: #e77600!important
+        color: #2196f3!important
     }
     .a-color-link {
         color: #0066c0!important
@@ -8382,7 +8382,7 @@ only screen and (min-resolution:2dppx) {
     }
     .a-spacing-top-micro.a-button-stack,
     .a-spacing-top-micro.a-section {
-        padding-top: 4px;
+        padding-top: 0;
         margin-top: 0!important
     }
     .a-spacing-mini,
@@ -10311,7 +10311,7 @@ only screen and (min-resolution:2dppx) {
     .a-button.a-button-focus,
     .a-button:focus {
         outline: 0;
-        border-color: #e77600;
+        border-color: #2196f3;
         box-shadow: 0 0 3px 2px rgba(228, 121, 17, .5)
     }
     .a-button.a-button-pressed,
@@ -10492,7 +10492,7 @@ only screen and (min-resolution:2dppx) {
     }
     .a-button-toggle.a-button-selected,
     .a-button-toggle.a-button-selected.a-button-unavailable {
-        border-color: #e77600
+        border-color: #2196f3
     }
     .a-button-toggle.a-button-selected .a-button-inner,
     .a-button-toggle.a-button-selected:hover .a-button-inner {
@@ -10539,7 +10539,7 @@ only screen and (min-resolution:2dppx) {
         border-color: #adb1b8 #a2a6ac #a2a6ac
     }
     .a-button-toggle.a-button-thumbnail.a-button-selected {
-        border-color: #e77600
+        border-color: #2196f3
     }
     .a-button-toggle.a-button-thumbnail.a-button-selected .a-button-inner {
         background-color: transparent
@@ -10657,36 +10657,36 @@ only screen and (min-resolution:2dppx) {
         display: none
     }
     .a-button-primary {
-        background: #f0c14b;
-        border-color: #a88734 #9c7e31 #846a29;
+        background: #2196F3;
+        border-color: #2196F3;
         color: #111
     }
     .a-button-primary .a-button-inner {
         background: #f3d078;
-        background: -webkit-linear-gradient(top, #f7dfa5, #f0c14b);
+        background: -webkit-linear-gradient(top, #f7dfa5, #2196F3);
         background: linear-gradient(to bottom, #a8f5ff, #9bd3ff)
     }
     .a-button-primary:hover .a-button-inner {
-        background: #f1c860;
+        background: #2196F3;
         background: -webkit-linear-gradient(top, #f5d78e, #eeb933);
-        background: linear-gradient(to bottom, #f5d78e, #eeb933)
+        background: linear-gradient(to bottom, #2196F3,#2196F3)
     }
     .a-button-primary:active .a-button-inner {
-        background-color: #f0c14b;
+        background-color: #2196F3;
         background-image: none
     }
     .a-button-primary.a-button-focus,
     .a-button-primary:focus,
     .a-button-primary:hover,
     .a-button-primary:hover:active {
-        border-color: #a88734 #9c7e31 #846a29
+        border-color: #2196F3
     }
     .a-button-primary:active {
-        border-color: #a88734 #9c7e31 #9c7e31
+        border-color: #2196F3
     }
     .a-button-primary.a-button-focus,
     .a-button-primary:focus {
-        border-color: #e77600
+        border-color: #2196F3
     }
     .a-button-primary.a-button-disabled {
         background-color: #f9f3e5!important;
@@ -10709,7 +10709,7 @@ only screen and (min-resolution:2dppx) {
     .a-button-primary.a-button-pressed:hover .a-button-inner {
         background-image: none;
         box-shadow: 0 1px 3px rgba(0, 0, 0, .2) inset;
-        background-color: #f0c14b
+        background-color: #2196F3
     }
     .a-button-primary .a-button-inner {
         box-shadow: 0 1px 0 rgba(255, 255, 255, .4) inset
@@ -10945,7 +10945,7 @@ only screen and (min-resolution:2dppx) {
         box-shadow: 0 0 3px 2px rgba(228, 121, 17, .5);
         outline: 0;
         z-index: 1;
-        border-color: #e77600
+        border-color: #2196f3
     }
     .a-button-group .a-button .a-button-group-first,
     .a-button-group .a-button:first-child {
@@ -12060,7 +12060,7 @@ only screen and (min-resolution:2dppx) {
     }
     ul.a-pagination li a:active {
         border-radius: 3px;
-        border-color: #e77600;
+        border-color: #2196f3;
         box-shadow: 0 1px 3px rgba(0, 0, 0, .2) inset;
         background-color: #e7e9ec;
         background-image: none
@@ -12077,7 +12077,7 @@ only screen and (min-resolution:2dppx) {
         background-color: #fff;
         background-image: none;
         color: #c45500;
-        border-color: #e77600
+        border-color: #2196f3
     }
     ul.a-pagination li {
         margin-right: 4px
@@ -12163,8 +12163,7 @@ only screen and (min-resolution:2dppx) {
     select.a-select-multiple:focus,
     textarea.a-form-focus,
     textarea:focus {
-        border-color: #e77600;
-        box-shadow: 0 0 3px 2px rgba(228, 121, 17, .5)
+        border-color: #2196f3;
     }
     .a-input-text input.a-form-error,
     .a-input-text.a-form-error,
@@ -12183,7 +12182,6 @@ only screen and (min-resolution:2dppx) {
     textarea input.a-form-error,
     textarea.a-form-error {
         border-color: #d00;
-        box-shadow: 0 0 0 3px rgba(221, 0, 0, .1) inset
     }
     .a-input-text.a-form-disabled,
     input[type=text].a-form-disabled,
@@ -12317,7 +12315,7 @@ only screen and (min-resolution:2dppx) {
     }
     .a-checkbox.a-checkbox-fancy input:focus+.a-icon:after,
     .a-radio.a-radio-fancy input:focus+.a-icon:after {
-        border: 1px solid #e77600;
+        border: 1px solid #2196f3;
         content: ' ';
         position: absolute;
         top: 0;
@@ -13095,7 +13093,7 @@ only screen and (min-resolution:2dppx) {
     }
     ul.a-tabs .a-tab-heading a:hover,
     ul.a-tabs li a:hover {
-        border-top-color: #e77600;
+        border-top-color: #2196f3;
         text-decoration: none
     }
     ul.a-tabs .a-tab-heading.a-active a,
@@ -13103,7 +13101,7 @@ only screen and (min-resolution:2dppx) {
         border-color: #ddd;
         background-color: #fff;
         color: #c45500;
-        border-top-color: #e77600;
+        border-top-color: #2196f3;
         font-weight: 700
     }
     ul.a-tabs .a-tab-heading:first-child a,
@@ -13169,7 +13167,7 @@ only screen and (min-resolution:2dppx) {
     }
     .a-accordion .a-accordion-row:focus .a-icon-radio-active:after,
     .a-accordion .a-accordion-row:focus .a-icon-radio-inactive:after {
-        border: 1px solid #e77600;
+        border: 1px solid #2196f3;
         border-radius: 50%;
         content: ' ';
         display: block;
@@ -13228,7 +13226,7 @@ only screen and (min-resolution:2dppx) {
     ul.a-viewoptions-list li.a-viewoptions-list-item.a-selected a {
         font-weight: 700;
         color: #111;
-        border-bottom-color: #e77600
+        border-bottom-color: #2196f3
     }
     ul.a-viewoptions-list li.a-viewoptions-list-item.a-selected a .a-icon {
         opacity: 1
@@ -13413,7 +13411,7 @@ only screen and (min-resolution:2dppx) {
         border-color: #ad5800 #b95e00 #cf6a00
     }
     .a-active .a-switch {
-        background-color: #e77600;
+        background-color: #2196f3;
         border-color: #ad5800 #b95e00 #cf6a00
     }
     .a-active .a-switch-control {
@@ -13715,7 +13713,7 @@ only screen and (min-resolution:2dppx) {
     .a-button-close:focus {
         background-color: transparent;
         border: 1px solid;
-        border-color: #e77600;
+        border-color: #2196f3;
         box-shadow: 0 0 3px 2px rgba(228, 121, 17, .5);
         outline: 0;
         padding: 8px
@@ -13785,7 +13783,7 @@ only screen and (min-resolution:2dppx) {
     .a-dropdown-common .a-dropdown-link.a-active {
         background-color: #f3f3f3;
         border-color: #e7e7e7;
-        border-left-color: #e77600!important
+        border-left-color: #2196f3!important
     }
     .a-dropdown-common .a-dropdown-link img {
         margin-right: 5px
@@ -21545,7 +21543,7 @@ only screen and (min-resolution:2dppx) {
     .a-button.a-button-focus,
     .a-button:focus {
         outline: 0;
-        border-color: #e77600;
+        border-color: #2196f3;
         box-shadow: 0 0 3px 2px rgba(228, 121, 17, .5)
     }
     .a-button.a-button-pressed,
@@ -21751,7 +21749,7 @@ only screen and (min-resolution:2dppx) {
     }
     .a-button-toggle.a-button-selected,
     .a-button-toggle.a-button-selected.a-button-unavailable {
-        border-color: #e77600
+        border-color: #2196f3
     }
     .a-button-toggle.a-button-selected .a-button-inner,
     .a-button-toggle.a-button-selected.a-button-focus .a-button-inner,
@@ -21787,7 +21785,7 @@ only screen and (min-resolution:2dppx) {
         border-color: #adb1b8 #a2a6ac #a2a6ac
     }
     .a-button-toggle.a-button-thumbnail.a-button-selected {
-        border-color: #e77600
+        border-color: #2196f3
     }
     .a-button-toggle.a-button-thumbnail .a-button-inner {
         border-radius: 2px;
@@ -21894,36 +21892,36 @@ only screen and (min-resolution:2dppx) {
         display: none
     }
     .a-button-primary {
-        background: #f0c14b;
-        border-color: #a88734 #9c7e31 #846a29;
+        background: #2196F3;
+        border-color: #2196F3;
         color: #111
     }
     .a-button-primary .a-button-inner {
         background: #f4d078;
-        background: -webkit-linear-gradient(top, #f7dfa5, #f0c14b);
+        background: -webkit-linear-gradient(top, #f7dfa5, #2196F3);
         background: linear-gradient(to bottom, #a8f5ff, #9bd3ff)
     }
     .a-button-primary:hover .a-button-inner {
-        background: #f2c861;
+        background: #2196F3;
         background: -webkit-linear-gradient(top, #f5d78e, #eeb933);
-        background: linear-gradient(to bottom, #f5d78e, #eeb933)
+        background: linear-gradient(to bottom, #2196F3,#2196F3)
     }
     .a-button-primary:active .a-button-inner {
-        background-color: #f0c14b;
+        background-color: #2196F3;
         background-image: none
     }
     .a-button-primary.a-button-focus,
     .a-button-primary:focus,
     .a-button-primary:hover,
     .a-button-primary:hover:active {
-        border-color: #a88734 #9c7e31 #846a29
+        border-color: #2196F3
     }
     .a-button-primary:active {
         border-color: #a88734 #9c7e31 #9c7e31
     }
     .a-button-primary.a-button-focus,
     .a-button-primary:focus {
-        border-color: #e77600
+        border-color: #2196f3
     }
     .a-button-primary.a-button-disabled {
         background-color: #f9f3e5!important;
@@ -21943,7 +21941,7 @@ only screen and (min-resolution:2dppx) {
     .a-button-primary.a-button-pressed:hover .a-button-inner {
         background-image: none;
         box-shadow: 0 1px 3px rgba(0, 0, 0, .2) inset;
-        background-color: #f0c14b
+        background-color: #2196F3
     }
     .a-button-primary .a-button-inner {
         box-shadow: 0 1px 0 rgba(255, 255, 255, .4) inset
@@ -22149,7 +22147,7 @@ only screen and (min-resolution:2dppx) {
         box-shadow: 0 0 3px 2px rgba(228, 121, 17, .5);
         outline: 0;
         z-index: 1;
-        border-color: #e77600
+        border-color: #2196f3
     }
     .a-button-group .a-button .a-button-group-first,
     .a-button-group .a-button:first-child {
@@ -23159,14 +23157,14 @@ only screen and (min-resolution:2dppx) {
     }
     ul.a-pagination li.a-selected {
         background-color: #fff;
-        border-color: #e77600
+        border-color: #2196f3
     }
     ul.a-pagination li.a-selected a {
         font-weight: 700;
         background-color: #fff;
         background-image: none;
         color: #c45500;
-        border-color: #e77600
+        border-color: #2196f3
     }
     ul.a-pagination li a {
         border-radius: 3px;
@@ -23203,7 +23201,7 @@ only screen and (min-resolution:2dppx) {
     }
     ul.a-pagination li a:active {
         border-radius: 3px;
-        border-color: #e77600;
+        border-color: #2196f3;
         box-shadow: 0 1px 3px rgba(0, 0, 0, .2) inset;
         background-color: #e7e9ec;
         background-image: none
@@ -23276,8 +23274,7 @@ only screen and (min-resolution:2dppx) {
     select.a-select-multiple:focus,
     textarea.a-form-focus,
     textarea:focus {
-        border-color: #e77600;
-        box-shadow: 0 0 3px 2px rgba(228, 121, 17, .5)
+        border-color: #2196f3;
     }
     .a-input-text input.a-form-error,
     .a-input-text.a-form-error,
@@ -23296,7 +23293,6 @@ only screen and (min-resolution:2dppx) {
     textarea input.a-form-error,
     textarea.a-form-error {
         border-color: #d00;
-        box-shadow: 0 0 0 3px rgba(221, 0, 0, .1) inset
     }
     .a-input-text.a-form-disabled,
     input[type=text].a-form-disabled,
@@ -23424,7 +23420,7 @@ only screen and (min-resolution:2dppx) {
     }
     .a-checkbox.a-checkbox-fancy input:focus+.a-icon:after,
     .a-radio.a-radio-fancy input:focus+.a-icon:after {
-        border: 1px solid #e77600;
+        border: 1px solid #2196f3;
         content: ' ';
         position: absolute;
         top: 0;
@@ -24149,7 +24145,7 @@ only screen and (min-resolution:2dppx) {
     ul.a-viewoptions-list li.a-viewoptions-list-item.a-selected a {
         font-weight: 700;
         color: #111;
-        border-bottom-color: #e77600
+        border-bottom-color: #2196f3
     }
     ul.a-viewoptions-list li.a-viewoptions-list-item.a-selected a .a-icon {
         opacity: 1
@@ -24246,7 +24242,7 @@ only screen and (min-resolution:2dppx) {
     }
     ul.a-tabs .a-tab-heading a:hover,
     ul.a-tabs li a:hover {
-        border-top-color: #e77600;
+        border-top-color: #2196f3;
         text-decoration: none
     }
     ul.a-tabs .a-tab-heading.a-active a,
@@ -24254,7 +24250,7 @@ only screen and (min-resolution:2dppx) {
         border-color: #ddd;
         background-color: #fff;
         color: #c45500;
-        border-top-color: #e77600;
+        border-top-color: #2196f3;
         font-weight: 700
     }
     ul.a-tabs .a-tab-heading.a-active a:hover:after,
@@ -24334,7 +24330,7 @@ only screen and (min-resolution:2dppx) {
         border-radius: 50%
     }
     .a-accordion .a-accordion-row:active .a-icon-radio-inactive:after {
-        border: 1px solid #e77600;
+        border: 1px solid #2196f3;
         border-radius: 50%;
         content: ' ';
         display: block;
@@ -24346,7 +24342,7 @@ only screen and (min-resolution:2dppx) {
         border-radius: 50%
     }
     .a-accordion .a-accordion-row:active .a-icon-radio-active:after {
-        border: 1px solid #e77600;
+        border: 1px solid #2196f3;
         border-radius: 50%;
         content: ' ';
         display: block;
@@ -24358,7 +24354,7 @@ only screen and (min-resolution:2dppx) {
         border-radius: 50%
     }
     .a-accordion .a-accordion-row:focus .a-icon-radio-inactive:after {
-        border: 1px solid #e77600;
+        border: 1px solid #2196f3;
         border-radius: 50%;
         content: ' ';
         display: block;
@@ -24370,7 +24366,7 @@ only screen and (min-resolution:2dppx) {
         border-radius: 50%
     }
     .a-accordion .a-accordion-row:focus .a-icon-radio-active:after {
-        border: 1px solid #e77600;
+        border: 1px solid #2196f3;
         border-radius: 50%;
         content: ' ';
         display: block;
@@ -24534,7 +24530,7 @@ only screen and (min-resolution:2dppx) {
         border-color: #ad5800 #b95e00 #cf6a00
     }
     .a-active .a-switch {
-        background-color: #e77600;
+        background-color: #2196f3;
         border-color: #ad5800 #b95e00 #cf6a00
     }
     .a-active .a-switch-control {
@@ -24859,7 +24855,7 @@ only screen and (min-resolution:2dppx) {
     .a-button-close:focus {
         background-color: transparent;
         border: 1px solid;
-        border-color: #e77600;
+        border-color: #2196f3;
         box-shadow: 0 0 3px 2px rgba(228, 121, 17, .5);
         outline: 0;
         padding: 8px
@@ -24942,7 +24938,7 @@ only screen and (min-resolution:2dppx) {
         background-color: #f3f3f3;
         border-color: #e7e7e7;
         border-top-color: #e7e7e7;
-        border-left-color: #e77600!important
+        border-left-color: #2196f3!important
     }
     .a-dropdown-common .a-dropdown-link img {
         margin-right: 5px

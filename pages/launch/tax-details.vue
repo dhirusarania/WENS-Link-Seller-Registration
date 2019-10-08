@@ -116,7 +116,10 @@
                     <input
                       id="gstin"
                       type="text"
+                      :class="['input-group', isValid('gst')]"
+                      v-model="gst"
                       class="form-control"
+                      placeholder="E.g., 27AAPFU0939F1ZV"
                       maxlength="50"
                       autocomplete="anyrandomstring"
                     />
@@ -125,9 +128,28 @@
                     <label class="control-label noselect">PAN number</label>
                     <input
                       id="pan"
+                      :class="['input-group', isValid('pan')]"
+                      v-model="pan"
                       type="text"
                       class="form-control"
                       maxlength="50"
+                      placeholder="E.g., ABCDE1234A"
+                      autocomplete="anyrandomstring"
+                    />
+                  </div>
+                </div>
+
+                <div v-if="GST_selection == 2">
+                  <div class="form-group margin-top-20">
+                    <label class="control-label noselect">PAN number</label>
+                    <input
+                      id="pan"
+                      :class="['input-group', isValid('pan')]"
+                      v-model="pan"
+                      type="text"
+                      class="form-control"
+                      maxlength="50"
+                      placeholder="E.g., ABCDE1234A"
                       autocomplete="anyrandomstring"
                     />
                   </div>
@@ -140,7 +162,7 @@
 
                 <div class="form-group margin-top-20">
                   <input id="email" type="radio" name="GST" value="3" v-model="GST_selection" />
-                  I dont't have it handy and will update later
+                  I don't have it handy and will update later
                 </div>
 
                 <div class="form-group margin-top-20">
@@ -182,30 +204,41 @@ import Aside from '@/components/aside'
 export default {
   data() {
     return {
-      GST_selection: '1'
+      GST_selection: '1',
+      regex_pan: /^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$/,
+      regex_gst: /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/,
+      pan: "",
+      gst: ""
     }
   },
   components: {
     Aside
+  },
+  mounted(){
+
+    this.$store.dispatch('getStep')
+
   },
 methods:{
             changeCompany: function(){
 
 
 
+       if (this.regex_pan.test(this.pan) && this.regex_gst.test(this.gst) || parseInt(this.GST_selection) > 2) {
+
      var payload = new FormData()
 
      payload.append('phone_number', localStorage.getItem('phone_number'))
      payload.append('gst_option', this.GST_selection)
-     payload.append('gstin', $("#gstin").val())
-     payload.append('pan', $("#pan").val())
+     payload.append('gstin', this.gst)
+     payload.append('pan', this.pan)
 
 
 
             axios({
                 method: 'PUT',
                 data: payload,
-                url: '/backend/api/vendors/tax/',
+                url: this.$store.state.api.tax,
                 contentType: 'application/json',
                 data: payload
             })
@@ -218,10 +251,42 @@ methods:{
                     console.log('error in request', err)
                 })
 
+     
+      }else{
+
+        $( "input" ).each(function( index ) {
+          if($(this).val() == ""){
+            
+            $(this).addClass('has-error')
+
+          }
+      });
+
+      }
 
 
 
+    },    isValid: function(type) {
+      switch (type) {
+        case 'pan':
 
+          return this.pan == ''
+            ? ''
+            : this.regex_pan.test(this.pan)
+            ? 'has-success'
+            : 'has-error'
+
+          break;
+        case 'gst':
+
+          return this.gst == ''
+            ? ''
+            : this.regex_gst.test(this.gst)
+            ? 'has-success'
+            : 'has-error'
+
+          break;
+      }
     }
 }
 }

@@ -126,12 +126,12 @@
           <div data-ng-show="showError" class="a-section a-spacing-base ng-hide">
             <div
               class="a-box a-alert-inline a-alert-inline-error"
-              aria-live="assertive"
+              aria-live="assertive" v-show="showError1"
               role="alert"
             >
               <div class="a-box-inner a-alert-container">
                 <i class="a-icon a-icon-alert"></i>
-                <div class="a-alert-content ng-binding">Please choose any one of the option</div>
+                <div class="a-alert-content ng-binding">Please choosse any one of the option</div>
               </div>
             </div>
           </div>
@@ -163,7 +163,7 @@
                 <label>
                   <input
                     type="checkbox"
-                    name
+                    name="products"
                     value="manufacturer"
                     data-a-input-name
                     data-ng-model="checkboxModel[value.renderConfig.id][option.id]"
@@ -181,7 +181,7 @@
                 <label>
                   <input
                     type="checkbox"
-                    name
+                    name="products"
                     value="reseller"
                     data-a-input-name
                     data-ng-model="checkboxModel[value.renderConfig.id][option.id]"
@@ -199,7 +199,7 @@
                 <label>
                   <input
                     type="checkbox"
-                    name
+                    name="products"
                     value="importer"
                     data-a-input-name
                     data-ng-model="checkboxModel[value.renderConfig.id][option.id]"
@@ -219,6 +219,7 @@
                 class="a-box a-alert-inline a-alert-inline-error"
                 aria-live="assertive"
                 role="alert"
+                v-show="showError2"
               >
                 <div class="a-box-inner a-alert-container">
                   <i class="a-icon a-icon-alert"></i>
@@ -300,6 +301,7 @@
               <div
                 class="a-box a-alert-inline a-alert-inline-error"
                 aria-live="assertive"
+                v-show="showError3"
                 role="alert"
               >
                 <div class="a-box-inner a-alert-container">
@@ -371,6 +373,7 @@
                 class="a-box a-alert-inline a-alert-inline-error"
                 aria-live="assertive"
                 role="alert"
+                v-show="showError4"
               >
                 <div class="a-box-inner a-alert-container">
                   <i class="a-icon a-icon-alert"></i>
@@ -446,6 +449,7 @@
                 class="a-box a-alert-inline a-alert-inline-error"
                 aria-live="assertive"
                 role="alert"
+                v-show="showError5"
               >
                 <div class="a-box-inner a-alert-container">
                   <i class="a-icon a-icon-alert"></i>
@@ -699,15 +703,78 @@ data(){
             }
           ]
         }
-      ]
+      ],
+      showError1: false,
+      showError2: false,
+      showError3: false,
+      showError4: false,
+      showError5: false,
     }
 },
 
           components:{
     Aside
   },
+  mounted(){
+        this.$store.dispatch('getStep')
+  },
   methods: {
     dashboard: function(){
+
+      console.log("running")
+
+              var vm = this
+
+
+                var count = 0, count1 = 0
+
+                    $("input[name=categoryCheckbox").each(function( index ) {
+
+                      if($(this).prop('checked') == false && count == 0){
+
+                        vm.showError1 = true
+
+                      }else{
+
+                        count = 1
+
+                        vm.showError1 = false
+
+                      }
+          })
+                    $("input[name=products").each(function( index ) {
+
+                      if($(this).prop('checked') == false && count1 == 0){
+
+                        vm.showError2 = true
+                        
+                      }else{
+
+                        count1 = 1
+                        
+                        vm.showError2 = false
+                      }
+          })
+
+                    if($('#sellerTurnoverInfo option:selected').val() == ""){
+                      vm.showError3 = true
+                    }else{
+                      vm.showError3 = false
+    }
+
+                    if($('#sellerProductQuantity option:selected').val() == ""){
+                      vm.showError4 = true
+                    }else{
+                      vm.showError4 = false
+    }
+
+                    if($('input[name=sellerOtherPlatformInfo]').is(':checked') == false){
+                      vm.showError5 = true
+                    }else{
+                      vm.showError5 = false
+    }
+
+      if(this.showError1 == false && this.showError2 == false && this.showError3 == false && this.showError4 == false && this.showError5 == false){
 
 
       
@@ -718,7 +785,7 @@ data(){
            axios({
                 method: 'PUT',
                 data: payload,
-                url: '/backend/api/vendors/seller_interview/',
+                url: this.$store.state.api.seller_interview,
                 contentType: 'application/json',
                 data: payload
             })
@@ -730,6 +797,10 @@ data(){
                 .catch(err => {
                     console.log('error in request', err)
                 })
+
+      }else{
+    
+      }
 
 
     }
@@ -743,7 +814,7 @@ data(){
     /* margin-bottom: 20px!important */
 }
 .a-alert-inline{
-  display: none!important
+  /* display: none!important */
 }
 
 .a-checkbox.a-checkbox-fancy input, .a-radio.a-radio-fancy input{

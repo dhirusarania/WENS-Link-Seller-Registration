@@ -4,11 +4,11 @@
       <div class="a-section a-spacing-none auth-navbar">
         <div class="a-section a-spacing-medium a-text-center">
           <div style="justify-content: center;display: flex;align-items: center;">
-          <img style="height: 100%;width: 45px;"
-            src="~static/dashboard-icon-black.png"
-          />
-          <p style="margin-left: 15px;font-size:19px;font-weight: bold">WENS Link Seller Registration</p>
-        </div>
+            <img style="height: 100%;width: 45px;" src="~static/dashboard-icon-black.png" />
+            <p
+              style="margin-left: 15px;font-size:19px;font-weight: bold"
+            >WENS Link Seller Registration</p>
+          </div>
         </div>
       </div>
 
@@ -32,11 +32,8 @@
           </div>
 
           <div class="a-section auth-pagelet-container">
-
-
             <div class="a-section auth-pagelet-container">
-              <div
-                id="auth-pv-client-side-error-box"
+              <!-- <div v-if="error"
                 class="a-box a-alert a-alert-error auth-client-side-message-box a-spacing-base"
                 aria-live="assertive"
                 role="alert"
@@ -51,18 +48,15 @@
                       <li id="auth-there-was-an-error-throttled">
                         <span
                           class="a-list-item"
-                        >Sorry, you've reached the maximum number of attempts today. Please try again later.</span>
-                      </li>
-                      <li id="auth-there-was-an-error">
-                        <span class="a-list-item">Internal Error. Please try again later.</span>
+                        >{{message}}</span>
                       </li>
                     </ul>
                   </div>
                 </div>
-              </div>
+              </div> -->
 
               <div
-                id="auth-pv-client-side-success-box"
+                v-if="is_otp_sent"
                 class="a-box a-alert a-alert-success auth-client-side-message-box a-spacing-base"
               >
                 <div class="a-box-inner a-alert-container">
@@ -91,7 +85,6 @@
                     <span
                       class="a-text-bold"
                     >{{phone_number}}</span>
-  
                   </p>
 
                   <div class="a-row a-spacing-top-large">
@@ -99,13 +92,14 @@
                       <label for="auth-pv-enter-code" class="a-form-label">Enter OTP:</label>
                     </div>
                     <div class="a-column a-span5 a-text-right a-span-last">
-
-                      <form id="auth-resend-form" method="post" action class="a-spacing-mini">
-                        <a
-                          id="auth-resend-code-link"
-                          class="a-spacing-extra-large a-link-normal"
-                          href="#"
-                        >Resend OTP</a>
+                      <form
+                        v-if="!is_otp_sent"
+                        id="auth-resend-form"
+                        method="post"
+                        action
+                        class="a-spacing-mini"
+                      >
+                        <a @click="resendOTP" href="#">Resend OTP</a>
                       </form>
                     </div>
                   </div>
@@ -193,47 +187,64 @@
 <script>
 import axios from 'axios'
 
-
 export default {
-  data(){
-    return{
+  data() {
+    return {
       otp: null,
+      is_otp_sent: false,
       phone_number: localStorage.getItem('phone_number')
     }
   },
-    methods:{
-    createAccount: function(){
+  methods: {
+    createAccount: function() {
 
 
+      if(this.otp != ""){
 
-     var payload = new FormData()
+      var payload = new FormData()
 
-     payload.append('phone_number', this.phone_number)
-     payload.append('OTP', this.otp)
+      payload.append('phone_number', this.phone_number)
+      payload.append('OTP', this.otp)
 
+      axios({
+        method: 'PUT',
+        data: payload,
+        url: this.$store.state.api.otp_verify,
+        contentType: 'application/json',
+        data: payload
+      })
+        .then(res => {
+          console.log(res.data)
+          console.log('response')
+          if (res.data.status == 200) {
+            localStorage.setItem('phone_number', this.phone_number)
+            this.$router.push('/continue')
+          }
+        })
+        .catch(err => {
+          console.log('error in request', err)
+        })
+      }
+    },
+    resendOTP: function() {
+      var payload = new FormData()
 
-
-            axios({
-                method: 'PUT',
-                data: payload,
-                url: '/backend/api/vendors/otp_verify/',
-                contentType: 'application/json',
-                data: payload
-            })
-                .then(res => {
-                    console.log(res.data)
-                    console.log('response')
-                    localStorage.setItem('phone_number' , this.phone_number)
-                    this.$router.push('/continue')
-                })
-                .catch(err => {
-                    console.log('error in request', err)
-                })
-
-
-
-
-
+      payload.append('phone_number', this.phone_number)
+      axios({
+        method: 'PUT',
+        data: payload,
+        url: this.$store.state.api.resendOTP,
+        contentType: 'application/json',
+        data: payload
+      })
+        .then(res => {
+          console.log(res.data)
+          console.log('response')
+          this.is_otp_sent = true
+        })
+        .catch(err => {
+          console.log('error in request', err)
+        })
     }
   }
 }

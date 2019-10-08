@@ -4,16 +4,39 @@
       <div class="a-section a-padding-medium auth-workflow">
         <div class="a-section a-spacing-none auth-navbar">
           <div class="a-section a-spacing-medium a-text-center">
-                    <div class="center-align">
-          <img src="~static/dashboard-icon-black.png" style="height: 45px;padding-bottom: 10px" class="company_logo" />
-          <p class="margin-top-10">WENSLink Seller Registration</p>
-        </div>
+            <div class="center-align">
+              <img
+                src="~static/dashboard-icon-black.png"
+                style="height: 45px;padding-bottom: 10px"
+                class="company_logo"
+              />
+              <p class="margin-top-10">WENS Link Seller Registration</p>
+            </div>
           </div>
         </div>
 
         <div id="authportal-center-section" class="a-section">
           <div id="authportal-main-section" class="a-section">
-
+            <div v-if="isError" class="a-section a-spacing-base auth-pagelet-container">
+              <div class="a-section">
+                <div
+                  id="auth-warning-message-box"
+                  class="a-box a-alert a-alert-warning auth-server-side-message-box a-spacing-base"
+                >
+                  <div class="a-box-inner a-alert-container">
+                    <h4 class="a-alert-heading">Error</h4>
+                    <i class="a-icon a-icon-alert"></i>
+                    <div class="a-alert-content">
+                      <ul class="a-unordered-list a-nostyle a-vertical a-spacing-none">
+                        <li>
+                          <span class="a-list-item">{{error_message}}</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <div class="a-section auth-pagelet-container">
               <!-- Set cross domain sso variables to be used for making Ajax calls to central Identity domain -->
@@ -32,7 +55,6 @@
                     class="a-spacing-none fwcim-form"
                     data-fwcim-id="dd379249"
                   >
-
                     <div class="a-section">
                       <div class="a-box">
                         <div class="a-box-inner a-padding-extra-large">
@@ -43,7 +65,7 @@
                             <label for="ap_email" class="a-form-label">Phone Number</label>
 
                             <input
-                              type="email"
+                              type="number"
                               maxlength="128"
                               id="ap_email"
                               name="email"
@@ -72,14 +94,14 @@
                                 <label for="ap_password" class="a-form-label">Password</label>
                               </div>
 
-                              <div class="a-column a-span7 a-text-right a-span-last">
+                              <!-- <div class="a-column a-span7 a-text-right a-span-last">
                                 <a
                                   id="auth-fpp-link-bottom"
                                   class="a-link-normal"
                                   tabindex="3"
                                   href="https://sellercentral.WENS Link.in/ap/forgotpassword?showRememberMe=true&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;marketPlaceId=A21TJRUUN4KGV&amp;pageId=amzn_sw_signup_in&amp;openid.return_to=https%3A%2F%2Fsellercentral.WENS Link.in%2Fsw%2Fin%2FINSSR%2Fstep%2FSignUp%3Fpassthrough%252Faccount%3Dsoa%26passthrough%252FsuperSource%3DOAR%26ref_%3Das_in_soa_hp%26passthrough%252FmarketplaceID%3DA21TJRUUN4KGV%26passthrough%252F%26productTier%3DSILVER%26productType%3DSellOnWENS Link%26marketplaceId%3DA21TJRUUN4KGV%26passthrough%252Ftag%3DREDIRECTT1%26redirectAP%3D1&amp;prevRID=CYNRM35MQCJC1BR99Y6D&amp;openid.assoc_handle=amzn_sw_signup_in&amp;openid.mode=checkid_setup&amp;prepopulatedLoginId=&amp;failedSignInCount=0&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0"
                                 >Forgot Password</a>
-                              </div>
+                              </div> -->
                             </div>
 
                             <input
@@ -105,7 +127,11 @@
                           </div>
 
                           <div class="a-section a-spacing-extra-large">
-                            <span @click="login" class="a-button a-button-span12 a-button-primary" id="a-autoid-0">
+                            <span
+                              @click="login"
+                              class="a-button a-button-span12 a-button-primary"
+                              id="a-autoid-0"
+                            >
                               <span class="a-button-inner">
                                 <span
                                   class="a-button-text"
@@ -122,7 +148,7 @@
                                   <div data-a-input-name="rememberMe" class="a-checkbox">
                                     <label>
                                       <input
-                                      style="bottom: 1px;"
+                                        style="bottom: 1px;"
                                         type="checkbox"
                                         name="rememberMe"
                                         value="true"
@@ -134,9 +160,7 @@
                                           class="a-declarative"
                                           data-action="a-popover"
                                           data-a-popover="{&quot;activate&quot;:&quot;onclick&quot;,&quot;header&quot;:&quot;\&quot;Keep Me Signed In\&quot; Checkbox&quot;,&quot;inlineContent&quot;:&quot;\u003cp>Choosing \&quot;Keep me signed in\&quot; reduces the number of times you're asked to Sign-In on this device.\u003c\/p>\n\u003cp>To keep your account secure, use this option only on your personal devices.\u003c\/p>&quot;}"
-                                        >
-      
-                                        </span>
+                                        ></span>
                                       </span>
                                     </label>
                                   </div>
@@ -153,7 +177,9 @@
                             class="a-button a-button-span12 a-button-base"
                           >
                             <span class="a-button-inner">
-                              <nuxt-link to="/register_account" class="a-button-text"
+                              <nuxt-link
+                                to="/register_account"
+                                class="a-button-text"
                               >Create your WENS Link account</nuxt-link>
                             </span>
                           </span>
@@ -196,65 +222,74 @@
 
 
 <style scoped>
-.a-alert-inline{
-  display: none!important
+.a-alert-inline {
+  display: none !important;
 }
 </style>
 
 
 <script>
-
-
 import axios from 'axios'
 
-
 export default {
-  methods:{
-    login: function(){
+  data() {
+    return {
+      error_message: '',
+      isError: false
+    }
+  },
+  methods: {
+    login: function() {
+      var payload = new FormData()
 
+      payload.append('phone_number', $('#ap_email').val())
+      payload.append('password', $('#ap_password').val())
 
+      axios({
+        method: 'POST',
+        data: payload,
+        url: this.$store.state.api.login,
+        contentType: 'application/json',
+        data: payload
+      })
+        .then(res => {
+          console.log(res.data)
+          console.log('response')
 
-     var payload = new FormData()
+          switch (res.data.status) {
+            case 200:
+              localStorage.setItem('phone_number', $('#ap_email').val())
 
-     payload.append('phone_number', $("#ap_email").val())
-     payload.append('password', $("#ap_password").val())
-
-
-
-
-            axios({
-                method: 'POST',
-                data: payload,
-                url: '/backend/api/login/',
-                contentType: 'application/json',
-                data: payload
-            })
-                .then(res => {
-                    console.log(res.data)
-                    console.log('response')
-
-
-                    localStorage.setItem('phone_number', $("#ap_email").val())
-
-                    switch(res.data.user_info.step){
-                      case 0 : this.$router.push('/continue');break;
-                      case 1 : this.$router.push('/register');break;
-                      case 2 : this.$router.push('/launch/tax-details');break;
-                      case 3 : this.$router.push('/launch/seller-interview');break;
-                      case 4 : this.$router.push('/launch/dashboard');break;
-                    }
-
-
-                    this.$router.push('')
-                })
-                .catch(err => {
-                    console.log('error in request', err)
-                })
-
-
-
-
-
+              if (res.data.user_info.isVerified == 1) {
+                switch (res.data.user_info.step) {
+                  case 0:
+                    this.$router.push('/continue')
+                    break
+                  case 1:
+                    this.$router.push('/launch/register')
+                    break
+                  case 2:
+                    this.$router.push('/launch/tax-details')
+                    break
+                  case 3:
+                    this.$router.push('/launch/seller-interview')
+                    break
+                  case 4:
+                    this.$router.push('/launch/dashboard')
+                    break
+                }
+              } else {
+                this.$router.push('/verification')
+              }
+              break
+            default:
+              this.isError = true
+              this.error_message = res.data.message
+          }
+        })
+        .catch(err => {
+          console.log(err.response)
+        })
     }
   }
 }

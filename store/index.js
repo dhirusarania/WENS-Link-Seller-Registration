@@ -128,6 +128,48 @@ export const actions = {
 
 
 
+    getStep({ commit, state }) {
+
+
+        return new Promise((resolve, reject) => {
+
+            axios({
+                method: 'GET',
+                url: state.api.getStep + localStorage.getItem('phone_number'),
+                contentType: 'application/json',
+            })
+                .then(res => {
+                    console.log(res.data)
+                    console.log('response')
+
+
+                    switch (res.data.step) {
+                        case 0:
+                          this.$router.push('/continue')
+                          break
+                        case 1:
+                          this.$router.push('/launch/register')
+                          break
+                        case 2:
+                          this.$router.push('/launch/tax-details')
+                          break
+                        case 3:
+                          this.$router.push('/launch/seller-interview')
+                          break
+                        case 4:
+                          this.$router.push('/launch/dashboard')
+                          break
+                      }
+
+                    resolve(res)
+                })
+                .catch(err => {
+                    console.log('error in request', err)
+                })
+        })
+    },
+
+
     getCategory({ commit, state }) {
 
 

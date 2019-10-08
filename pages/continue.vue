@@ -4,7 +4,15 @@
       <div class="a-box-inner">
         <div class="a-box header_logo_desk">
           <div class="a-box-inner">
-            <img src />
+            <div style="    display: flex;
+    align-items: center;">
+              <img
+                src="~static/dashboard-icon-black.png"
+                style="height: 75px;padding-bottom: 10px; object-fit:contain"
+                class="company_logo"
+              />
+              <h4 style="padding-left: 10px" class="margin-top-10">WENS Link Seller Registration</h4>
+            </div>
           </div>
         </div>
 
@@ -49,16 +57,9 @@
                             <input
                               type="text"
                               maxlength="50"
-                              id="ln_legal_name"
-                              placeholder
-                              name="ln_legal_name"
                               class="a-input-text address-textbox ng-scope ng-pristine ng-invalid ng-invalid-required"
-                              data-ng-class="{'a-form-error':!!fragmentData.ln_legal_name.legal_field_error,
-                                             'a-form-disabled':legalNameDisable }"
-                              data-ng-disabled
-                              data-ng-focus="clearError()"
-                              data-ng-model="fragmentData.ln_legal_name.renderConfig.ln_value"
-                              data-ng-required="true"
+                              v-model="email"
+                              :class="['input-group', isEmailValid()]"
                               required="required"
                             />
                           </div>
@@ -82,22 +83,14 @@
                             <!-- ngIf: fragmentData.showMandatory -->
                           </div>
 
-                          <div
-                            data-ng-show="agreementSelected.errorIsNotSelected"
-                            class="a-box a-alert-inline a-alert-inline-error ng-hide"
-                            aria-live="assertive"
-                            role="alert"
-                          >
-                            <div class="a-box-inner a-alert-container hide">
-                              <i class="a-icon a-icon-alert"></i>
-                              <div class="a-alert-content ng-binding">You must accept the agreement.</div>
-                            </div>
-                          </div>
-
                           <div class="a-section a-spacing-top-micro">
                             <div class="a-checkbox a-checkbox-fancy agreementCheckbox ng-scope">
                               <label style="display:flex">
-                                <input type="checkbox" style="opacity: 1;z-index: 5" v-model="isSelected" />
+                                <input
+                                  type="checkbox"
+                                  style="opacity: 1;z-index: 5"
+                                  v-model="isSelected"
+                                />
                                 <span class="a-label a-checkbox-label">
                                   <span class="a-size-base ng-binding">
                                     I have read and agree to comply with and/or be bound by the terms and conditions of
@@ -144,13 +137,14 @@
               <div class="a-section">
                 <span class="a-button continue_b_legal" id="a-autoid-0">
                   <span class="a-button-inner">
-                    <div
+                    <button
+                      type="button"
                       @click="changeCompany"
-                      :disabled="!isSelected"
+                      :disabled="!isAllowed"
                       id="auth-continue-announce"
-                      class="a-button-text"
+                      class="a-button-text btn"
                       aria-hidden="true"
-                    >Continue</div>
+                    >Continue</button>
                   </span>
                 </span>
               </div>
@@ -193,51 +187,87 @@
 <script>
 import axios from 'axios'
 
-
 export default {
-  data(){
-    return{
+  data() {
+    return {
       otp: null,
       phone_number: localStorage.getItem('phone'),
-      isSelected: false
+      isSelected: false,
+      email: '',
+      isAllowed: false,
+      regex: /^(?!\s)(?!.*\s$)(?=.*[a-zA-Z0-9])[a-zA-Z0-9 '~?!]{3,}$/
     }
   },
 
+  mounted(){
 
-    methods:{
-    changeCompany: function(){
+    this.$store.dispatch('getStep')
 
+  },
 
+  watch: {
+    isSelected: function() {
+      this.verify()
+    },
+    email: function() {
+      this.verify()
+    }
+  },
 
-     var payload = new FormData()
+  methods: {
+    verify: function() {
+      if (this.regex.test(this.email) && this.isSelected == true) {
+        this.isAllowed = true
+      } else {
+        this.isAllowed = false
+      }
+    },
+    changeCompany: function() {
+      if (this.regex.test(this.email) && this.isSelected == true) {
+        var payload = new FormData()
 
-     payload.append('phone_number', localStorage.getItem('phone_number'))
-     payload.append('company_name', $("#ln_legal_name").val())
+        payload.append('phone_number', localStorage.getItem('phone_number'))
+        payload.append('company_name', this.email)
 
-
-
-            axios({
-                method: 'PUT',
-                data: payload,
-                url: '/backend/api/vendors/company_name/',
-                contentType: 'application/json',
-                data: payload
-            })
-                .then(res => {
-                    console.log(res.data)
-                    console.log('response')
-                    localStorage.setItem('business_name',  $("#ln_legal_name").val())
-                    this.$router.push('/register')
-                })
-                .catch(err => {
-                    console.log('error in request', err)
-                })
-
-
-
-
-
+        axios({
+          method: 'PUT',
+          data: payload,
+          url: this.$store.state.api.company_name,
+          contentType: 'application/json',
+          data: payload
+        })
+          .then(res => {
+            console.log(res.data)
+            console.log('response')
+            localStorage.setItem('business_name', $('#ln_legal_name').val())
+            this.$router.push('/launch/register')
+          })
+          .catch(err => {
+            console.log('error in request', err)
+          })
+      }
+    },
+    isEmailValid: function() {
+      return this.email == ''
+        ? ''
+        : this.regex.test(this.email)
+        ? 'has-success'
+        : 'has-error'
     }
   }
 }
 </script>
+<style scoped>
+/* .disabled{
+  color
+} */
+
+.btn {
+  background: linear-gradient(to bottom, #a8f5ff, #9bd3ff);
+}
+
+.a-checkbox.a-checkbox-fancy input,
+.a-radio.a-radio-fancy input {
+  top: 4px;
+}
+</style>

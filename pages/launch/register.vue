@@ -118,6 +118,9 @@
                   data-ng-if="fragmentData.dn_fragment_heading.visibility"
                   class="a-section a-spacing-none ng-scope"
                 >
+                <h2 class="a-spacing-small a-color-state a-text-normal">
+                Tell us about your business
+            </h2>
                   <span class="a-text-bold ng-binding">
                     Store Name
                   </span>
@@ -132,17 +135,11 @@
                     type="text"
                     maxlength="50"
                     autocomplete="off"
-                    placeholder
+                    v-model="store_name"
+                    :class="['input-group', isValid('store_name')]"
                     id="store_name"
                     name="displayNameField"
                     class="a-input-text dn_inputTextbox celwidget ng-scope ng-pristine ng-invalid ng-invalid-required"
-                    data-ng-blur="validateDisplayName()"
-                    data-ng-class="{'a-form-error':fragmentData.dn_fragment_display_name.error,'a-form-disabled':fragmentData.dn_fragment_display_name.disabled}"
-                    data-ng-disabled="fragmentData.dn_fragment_display_name.disabled"
-                    data-ng-focus="clearDisplayNameError()"
-                    data-ng-model="fragmentData.dn_fragment_display_name.value"
-                    data-ng-required="true"
-                    required="required"
                   />
                   <!-- ngIf: fragmentData.dn_fragment_verify.visibility && !fragmentData.dn_fragment_display_name.disabled -->
                   <span
@@ -217,28 +214,14 @@
                     >
                       <div class="a-section a-spacing-none address-inputName ng-binding">Pincode</div>
                       <input
-                        type="text"
+                        type="number"
                         maxlength="6"
+                        v-model="pincode"
+                        :class="['input-group', isValid('pincode')]"
                         autocomplete="off"
                         id="pincode"
                         class="a-input-text address-textbox ng-scope ng-pristine ng-valid-pattern ng-animate ng-valid-remove ng-invalid-add ng-valid-required-remove ng-valid-remove-active ng-invalid ng-invalid-add-active ng-valid-required-remove-active ng-invalid-required"
-                        data-ng-blur="populateAddressData()"
-                        data-ng-class="{'a-form-error': fragmentData.errors.pincode}"
-                        data-ng-disabled="addressDisable||pincodeDisabled||fragmentData.editDisable"
-                        data-ng-focus="clearError('pincode')"
-                        data-ng-model="fragmentData.address.pincode"
-                        data-ng-pattern="pincodeRegex"
-                        data-ng-required="true"
-                        required="required"
-                        style
                       />
-                      <div
-                        data-ng-show="fragmentData.errors.pincode"
-                        class="a-box a-alert-inline a-alert-inline-error a-spacing-top-mini ng-hide"
-                        aria-live="assertive"
-                        role="alert"
-                      >
-                      </div>
                     </div>
                     <!-- end ngIf: fragmentData.pincode.visibility -->
                     <!-- ngIf: fragmentData.name.visibility -->
@@ -253,25 +236,13 @@
                       <input
                         type="text"
                         maxlength="60"
-                        value
+                        v-model="addressline_1"
+                        :class="['input-group', isValid('addressline_1')]"
                         autocomplete="off"
                         id="address_line1"
                         class="a-input-text address-textbox ng-scope ng-pristine ng-animate ng-valid-remove ng-invalid-add ng-valid-required-remove ng-valid-remove-active ng-invalid ng-invalid-add-active ng-valid-required-remove-active ng-invalid-required"
-                        data-ng-class="{'a-form-error': fragmentData.errors.address_line1}"
-                        data-ng-disabled="addressDisable||fragmentData.editDisable"
-                        data-ng-focus="clearError('address_line1')"
-                        data-ng-model="fragmentData.address.address_line1"
-                        data-ng-required="true"
-                        required="required"
                         style
                       />
-                      <div
-                        data-ng-show="fragmentData.errors.address_line1"
-                        class="a-box a-alert-inline a-alert-inline-error a-spacing-top-mini ng-hide"
-                        aria-live="assertive"
-                        role="alert"
-                      >
-                      </div>
                     </div>
                     <div
                       data-cel_widget_id="PV_PincodeInput"
@@ -286,20 +257,11 @@
                         maxlength="60"
                         value
                         autocomplete="off"
+                        v-model="addressline_2"
+                        :class="['input-group', isValid('addressline_2')]"
                         id="address_line2"
                         class="a-input-text address-textbox ng-scope ng-pristine ng-valid"
-                        data-ng-class="{'a-form-error': fragmentData.errors.address_line2}"
-                        data-ng-disabled="addressDisable||fragmentData.editDisable"
-                        data-ng-focus="clearError('address_line2')"
-                        data-ng-model="fragmentData.address.address_line2"
                       />
-                      <div
-                        data-ng-show="fragmentData.errors.address_line2"
-                        class="a-box a-alert-inline a-alert-inline-error a-spacing-top-mini ng-hide"
-                        aria-live="assertive"
-                        role="alert"
-                      >
-                      </div>
                     </div>
                     <div
                       data-cel_widget_id="PV_CityInput"
@@ -313,14 +275,9 @@
                         value
                         autocomplete="off"
                         id="city"
+                        v-model="city"
+                        :class="['input-group', isValid('city')]"
                         class="a-input-text address-textbox ng-scope ng-pristine ng-animate ng-valid-remove ng-invalid-add ng-valid-required-remove ng-valid-remove-active ng-invalid ng-invalid-add-active ng-valid-required-remove-active ng-invalid-required"
-                        data-ng-class="{'a-form-error': fragmentData.errors.city}"
-                        data-ng-disabled="addressDisable||fragmentData.editDisable"
-                        data-ng-focus="clearError('city')"
-                        data-ng-model="fragmentData.address.city"
-                        data-ng-required="true"
-                        required="required"
-                        style
                       />
                     </div>
                     <div
@@ -336,6 +293,7 @@
                         <select
                           class="address-dropdown-select ng-pristine ng-animate ng-valid-remove ng-invalid-add ng-valid-required-remove ng-valid-remove-active ng-invalid ng-invalid-add-active ng-valid-required-remove-active ng-invalid-required"
                           id="state"
+                          v-model="state"
                           data-ng-focus="clearError('state')"
                           ng-model="fragmentData.address.state"
                           ng-options="key as key for key in stateList"
@@ -564,9 +522,7 @@ import axios from 'axios'
 export default {
   data: function() {
     return {
-      email: '',
-      currentOption: 1,
-      product_cat: 0,
+
       product_category: [
         {
           id: 1,
@@ -705,7 +661,6 @@ export default {
           name: 'Watches'
         }
       ],
-      GST_selection: '1',
       interview_data: [
         {
           id: 1,
@@ -875,7 +830,19 @@ export default {
             }
           ]
         }
-      ]
+      ],
+      GST_selection: '1',
+      email: '',
+      currentOption: 1,
+      product_cat: 0,
+      store_name: "",
+      pincode: null,
+      addressline_1: "",
+      addressline_2: "",
+      city: "",
+      state: 0,
+      regex_store_name: /^(?!\s)(?!.*\s$)(?=.*[a-zA-Z0-9])[a-zA-Z0-9 '~?!]{3,}$/,
+      regex_pincode: /^[1-9][0-9]{5}$/,
     }
   },
   components:{
@@ -883,6 +850,7 @@ export default {
   },
   mounted() {
     feather.replace({ color: '#009688' })
+    this.$store.dispatch('getStep')
   },
   methods: {
     selectThis: function(id) {
@@ -890,25 +858,34 @@ export default {
     },
         changeCompany: function(){
 
+                  $( "input" ).each(function( index ) {
+            
+            $(this).removeClass('has-error')
+
+      
+      });
+
+
+      if (this.regex_store_name.test(this.store_name) && this.regex_pincode.test(this.pincode) && this.addressline_1 != "" && this.addressline_2 != "" && this.city != "") {     
 
 
      var payload = new FormData()
 
      payload.append('phone_number', localStorage.getItem('phone_number'))
-     payload.append('store_name', $("#store_name").val())
+     payload.append('store_name', this.store_name)
      payload.append('product_category', this.product_cat)
-     payload.append('pincode', $("#pincode").val())
-     payload.append('addressline1', $("#address_line1").val())
-     payload.append('addressline2', $("#address_line1").val())
-     payload.append('city', $("#city").val())
-     payload.append('state', $("#state").val())
+     payload.append('pincode',this.pincode)
+     payload.append('addressline1', this.addressline_1)
+     payload.append('addressline2', this.addressline_2)
+     payload.append('city', this.city)
+     payload.append('state', this.state)
 
 
 
             axios({
                 method: 'PUT',
                 data: payload,
-                url: '/backend/api/vendors/seller_info/',
+                url: this.$store.state.api.seller_info,
                 contentType: 'application/json',
                 data: payload
             })
@@ -921,10 +898,61 @@ export default {
                     console.log('error in request', err)
                 })
 
+      }else{
+
+        $( "input" ).each(function( index ) {
+          if($(this).val() == ""){
+            
+            $(this).addClass('has-error')
+
+          }
+      });
+
+      }
 
 
 
+    },
+        isValid: function(type) {
+      switch (type) {
+        case 'store_name':
 
+          return this.store_name == ''
+            ? ''
+            : this.regex_store_name.test(this.store_name)
+            ? 'has-success'
+            : 'has-error'
+
+          break
+        case 'pincode':
+
+          return this.pincode == null
+            ? ''
+            : this.regex_pincode.test(this.pincode)
+            ? 'has-success'
+            : 'has-error'
+
+          break
+        case 'addressline1':
+
+          return this.addressline_1 == ''
+            ? ''
+            : this.regex_addressline_1.test(this.addressline_1)
+            ? 'has-success'
+            : 'has-error'
+
+          break
+        case 'password':
+          var regex = /(?=^.{8,}$)(?![.\n])(?=.*[a-zA-Z_]).*$/
+
+          return this.password == ''
+            ? ''
+            : regex.test(this.password)
+            ? 'has-success'
+            : 'has-error'
+
+          break
+      }
     }
   }
 }

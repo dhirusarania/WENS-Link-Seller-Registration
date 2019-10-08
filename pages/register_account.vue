@@ -4,18 +4,44 @@
       <div class="a-section a-padding-medium auth-workflow">
         <div class="a-section a-spacing-none auth-navbar">
           <div class="a-section a-spacing-medium a-text-center">
-                     <div class="center-align">
-          <img src="~static/dashboard-icon-black.png" style="height: 45px;padding-bottom: 10px" class="company_logo" />
-          <p class="margin-top-10">WENSLink Seller Registration</p>
-        </div>
+            <div class="center-align">
+              <img
+                src="~static/dashboard-icon-black.png"
+                style="height: 45px;padding-bottom: 10px"
+                class="company_logo"
+              />
+              <p class="margin-top-10">WENSLink Seller Registration</p>
+            </div>
           </div>
         </div>
 
         <div id="authportal-center-section" class="a-section">
           <div id="authportal-main-section" class="a-section">
-
+            <div v-if="isError" class="a-section a-spacing-base auth-pagelet-container">
+              <div class="a-section">
+                <div
+                  id="auth-warning-message-box"
+                  class="a-box a-alert a-alert-warning auth-server-side-message-box a-spacing-base"
+                >
+                  <div class="a-box-inner a-alert-container">
+                    <h4 class="a-alert-heading">Error</h4>
+                    <i class="a-icon a-icon-alert"></i>
+                    <div class="a-alert-content">
+                      <ul class="a-unordered-list a-nostyle a-vertical a-spacing-none">
+                        <li
+                          style="list-style: disc;list-style-position: inside;"
+                          v-for="p in error_message"
+                          :key="p.id"
+                        >
+                          <span class="a-list-item">{{p}}</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="a-section auth-pagelet-container">
-
               <!-- show a warning modal dialog when the third party account is connected with WENS Link -->
 
               <div class="a-section auth-pagelet-container">
@@ -28,7 +54,6 @@
                   class="ap_ango_default auth-validate-form-moa fwcim-form"
                   data-fwcim-id="078d6cd3"
                 >
-
                   <div class="a-box a-spacing-extra-large">
                     <div class="a-box-inner">
                       <h1 class="a-spacing-small moa_desktop_signup">Create Account</h1>
@@ -39,9 +64,10 @@
                         <input
                           type="text"
                           maxlength="50"
-                          id="ap_customer_name"
+                          v-model="name"
                           autocomplete="off"
                           name="customerName"
+                          :class="['input-group', isValid('name')]"
                           tabindex="1"
                           class="a-input-text a-span12 auth-autofocus auth-required-field"
                         />
@@ -116,9 +142,11 @@
                                 style="padding-left:2%;float:left;"
                               >
                                 <input
-                                  type="tel"
+                                  type="number"
                                   maxlength="50"
                                   id="ap_phone_number"
+                                  v-model="mobile"
+                                  :class="['input-group', isValid('mobile')]"
                                   placeholder="Mobile number"
                                   name="email"
                                   tabindex="3"
@@ -175,11 +203,9 @@
                           <input
                             type="email"
                             maxlength="64"
-                            id="ap_email"
-                            name="secondaryLoginClaim"
-                            tabindex="4"
+                            v-model="email"
+                            :class="['input-group', isValid('email')]"
                             class="a-input-text a-span12 auth-require-email-validaton"
-                            data-validation-id="email"
                           />
 
                           <div
@@ -254,6 +280,7 @@
                             type="password"
                             maxlength="1024"
                             id="ap_password"
+                            v-model="password"
                             autocomplete="off"
                             placeholder="At least 6 characters"
                             name="password"
@@ -309,7 +336,8 @@
                           class="a-button a-button-span12 a-button-primary auth-requires-verify-modal"
                         >
                           <span class="a-button-inner">
-                            <span @click="createAccount"
+                            <span
+                              @click="createAccount"
                               id="auth-continue-announce"
                               class="a-button-text"
                               aria-hidden="true"
@@ -358,55 +386,116 @@
 
 
 <script>
-
-
 import axios from 'axios'
 
-
 export default {
-  methods:{
-    createAccount: function(){
+  data() {
+    return {
+      name: '',
+      mobile: null,
+      email: '',
+      password: '',
+      isError: false,
+      error_message: [],
+      regex_email : /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+      regex_name : /^(?!\s)[a-zA-Z\. ]{4,50}$/,
+      regex_mobile: /\+?\d[\d -]{8,8}\d/,
+
+    }
+  },
+  methods: {
+    createAccount: function() {
 
 
 
-     var payload = new FormData()
-
-     payload.append('name', $("#ap_customer_name").val())
-     payload.append('phone_number', $("#ap_phone_number").val())
-     payload.append('email', $("#ap_email").val())
-     payload.append('password', $("#ap_password").val())
+       if (this.regex_email.test(this.email) && this.regex_name.test(this.name) && this.regex_mobile.test(this.mobile)) {
 
 
+      var payload = new FormData()
 
+      payload.append('name', this.name)
+      payload.append('phone_number', this.mobile)
+      payload.append('email', this.email)
+      payload.append('password', this.password)
 
-            axios({
-                method: 'POST',
-                data: payload,
-                url: '/backend/api/vendors/create/',
-                contentType: 'application/json',
-                data: payload
-            })
-                .then(res => {
-                    console.log(res.data)
-                    console.log('response')
-                    localStorage.setItem('phone_number' , $("#ap_phone_number").val())
-                    this.$router.push('/verification')
-                })
-                .catch(err => {
-                    console.log('error in request', err)
-                })
+      axios({
+        method: 'POST',
+        data: payload,
+        url: this.$store.state.api.register,
+        contentType: 'application/json',
+        data: payload
+      })
+        .then(res => {
+          console.log(res.data)
+          console.log('response')
+          localStorage.setItem('phone_number', this.mobile)
+          this.$router.push('/verification')
+        })
+        .catch(err => {
+          console.log('error in request', err)
+          this.isError = true
 
+          if(err.response.status != 500){
 
+          
 
+          for (var prop in err.response.data) {
+            if (!err.response.data.hasOwnProperty(prop)) {
+              continue
+            }
+            this.error_message.push(err.response.data[prop][0])
+          }
+          }
+        })
+       }
+    },
+    isValid: function(type) {
+      switch (type) {
+        case 'name':
 
+          return this.name == ''
+            ? ''
+            : this.regex_name.test(this.name)
+            ? 'has-success'
+            : 'has-error'
 
+          break
+        case 'mobile':
+
+          return this.mobile == null
+            ? ''
+            : this.regex_mobile.test(this.mobile)
+            ? 'has-success'
+            : 'has-error'
+
+          break
+        case 'email':
+
+          return this.email == ''
+            ? ''
+            : this.regex_email.test(this.email)
+            ? 'has-success'
+            : 'has-error'
+
+          break
+        case 'password':
+          var regex = /(?=^.{8,}$)(?![.\n])(?=.*[a-zA-Z_]).*$/
+
+          return this.password == ''
+            ? ''
+            : regex.test(this.password)
+            ? 'has-success'
+            : 'has-error'
+
+          break
+      }
     }
   }
 }
 </script>
 
 <style scoped>
-.a-alert-inline{
-  display: none!important
+.a-alert-inline {
+  display: none !important;
 }
 </style>
