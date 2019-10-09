@@ -33,7 +33,7 @@
 
           <div class="a-section auth-pagelet-container">
             <div class="a-section auth-pagelet-container">
-              <!-- <div v-if="error"
+              <div v-if="error"
                 class="a-box a-alert a-alert-error auth-client-side-message-box a-spacing-base"
                 aria-live="assertive"
                 role="alert"
@@ -53,7 +53,7 @@
                     </ul>
                   </div>
                 </div>
-              </div> -->
+              </div>
 
               <div
                 v-if="is_otp_sent"
@@ -191,6 +191,8 @@ export default {
   data() {
     return {
       otp: null,
+      error: false,
+      message: "",
       is_otp_sent: false,
       phone_number: localStorage.getItem('phone_number')
     }
@@ -200,6 +202,9 @@ export default {
 
 
       if(this.otp != ""){
+
+
+        this.is_otp_sent = false
 
       var payload = new FormData()
 
@@ -223,6 +228,8 @@ export default {
         })
         .catch(err => {
           console.log('error in request', err)
+          this.error = true
+          this.message = err.response.data.message
         })
       }
     },
@@ -243,6 +250,7 @@ export default {
           this.is_otp_sent = true
         })
         .catch(err => {
+          this.error = false
           console.log('error in request', err)
         })
     }
