@@ -98,23 +98,17 @@
                                       data-ng-show="true"
                                       class
                                     >
-                                      <a
+                                      <nuxt-link
                                         target="_blank"
-                                        href="/sssl"
+                                        to="/legal/selleragreement"
                                         class="ng-binding"
-                                      >WENS Link Services Business Solutions Agreement</a>
-                                      ,
-                                      <a
-                                        target="_blank"
-                                        href="/sssl"
-                                        class="ng-binding"
-                                      >Easy Ship Service &amp; Runway Terms and Conditions</a>
+                                      >WENS Link Seller Agreement</nuxt-link>
                                       and
-                                      <a
+                                      <nuxt-link
                                         target="_blank"
-                                        href="/sssl"
+                                        to="/legal/returnpolicy"
                                         class="ng-binding"
-                                      >WENS Link Terms &amp; Conditions</a>
+                                      >WENS Link Return Policy</nuxt-link>
                                     </span>
                                   </span>
                                 </span>
@@ -168,13 +162,13 @@
             </div>
 
             <div class="a-section a-spacing-medium a-spacing-top-large text-center">
-              <a
+              <nuxt-link
                 class="a-size-base-plus a-link-normal link_color_legal"
                 target="_blank"
                 rel="noopener"
                 title="Privacy Notice"
-                href="/sss"
-              >Privacy Notice</a>
+                to="/legal/privacy"
+              >Privacy Notice</nuxt-link>
             </div>
           </div>
         </div>
