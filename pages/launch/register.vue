@@ -71,7 +71,7 @@
 
       <div data-ng-hide="isLinkAllowed(step)" class="stepLinkBox" title="Dashboard">
         <img class="stepImg" ng-src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/notReadyStep._CB295853632_.png" src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/notReadyStep._CB295853632_.png">
-        <span class="step-text ng-binding">Dashboard</span>
+        <span class="step-text ng-binding">Payment</span>
       </div>
 
     </div><!-- end ngRepeat: step in navigation.Steps -->

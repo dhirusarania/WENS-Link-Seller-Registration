@@ -1,8 +1,8 @@
 <template>
   <form method="POST" action="https://api.razorpay.com/v1/checkout/embedded">
-    <input type="hidden" name="key_id" value="YOUR_KEY_ID" />
-    <input type="hidden" name="order_id" value="razorpay_order_id" />
-    <input type="hidden" name="name" value="Acme Corp" />
+    <input type="hidden" name="key_id" value="rzp_test_k9Sb2Jf6pfTMXr" />
+    <input type="hidden" name="order_id" value="order_DTpdI5BTMCJH3R" />
+    <input type="hidden" name="name" value="Acme Corhhhp" />
     <input type="hidden" name="description" value="A Wild Sheep Chase" />
     <input
       type="hidden"
@@ -21,4 +21,4 @@
     <input type="hidden" name="cancel_url" value="https://example.com/payment-cancel" />
     <button>Submit</button>
   </form>
-</template>
+</template> 

@@ -21,7 +21,8 @@
            <nuxt-link class="a-link-normal ng-binding" to="/login">Logout</nuxt-link>
       
         </ul>
-    </div></div>
+    </div>
+    </div>
 </div>
             
         
@@ -30,7 +31,7 @@
 
 
 <div class="a-box a-box-normal page-nav"><div class="a-box-inner a-padding-base">
-<div class="stepRow">
+<div class="stepRow hide">
     <!-- ngRepeat: step in navigation.Steps --><div ng-class="['step', getStepClass(step.currentStep ,step.stepCompletionStatus)]" ng-repeat="step in navigation.Steps" class="ng-scope step stepCompleted">
 
  
@@ -68,7 +69,7 @@
 
       <div data-ng-hide="isLinkAllowed(step)" class="stepLinkBox" title="Dashboard">
         <img class="stepImg" ng-src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/currentStepA._CB295853638_.png" src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/currentStepA._CB295853638_.png">
-        <span class="step-text ng-binding">Dashboard</span>
+        <span class="step-text ng-binding">Payment</span>
       </div>
 
     </div><!-- end ngRepeat: step in navigation.Steps -->
@@ -98,8 +99,16 @@
                     Hi {{business_name}}, You are almost there
                 </h1>
                 <p class="a-spacing-mini a-spacing-top-mini a-size-small a-color-tertiary ng-binding">
-                    Please complete the below steps and start selling to millions of customer
+                    Please complete the payment to Activate your account.
                 </p>
+
+
+                <h4 style="padding-top: 40px">You will be Charged a Fee of </h4>
+                <h3>₹ {{amount}}</h3>
+                <p>including GST + Gateway charge</p>
+
+
+
             </div>
             <!-- <div data-ng-show="isLaunched" class="a-section ng-hide">
                 <div class="a-box a-alert a-alert-success"><div class="a-box-inner a-alert-container"><i class="a-icon a-icon-alert"></i><div class="a-alert-content ng-binding">
@@ -1130,9 +1139,31 @@
         
         
             
-            
+              <form method="POST" action="https://api.razorpay.com/v1/checkout/embedded">
+    <input type="hidden" name="key_id" value="rzp_test_k9Sb2Jf6pfTMXr" />
+    <input type="hidden" name="order_id" value="order_DTpdI5BTMCJH3R" />
+    <input type="hidden" name="name" value="WENS Link" />
+    <input type="hidden" name="description" value="Seller Registration Payment" />
+    <input
+      type="hidden"
+      name="image"
+      value="https://wenslink.com/dashboard-icon-black.png"
+    />
+    <input type="hidden" name="prefill[name]" value="Gaurav Kumar" />
+    <input type="hidden" name="prefill[contact]" value="9123456780" />
+    <input type="hidden" name="prefill[email]" value="gaurav.kumar@example.com" />
+    <input
+      type="hidden"
+      name="notes[shipping address]"
+      value="L-16, The Business Centre, 61 Wellfield Road, New Delhi - 110001"
+    />
+    <input type="hidden" name="callback_url" value="https://example.com/payment-callback" />
+    <input type="hidden" name="cancel_url" value="https://example.com/payment-cancel" />
+    <button  class="a-button a-spacing-top-medium a-button-primary launch-submit"> <span class="a-button-inner"><input id="launch-main-button-post-launch" class="a-button-input" type="submit" aria-labelledby="a-autoid-22-announce"><span class="a-button-text" aria-hidden="true" id="a-autoid-22-announce">Pay ₹ {{amount}} & Launch your business </span></span></button>
+    
+  </form>
                 
-                    <span class="a-button a-spacing-top-medium a-button-primary launch-submit" id="a-autoid-22"><span class="a-button-inner"><input id="launch-main-button-post-launch" data-ng-click="submit()" class="a-button-input" type="submit" aria-labelledby="a-autoid-22-announce"><span class="a-button-text" aria-hidden="true" id="a-autoid-22-announce">Make payment & Launch your business </span></span></span>
+                   
                 
                 
             
@@ -1228,7 +1259,8 @@ import axios from 'axios'
 export default {
     data(){
         return{
-            business_name: ""
+            business_name: "",
+            amount: 1400
         }
     },
 
@@ -1255,3 +1287,10 @@ export default {
     
 }
 </script>
+
+
+<style scoped>
+.a-spacing-top-base{
+    display:none
+}
+</style>
