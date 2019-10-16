@@ -2058,8 +2058,8 @@
             name="notes[shipping address]"
             value="L-16, The Business Centre, 61 Wellfield Road, New Delhi - 110001"
           />
-          <input type="hidden" name="callback_url" value="http://127.0.0.1:8000/backend/api/payments/verify" />
-          <input type="hidden" name="cancel_url" value="http://localhost:3000/launch/failed" />
+          <input type="hidden" name="callback_url" value="http://seller.wenslink.com/backend/api/payments/verify" />
+          <input type="hidden" name="cancel_url" value="http://seller.wenslink.com/launch/failed" />
           <button id="goToGateway" class="hide a-button a-spacing-top-medium a-button-primary launch-submit">
             <span class="a-button-inner">
               <input
