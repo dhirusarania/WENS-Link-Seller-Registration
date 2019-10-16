@@ -39,5 +39,7 @@ export const state = () => ({
 
     getStep:  url +  "vendors/getStep/", //phone_number
 
+    createOrder:  url +  "payments/create/order", //phone_number
+
 
 })

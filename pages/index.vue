@@ -259,6 +259,7 @@ export default {
           switch (res.data.status) {
             case 200:
               localStorage.setItem('phone_number', $('#ap_email').val())
+              localStorage.setItem('user_id', res.data.user_info.id)
 
               if (res.data.user_info.isVerified == 1) {
                 switch (res.data.user_info.step) {

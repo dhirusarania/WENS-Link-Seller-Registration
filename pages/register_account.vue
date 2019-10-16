@@ -143,7 +143,7 @@
                               >
                                 <input
                                   type="number"
-                                  maxlength="50"
+                                  max="10"
                                   id="ap_phone_number"
                                   v-model="mobile"
                                   :class="['input-group', isValid('mobile')]"
@@ -199,7 +199,7 @@
 
                       <div class="a-section a-spacing-base ap_email_fields">
                         <div class="a-row a-spacing-micro">
-                          <label for="ap_email" class="a-form-label">Email (optional)</label>
+                          <label for="ap_email" class="a-form-label">Email</label>
                           <input
                             type="email"
                             maxlength="64"
@@ -399,7 +399,7 @@ export default {
       error_message: [],
       regex_email : /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
       regex_name : /^(?!\s)[a-zA-Z\. ]{4,50}$/,
-      regex_mobile: /\+?\d[\d -]{8,8}\d/,
+      regex_mobile: /^(\+\d{1,3}[- ]?)?\d{10}$/,
 
     }
   },
@@ -436,9 +436,6 @@ export default {
           this.isError = true
 
           if(err.response.status != 500){
-
-          
-
           for (var prop in err.response.data) {
             if (!err.response.data.hasOwnProperty(prop)) {
               continue

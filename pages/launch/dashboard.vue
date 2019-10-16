@@ -2044,9 +2044,9 @@
 
         <div class="a-section a-spacing-base a-spacing-top-base"></div>
 
-        <form method="POST" action="https://api.razorpay.com/v1/checkout/embedded">
-          <input type="hidden" name="key_id" value="rzp_test_k9Sb2Jf6pfTMXr" />
-          <input type="hidden" name="order_id" value="order_DTpdI5BTMCJH3R" />
+        <form id="payment_form" method="POST" action="https://api.razorpay.com/v1/checkout/embedded">
+          <input type="hidden" name="key_id" value="rzp_test_WQij2Xeq6EW9Ty" />
+          <input type="hidden" name="order_id" :value="order_id" />
           <input type="hidden" name="name" value="WENS Link" />
           <input type="hidden" name="description" value="Seller Registration Payment" />
           <input type="hidden" name="image" value="https://wenslink.com/dashboard-icon-black.png" />
@@ -2058,9 +2058,9 @@
             name="notes[shipping address]"
             value="L-16, The Business Centre, 61 Wellfield Road, New Delhi - 110001"
           />
-          <input type="hidden" name="callback_url" value="https://example.com/payment-callback" />
-          <input type="hidden" name="cancel_url" value="https://example.com/payment-cancel" />
-          <button class="a-button a-spacing-top-medium a-button-primary launch-submit">
+          <input type="hidden" name="callback_url" value="http://127.0.0.1:8000/backend/api/payments/verify" />
+          <input type="hidden" name="cancel_url" value="http://localhost:3000/launch/failed" />
+          <button id="goToGateway" class="hide a-button a-spacing-top-medium a-button-primary launch-submit">
             <span class="a-button-inner">
               <input
                 id="launch-main-button-post-launch"
@@ -2076,6 +2076,25 @@
             </span>
           </button>
         </form>
+
+        <span
+          class="a-button a-spacing-top-medium a-button-primary launch-submit"
+          @click="createOrder"
+        >
+          <span class="a-button-inner">
+            <input
+              id="launch-main-button-post-launch"
+              class="a-button-input"
+              type="submit"
+              aria-labelledby="a-autoid-22-announce"
+            />
+            <span
+              class="a-button-text"
+              aria-hidden="true"
+              id="a-autoid-22-announce"
+            >Pay ₹ {{amount}} & Launch your business</span>
+          </span>
+        </span>
 
         <div class="a-section a-spacing-medium a-spacing-top-large">
           <!-- 
@@ -2196,39 +2215,13 @@ export default {
   data() {
     return {
       business_name: '',
-      amount: 1400
+      amount: 1400,
+      order_id: ""
     }
   },
 
   mounted() {
     this.$store.dispatch('getStep')
-
-    axios({
-      method: 'POST',
-      url: 'https://api.razorpay.com/v1/orders',
-headers: {
-'Content-Type': 'application/json'
-        },
-    data: JSON.stringify({
-        amount: '1400',
-        currency: 'INR',
-        receipt: 'rcptid #1',
-        payment_capture: '1'
-      }),
-      auth: {
-        username: 'rzp_test_k9Sb2Jf6pfTMXr',
-        password: 'zpnYGwfAyBjGDFt3IyPsyUaT'
-      },withCredentials : false,
-
-    })
-      .then(res => {
-        console.log(res.data)
-        console.log('response')
-        this.business_name = res.data.company_name
-      })
-      .catch(err => {
-        console.log('error in request', err)
-      })
 
     axios({
       method: 'GET',
@@ -2245,6 +2238,34 @@ headers: {
       .catch(err => {
         console.log('error in request', err)
       })
+  },
+  methods: {
+    createOrder: function() {
+
+      var payload = new FormData()
+
+      payload.append('user' , localStorage.getItem('user_id'))
+      payload.append('amount' , '1440')
+      payload.append('capture' , 1)
+
+
+      axios({
+        method: 'POST',
+        url: this.$store.state.api.createOrder,
+        data: payload,
+        contentType: 'application/json'
+      })
+        .then(res => {
+          console.log(res.data)
+          console.log('response')
+          this.order_id = res.data.data.order_id
+          console.log(this.order_id)
+          setTimeout(function(){  $('#payment_form').submit() }, 500);
+        })
+        .catch(err => {
+          console.log('error in request', err)
+        })
+    }
   }
 }
 </script>
