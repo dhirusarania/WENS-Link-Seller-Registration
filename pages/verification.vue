@@ -223,6 +223,7 @@ export default {
           console.log('response')
           if (res.data.status == 200) {
             localStorage.setItem('phone_number', this.phone_number)
+            localStorage.setItem('user_id', res.data.user_id)
             this.$router.push('/continue')
           }
         })

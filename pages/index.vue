@@ -278,6 +278,9 @@ export default {
                   case 4:
                     this.$router.push('/launch/dashboard')
                     break
+                  case 5:
+                    this.$router.push('/launch/success')
+                    break
                 }
               } else {
                 this.$router.push('/verification')

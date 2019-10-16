@@ -1,26 +1,17 @@
 <template>
-    
-        <div>
-<div class="bg">
-  
-  <div class="card">
-    
-    <span class="card__success"><i class="ion-checkmark"></i></span>
-    
-    <h1 class="card__msg">Payment Complete</h1>
-    <h2 class="card__submsg">Welcome to WENS Link</h2>
-    
+  <div>
+    <div class="bg">
+      <div class="card">
+        <span class="card__success">
+          <i class="ion-checkmark"></i>
+        </span>
 
-
-    
+        <h1 class="card__msg">Payment Complete</h1>
+        <h2 class="card__submsg">Welcome to WENS Link</h2>
+        <nuxt-link to="/login">HOME<nuxt-link>
+      </div>
+    </div>
   </div>
-  
-</div>
-
-
-        </div>
-
-
 </template>
 
 
@@ -45,7 +36,7 @@
   padding: 80px 30px 25px 30px;
   text-align: center;
   position: relative;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 .card__success {
   position: absolute;
@@ -167,5 +158,4 @@
   font-size: 10px;
   color: #d3cece;
 }
-
 </style>
