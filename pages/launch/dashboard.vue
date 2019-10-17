@@ -149,7 +149,7 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Seller registration Fees</td>
+                        <td>Seller Registration Fees</td>
                         <td>Rs. 1000.00</td>
                       </tr>
                       <tr>
@@ -157,7 +157,7 @@
                         <td>180.00</td>
                       </tr>
                       <tr>
-                        <td>internet Charge</td>
+                        <td>Internet Charge</td>
                         <td>Rs. 30.00</td>
                       </tr>
                       <tr style="border-top: 1px solid #cccccc;">
