@@ -118,37 +118,59 @@
 
     <div class="a-section single-container">
       <div class="a-section single-main">
-        <div
-          data-ng-controller="greeting-fragment-controller"
-          data-ng-init="init('Greeting_BC_67635828-f378-41af-bc81-b6c1b3b8b032')"
-          data-ng-show="showFragment"
-          class="a-section ng-scope"
-        >
+        <div class="a-section ng-scope">
           <div class="a-section greeting-fragment">
-            <div data-ng-show="onPostLaunchPage" class="a-section a-text-center ng-hide">
+            <div data-ng-show="onPostLaunchPage" class="a-section ng-hide">
               <h1
                 id="post-launch-heading-id"
                 class="a-spacing-none post-launch-font-WENS Link-ember-light a-text-normal hide"
               >You are now an active seller on WENS Link.in</h1>
+              <h1
+                class="a-size-extra-large a-spacing-none a-text-normal ng-binding"
+              >Hi {{business_name}}, You are almost there</h1>
+              <p
+                class="a-spacing-mini a-spacing-top-mini a-size-small a-color-tertiary ng-binding"
+              >Please complete the payment to Activate your account.</p>
             </div>
             <div data-ng-show="!onPostLaunchPage" class="a-section">
-              <div data-ng-show="!isLaunched" class="a-section">
-                <h1
-                  class="a-size-extra-large a-spacing-none a-text-normal ng-binding"
-                >Hi {{business_name}}, You are almost there</h1>
-                <p
-                  class="a-spacing-mini a-spacing-top-mini a-size-small a-color-tertiary ng-binding"
-                >Please complete the payment to Activate your account.</p>
-
-                <h4 style="padding-top: 40px">You will be Charged a Fee of</h4>
-                <h3>₹ {{amount}}</h3>
-                <p>including GST + Gateway charge</p>
+              <div data-ng-show="!isLaunched" class="a-section row">
+                <div data-ng-show="!isLaunched" class="a-section col-sm-6">
+                  <h4 style="padding-top: 40px">You will be Charged a Fee of</h4>
+                  <h3 style="font-size: 50px!important;color: #006000;">₹ {{amount}}</h3>
+                  <p>including GST + Gateway charge</p>
+                </div>
+                <div class="col-sm-6">
+                  <table class="table">
+                    <thead class="thead-light">
+                      <tr>
+                        <th class="alignment font-weight font-size" style="font-size: 20px;">Invoice Summary</th>
+                        <th class="alignment font-weight font-size"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Seller registration Fees</td>
+                        <td>Rs. 1000.00</td>
+                      </tr>
+                      <tr>
+                        <td>18% IGST</td>
+                        <td>180.00</td>
+                      </tr>
+                      <tr>
+                        <td>internet Charge</td>
+                        <td>Rs. 30.00</td>
+                      </tr>
+                      <tr style="border-top: 1px solid #cccccc;">
+                        <td
+                          class="font-weight"
+                          style="font-size: 20px;font-weight: bold;color: #006000;"
+                        >Total Amount</td>
+                        <td style="font-size: 20px;font-weight: bold;color: #006000;">Rs. 1210.00</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
-              <!-- <div data-ng-show="isLaunched" class="a-section ng-hide">
-                <div class="a-box a-alert a-alert-success"><div class="a-box-inner a-alert-container"><i class="a-icon a-icon-alert"></i><div class="a-alert-content ng-binding">
-                    Congratulations, your account is now active. 
-                </div></div></div>
-              </div>-->
             </div>
           </div>
         </div>
@@ -2044,7 +2066,11 @@
 
         <div class="a-section a-spacing-base a-spacing-top-base"></div>
 
-        <form id="payment_form" method="POST" action="https://api.razorpay.com/v1/checkout/embedded">
+        <form
+          id="payment_form"
+          method="POST"
+          action="https://api.razorpay.com/v1/checkout/embedded"
+        >
           <input type="hidden" name="key_id" value="rzp_test_WQij2Xeq6EW9Ty" />
           <input type="hidden" name="order_id" :value="order_id" />
           <input type="hidden" name="name" value="WENS Link" />
@@ -2058,9 +2084,16 @@
             name="notes[shipping address]"
             value="L-16, The Business Centre, 61 Wellfield Road, New Delhi - 110001"
           />
-          <input type="hidden" name="callback_url" value="https://seller.wenslink.com/backend/api/payments/verify" />
+          <input
+            type="hidden"
+            name="callback_url"
+            value="https://seller.wenslink.com/backend/api/payments/verify"
+          />
           <input type="hidden" name="cancel_url" value="https://seller.wenslink.com/launch/failed" />
-          <button id="goToGateway" class="hide a-button a-spacing-top-medium a-button-primary launch-submit">
+          <button
+            id="goToGateway"
+            class="hide a-button a-spacing-top-medium a-button-primary launch-submit"
+          >
             <span class="a-button-inner">
               <input
                 id="launch-main-button-post-launch"
@@ -2215,8 +2248,8 @@ export default {
   data() {
     return {
       business_name: '',
-      amount: 1400,
-      order_id: ""
+      amount: 1210,
+      order_id: ''
     }
   },
 
@@ -2241,13 +2274,11 @@ export default {
   },
   methods: {
     createOrder: function() {
-
       var payload = new FormData()
 
-      payload.append('user' , localStorage.getItem('user_id'))
-      payload.append('amount' , '1440')
-      payload.append('capture' , 1)
-
+      payload.append('user', localStorage.getItem('user_id'))
+      payload.append('amount', this.amount)
+      payload.append('capture', 1)
 
       axios({
         method: 'POST',
@@ -2260,7 +2291,9 @@ export default {
           console.log('response')
           this.order_id = res.data.data.order_id
           console.log(this.order_id)
-          setTimeout(function(){  $('#payment_form').submit() }, 500);
+          setTimeout(function() {
+            $('#payment_form').submit()
+          }, 500)
         })
         .catch(err => {
           console.log('error in request', err)
@@ -2274,5 +2307,31 @@ export default {
 <style scoped>
 .a-spacing-top-base {
   display: none;
+}
+
+.table > thead,
+table > tbody {
+  background-color: #f3f3f3;
+}
+
+th {
+  color: black;
+}
+
+td {
+  color: black;
+}
+
+.table > thead > tr > th,
+.table > tbody > tr > td {
+  padding: 15px !important;
+}
+
+table > tbody > tr > td:nth-child(even) {
+  text-align: right;
+}
+
+thead tr {
+  border-bottom: 1px solid #cccccc;
 }
 </style>

@@ -8,8 +8,9 @@
 
         <h1 class="card__msg">Payment Complete</h1>
         <h2 class="card__submsg">Welcome to WENS Link</h2>
-        <nuxt-link to="/login">HOME<nuxt-link>
+        <nuxt-link to="/login">HOME</nuxt-link>
       </div>
+      
     </div>
   </div>
 </template>

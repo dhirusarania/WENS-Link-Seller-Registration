@@ -8,7 +8,7 @@
 
         <h1 class="card__msg">Payment Failed</h1>
         <h2 class="card__submsg">Please Try Again</h2>
-        <nuxt-link to="/launch/dashboard">Back<nuxt-link>
+        <nuxt-link to="/launch/dashboard">Back</nuxt-link>
       </div>
     </div>
   </div>
