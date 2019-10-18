@@ -145,7 +145,7 @@
                                   type="number"
                                   max="10"
                                   id="ap_phone_number"
-                                  v-model="mobile"
+                                  @input="checkLength('#ap_phone_number', 10)"
                                   :class="['input-group', isValid('mobile')]"
                                   placeholder="Mobile number"
                                   name="email"
@@ -445,6 +445,40 @@ export default {
           }
         })
        }
+    },
+        checkLength : function(field, maxChar){
+
+      
+      var ref = $(field),
+        val = ref.val();
+
+        console.log(/^(\+\d{1,3}[- ]?)?\d{10}$/.test(val) )
+        console.log(/^(\+\d{1,3}[- ]?)?\d{10}$/.test(val) )
+
+         ref.removeClass('has-error')
+                ref.addClass('has-success')
+
+        if ( !/^(\+\d{1,3}[- ]?)?\d{10}$/.test(val) ){
+          ref.val(function() {
+              console.log(val)
+                      ref.removeClass('has-success')
+        ref.addClass('has-error')
+       
+                console.log(val.substr(0, maxChar))
+                return val.substr(0, maxChar);       
+            });
+
+            console.log(val.length)
+
+            if(val.length == 10 || val.length == 11 ){
+
+                    ref.removeClass('has-error')
+                ref.addClass('has-success')
+
+            }
+        }
+
+
     },
     isValid: function(type) {
       switch (type) {

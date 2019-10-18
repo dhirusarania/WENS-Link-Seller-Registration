@@ -1,6 +1,130 @@
 <template>
   <div>
-    <div class="bg">
+
+
+        <div class="container">
+    <h3 class="tax-invoice">TAX INVOICE</h3>
+    <div class="row">
+      <div class="col-6 bold-font">
+        WENS Link
+      </div>
+      <div class="col-6">
+        <div class="top-right-address" style="text-align:right">
+          <h6 class="address-para margin-0">WENS Link Pvt. Ltd.</h6>
+          <p class="margin-0">Milan Path, 11 Bylane, House No. 13A</p>
+          <p class=" margin-0">Zoo Road Tiliali</p>
+          <p class="margin-0">Guwahati, Assam, 781024</p>
+          <p class="margin-0">India</p>
+          <p class="margin-0">GSTIN:18AACCW4881E1Z4</p>
+          <p class="margin-0">Phone: +91-XXXXXXXXXX</p>
+          <p class="margin-0">Email:XXXX@YYYYYY.com</p>
+        </div>
+      </div>
+    </div>
+    <div class="invoice-date">
+      <h5 class="bold-font ">Tax Invoice-BFRS-315498</h5>
+      <p class="margin-0">Invoice date:16/10/2019</p>
+      <p class="margin-0">Due date:16/10/2019</p>
+    </div>
+    <div class="billing-ID">
+      Billing Client ID:411434
+    </div>
+    <div class="">
+      <div class="bold-font">Invoiced To</div>
+      <div class="">
+        <h6 class="margin-0">WENS Link Pvt. Ltd.</h6>
+        <h6 class="margin-0">ATTN: WENS Link</h6>
+        <p class="margin-0">Milan Path, 11 Bylane, House No. 13A</p>
+        <p class="margin-0">Zoo Road, Tiliali</p>
+        <p class="margin-0">Guwahati, Assam, 781024</p>
+        <p>India</p>
+      </div>
+      <div class="">
+        <p class="margin-0">State Code:18</p>
+        <p>GSTIN:18AACCW4881E1Z4</p>
+      </div>
+    </div>
+
+    <div class="">
+      <table>
+        <thead>
+          <tr class="hex-bg">
+            <th class="center-align table-rborder">HSN</th>
+            <th class="center-align table-rborder">Description</th>
+            <th class="center-align ">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="table-rborder center-align">998313</td>
+            <td class="table-rborder"></td>
+            <td class="center-align">Rs. 10800.00</td>
+          </tr>
+          <tr class="hex-bg">
+            <td class="table-rborder"></td>
+            <td class="table-rborder right-align bold-font table-pad">Total Taxable Value of Supply</td>
+            <td class="center-align">Rs. 10800.00</td>
+          </tr>
+          <tr class="hex-bg">
+            <td class="table-rborder"></td>
+            <td class="table-rborder right-align bold-font table-pad">18.00% IGST</td>
+            <td class="center-align">Rs. 1944.00</td>
+          </tr>
+          <tr class="hex-bg">
+            <td class="table-rborder"></td>
+            <td class="table-rborder right-align bold-font table-pad">Total Value of Supply Including GST</td>
+            <td class="center-align">Rs. 12744.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="">
+      <h4>Payments</h4>
+      <table>
+        <tr class="hex-bg">
+          <th class="table-rborder center-align">Transaction Date</th>
+          <th class="table-rborder center-align">Gateway</th>
+          <th class="table-rborder center-align">Transaction ID</th>
+          <th class="center-align">Amount</th>
+        </tr>
+        <tr>
+          <td class="table-rborder center-align">16/10/2019</td>
+          <td class="table-rborder center-align">Credit Balance</td>
+          <td class="table-rborder center-align">NA</td>
+          <td class="center-align">Rs.0.00</td>
+        </tr>
+        <tr>
+          <td class="table-rborder center-align">16/10/2019</td>
+          <td class="table-rborder center-align">-</td>
+          <td class="table-rborder center-align">315498</td>
+          <td class="center-align">Rs.12744.00</td>
+        </tr>
+        <tr class="hex-bg">
+          <td class="center-align"></td>
+          <td class="center-align"></td>
+          <th class="table-rborder right-align bold-font table-pad">Amount Payable</th>
+          <th class="center-align">Rs.0.00</th>
+        </tr>
+      </table>
+    </div>
+    <!--
+    <div class="">
+      <div class="">
+        <p>All payments by transfer/cheque/ DD should be drawn locally in favour of BigFoot Retail Solutions Pvt. Ltd.</p>
+      </div>
+      <p>Bank and Other Commercial Details</p>
+      <ul>
+        <li>Account number: 75116037200</li>
+        <li>Bank:Kotak Mahindra Bank:Saket, New Delhi</li>
+        <li>RTGS/NEFT Code:KKBK0000187</li>
+        <li>GSTIN No: 07AAECB7131Q1ZC | PAN Number: AAECB7131Q | CIN Number: U72900DL2011PTC225614</li>
+      </ul>
+      <p>Disclaimer: Please ignore thus invoice if you have already upgraded to a ShipRocket SaaS plan through Shopify</p>
+
+    </div>-->
+  </div>
+
+    <!-- <div class="bg">
       <div class="card">
         <span class="card__success">
           <i class="ion-checkmark"></i>
@@ -11,7 +135,7 @@
         <nuxt-link to="/login">HOME</nuxt-link>
       </div>
       
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -158,5 +282,122 @@
   border-radius: 3px;
   font-size: 10px;
   color: #d3cece;
+}
+
+
+
+
+
+
+
+
+
+
+
+    h3 {
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .bold-font {
+      font-weight: bold;
+    }
+
+    .address-para {
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .center-align {
+      text-align: center;
+    }
+
+    .right-align {
+      text-align: right;
+    }
+
+    .margin-0 {
+      margin: 0;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+
+    .top-right-address {
+      margin-right: 9rem;
+    }
+
+    .tax-invoice {
+      margin: 17px 0 30px;
+    }
+
+    .invoice-date {
+      background-color: #edeff3;
+      margin: 14px 0 5px;
+      padding: 7px 3px;
+    }
+
+    .billing-ID {
+      font-weight: bold;
+      margin-bottom: 23px;
+    }
+
+    .hex-bg {
+      background: #edeff3;
+    }
+
+    tbody,
+    table {
+      border: 1px solid #d4d4d4;
+      width: 100%;
+    }
+
+    tr {
+      border-bottom: 1px solid #dee2e6;
+    }
+
+    .table-rborder {
+      border-right: 1px solid #d4d4d4;
+    }
+    .table-pad{
+      padding-right:7px;
+    }
+    @media print{
+      body {
+        -webkit-print-color-adjust:exact;
+        color-adjust:exact;
+    }
+    
+  }
+  @page{
+     size:A4; margin:8mm;
+   }
+
+
+.table > thead,
+table > tbody {
+  background-color: #fff;
+}
+
+th {
+  color: black;
+}
+
+td {
+  color: black;
+}
+
+.table > thead > tr > th,
+.table > tbody > tr > td {
+  padding: 15px !important;
+}
+
+table > tbody > tr > td:nth-child(even) {
+  text-align: right;
+}
+
+thead tr {
+  border-bottom: 1px solid #cccccc;
 }
 </style>

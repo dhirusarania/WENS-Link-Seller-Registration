@@ -66,8 +66,8 @@
 
                             <input
                               type="number"
-                              maxlength="128"
                               id="ap_email"
+                              @input="checkLength('#ap_email', 10)"
                               name="email"
                               tabindex="1"
                               class="a-input-text a-span12 auth-autofocus auth-required-field"
@@ -294,6 +294,24 @@ export default {
         .catch(err => {
           console.log(err.response)
         })
+    },
+    checkLength : function(field, maxChar){
+
+      
+      var ref = $(field),
+        val = ref.val();
+
+        console.log(/^(\+\d{1,3}[- ]?)?\d{10}$/.test(val) )
+        console.log(/^(\+\d{1,3}[- ]?)?\d{10}$/.test(val) )
+        if ( !/^(\+\d{1,3}[- ]?)?\d{10}$/.test(val) ){
+          ref.val(function() {
+              console.log(val)
+                console.log(val.substr(0, maxChar))
+                return val.substr(0, maxChar);       
+            });
+        }
+
+
     }
   }
 }
