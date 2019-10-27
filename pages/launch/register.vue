@@ -887,6 +887,9 @@ export default {
                 data: payload,
                 url: this.$store.state.api.seller_info,
                 contentType: 'application/json',
+                headers: {
+                    Authorization: 'Bearer ' + this.$cookies.get('access_token')
+                },
                 data: payload
             })
                 .then(res => {

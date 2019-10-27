@@ -134,7 +134,7 @@ export const actions = {
         return new Promise((resolve, reject) => {
 
             axios({
-                method: 'POST',
+                method: 'GET',
                 url: state.api.getStep,
                 headers: {
                     'Authorization': "Bearer " + this.$cookies.get('access_token')

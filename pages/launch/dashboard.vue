@@ -2278,7 +2278,6 @@ export default {
     createOrder: function() {
       var payload = new FormData()
 
-      payload.append('user', localStorage.getItem('user_id'))
       payload.append('amount', this.amount)
       payload.append('capture', 1)
 
@@ -2286,7 +2285,10 @@ export default {
         method: 'POST',
         url: this.$store.state.api.createOrder,
         data: payload,
-        contentType: 'application/json'
+        contentType: 'application/json',
+                headers: {
+                    Authorization: 'Bearer ' + this.$cookies.get('access_token')
+                  },
       })
         .then(res => {
           console.log(res.data)

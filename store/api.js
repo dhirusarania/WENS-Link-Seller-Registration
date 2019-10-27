@@ -25,7 +25,7 @@ export const state = () => ({
 
     seller_interview: url + "vendors/seller_interview/",
 
-    getCompany_name: url + "vendors/company_name/", //phone_number
+    getCompany_name: url + "vendors/company_name/get/", //phone_number
 
     tax: url + "vendors/tax/",
 
