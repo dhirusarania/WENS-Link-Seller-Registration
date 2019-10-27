@@ -228,7 +228,6 @@ methods:{
 
      var payload = new FormData()
 
-     payload.append('phone_number', localStorage.getItem('phone_number'))
      payload.append('gst_option', this.GST_selection)
      payload.append('gstin', this.gst)
      payload.append('pan', this.pan)
@@ -239,6 +238,9 @@ methods:{
                 method: 'PUT',
                 data: payload,
                 url: this.$store.state.api.tax,
+                headers: {
+                    Authorization: 'Bearer ' + this.$cookies.get('access_token')
+                  },
                 contentType: 'application/json',
                 data: payload
             })

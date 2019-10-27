@@ -102,8 +102,7 @@
                                         target="_blank"
                                         to="/legal/selleragreement"
                                         class="ng-binding"
-                                      >WENS Link Seller Agreement</nuxt-link>
-                                      and
+                                      >WENS Link Seller Agreement</nuxt-link>and
                                       <nuxt-link
                                         target="_blank"
                                         to="/legal/returnpolicy"
@@ -193,10 +192,8 @@ export default {
     }
   },
 
-  mounted(){
-
+  mounted() {
     this.$store.dispatch('getStep')
-
   },
 
   watch: {
@@ -219,8 +216,7 @@ export default {
     changeCompany: function() {
       if (this.regex.test(this.email) && this.isSelected == true) {
         var payload = new FormData()
-
-        payload.append('phone_number', localStorage.getItem('phone_number'))
+        
         payload.append('company_name', this.email)
 
         axios({
@@ -228,6 +224,9 @@ export default {
           data: payload,
           url: this.$store.state.api.company_name,
           contentType: 'application/json',
+          headers: {
+            Authorization: 'Bearer ' + this.$cookies.get('access_token')
+          },
           data: payload
         })
           .then(res => {

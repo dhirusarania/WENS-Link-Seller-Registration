@@ -28,7 +28,7 @@
 //             method: 'GET',
 //             url: state.api.getAllUser,
 //             headers: {
-//                 'Authorization': "bearer " + this.$cookies.get('access_token')
+//                 'Authorization': "Bearer " + this.$cookies.get('access_token')
 //             }
 //         })
 //             .then(res => {

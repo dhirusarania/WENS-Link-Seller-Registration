@@ -110,10 +110,8 @@
                     type="checkbox"
                     name="categoryCheckbox"
                     value="gl_book"
-                    data-a-input-name="categoryCheckbox"
-                    data-ng-model="categoryModel[category.id]"
-                    data-ng-true-value
-                    class="ng-pristine ng-valid"
+                    :data-checklist="q.name"
+                    class="ng-pristine ng-valid checklist"
                   />
                   <span class="a-label a-checkbox-label ng-binding">{{q.name}}</span>
                 </label>
@@ -167,7 +165,7 @@
                     value="manufacturer"
                     data-a-input-name
                     data-ng-model="checkboxModel[value.renderConfig.id][option.id]"
-                    class="ng-pristine ng-valid"
+                    class="ng-pristine ng-valid manufacture"
                   />
                   <span class="a-label a-checkbox-label ng-binding">I manufacture them</span>
                 </label>
@@ -185,7 +183,7 @@
                     value="reseller"
                     data-a-input-name
                     data-ng-model="checkboxModel[value.renderConfig.id][option.id]"
-                    class="ng-pristine ng-valid"
+                    class="ng-pristine ng-valid manufacture"
                   />
                   <span class="a-label a-checkbox-label ng-binding">I resell product that I buy</span>
                 </label>
@@ -203,7 +201,7 @@
                     value="importer"
                     data-a-input-name
                     data-ng-model="checkboxModel[value.renderConfig.id][option.id]"
-                    class="ng-pristine ng-valid"
+                    class="ng-pristine ng-valid manufacture"
                   />
                   <span class="a-label a-checkbox-label ng-binding">I import them</span>
                 </label>
@@ -255,7 +253,7 @@
                 data-a-native-class="dropdown-question"
                 id="sellerTurnoverInfo"
                 tabindex="-1"
-                class="a-native-dropdown dropdown-question"
+                class="a-native-dropdown dropdown-question turnover"
               >
                 <option class="a-prompt ng-binding" value>Select an option</option>
                 <!-- ngRepeat: option in renderOptions[key] -->
@@ -326,7 +324,7 @@
                 data-a-native-class="dropdown-question"
                 id="sellerProductQuantity"
                 tabindex="-1"
-                class="a-native-dropdown dropdown-question"
+                class="a-native-dropdown dropdown-question product_count"
               >
                 <option class="a-prompt ng-binding" value>Select an option</option>
                 <!-- ngRepeat: option in renderOptions[key] -->
@@ -418,7 +416,6 @@
                       data-ng-model="radioButtonModel[value.renderConfig.id]"
                       class="ng-pristine ng-valid"
                     />
-                    <i class="a-icon a-icon-radio"></i>
                     <span class="a-label a-radio-label ng-binding">Yes</span>
                   </label>
                 </div>
@@ -436,7 +433,6 @@
                       data-ng-model="radioButtonModel[value.renderConfig.id]"
                       class="ng-pristine ng-valid"
                     />
-                    <i class="a-icon a-icon-radio"></i>
                     <span class="a-label a-radio-label ng-binding">No</span>
                   </label>
                 </div>
@@ -777,15 +773,50 @@ data(){
       if(this.showError1 == false && this.showError2 == false && this.showError3 == false && this.showError4 == false && this.showError5 == false){
 
 
-      
+      var checklist = {}
+
+
+      $(".checklist").each(function(){
+        if($(this).prop('checked') == true){
+            checklist[$(this).data('checklist')] = true
+          }
+      })
+
+
+      var manufacture = {}
+
+
+      $(".manufacture").each(function(){
+
+        
+
+        if($(this).prop('checked') == true){
+
+            manufacture[$(this).val()] = true
+          
+          }else{
+
+      manufacture[$(this).val()] = false
+
+          }
+
+      })
+
      var payload = new FormData()
 
-     payload.append('phone_number', localStorage.getItem('phone_number'))
+     payload.append('seller_interview_category', JSON.stringify(checklist))
+     payload.append('manufacture', JSON.stringify(manufacture))
+     payload.append('turnover', $(".turnover :selected").text())
+     payload.append('product_quantity', $(".product_count :selected").text())
+     payload.append('other_website', $('input[name=sellerOtherPlatformInfo]:checked').val())
 
            axios({
                 method: 'PUT',
                 data: payload,
                 url: this.$store.state.api.seller_interview,
+                headers: {
+                    Authorization: 'Bearer ' + this.$cookies.get('access_token')
+                },
                 contentType: 'application/json',
                 data: payload
             })

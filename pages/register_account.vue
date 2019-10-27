@@ -150,6 +150,7 @@
                                   placeholder="Mobile number"
                                   name="email"
                                   tabindex="3"
+                                  v-model="mobile"
                                   class="a-input-text a-span12 a-spacing-micro auth-required-field auth-require-phone-validation"
                                   data-validation-id="phoneNumber"
                                 />
@@ -397,93 +398,87 @@ export default {
       password: '',
       isError: false,
       error_message: [],
-      regex_email : /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-      regex_name : /^(?!\s)[a-zA-Z\. ]{4,50}$/,
-      regex_mobile: /^(\+\d{1,3}[- ]?)?\d{10}$/,
-
+      regex_email: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+      regex_name: /^(?!\s)[a-zA-Z\. ]{4,50}$/,
+      regex_mobile: /^(\+\d{1,3}[- ]?)?\d{10}$/
     }
   },
   methods: {
     createAccount: function() {
+      if (
+        this.regex_email.test(this.email) &&
+        this.regex_name.test(this.name) &&
+        this.regex_mobile.test(this.mobile)
+      ) {
+        var payload = new FormData()
 
+        payload.append('name', this.name)
+        payload.append('phone_number', this.mobile)
+        payload.append('email', this.email)
+        payload.append('password', this.password)
 
-
-       if (this.regex_email.test(this.email) && this.regex_name.test(this.name) && this.regex_mobile.test(this.mobile)) {
-
-
-      var payload = new FormData()
-
-      payload.append('name', this.name)
-      payload.append('phone_number', this.mobile)
-      payload.append('email', this.email)
-      payload.append('password', this.password)
-
-      axios({
-        method: 'POST',
-        data: payload,
-        url: this.$store.state.api.register,
-        contentType: 'application/json',
-        data: payload
-      })
-        .then(res => {
-          console.log(res.data)
-          console.log('response')
-          localStorage.setItem('phone_number', this.mobile)
-          this.$router.push('/verification')
+        axios({
+          method: 'POST',
+          data: payload,
+          url: this.$store.state.api.register,
+          contentType: 'application/json',
+          data: payload
         })
-        .catch(err => {
-          console.log('error in request', err)
-          this.isError = true
+          .then(res => {
+            console.log(res.data)
+            console.log('response')
+            localStorage.setItem('phone_number', this.mobile)
+            this.$router.push('/verification')
+          })
+          .catch(err => {
+            console.log('error in request', err)
+            this.isError = true
 
-          if(err.response.status != 500){
-          for (var prop in err.response.data) {
-            if (!err.response.data.hasOwnProperty(prop)) {
-              continue
+            if (err.response.status != 500) {
+              for (var prop in err.response.data) {
+                if (!err.response.data.hasOwnProperty(prop)) {
+                  continue
+                }
+                this.error_message.push(err.response.data[prop][0])
+              }
             }
-            this.error_message.push(err.response.data[prop][0])
-          }
-          }
-        })
-       }
+          })
+      } else {
+        console.log('Wrong')
+        console.log(this.regex_mobile.test(this.mobile))
+      }
     },
-        checkLength : function(field, maxChar){
-
-      
+    checkLength: function(field, maxChar) {
       var ref = $(field),
-        val = ref.val();
+        val = ref.val()
 
-        console.log(/^(\+\d{1,3}[- ]?)?\d{10}$/.test(val) )
-        console.log(/^(\+\d{1,3}[- ]?)?\d{10}$/.test(val) )
+      console.log(/^(\+\d{1,3}[- ]?)?\d{10}$/.test(val))
+      console.log(/^(\+\d{1,3}[- ]?)?\d{10}$/.test(val))
 
-         ref.removeClass('has-error')
-                ref.addClass('has-success')
+      ref.removeClass('has-error')
+      ref.addClass('has-success')
 
-        if ( !/^(\+\d{1,3}[- ]?)?\d{10}$/.test(val) ){
-          ref.val(function() {
-              console.log(val)
-                      ref.removeClass('has-success')
-        ref.addClass('has-error')
-       
-                console.log(val.substr(0, maxChar))
-                return val.substr(0, maxChar);       
-            });
+      if (!/^(\+\d{1,3}[- ]?)?\d{10}$/.test(val)) {
+        ref.val(function() {
+          console.log(val)
+          ref.removeClass('has-success')
+          ref.addClass('has-error')
 
-            console.log(val.length)
+          console.log(val.substr(0, maxChar))
+          return val.substr(0, maxChar)
+        })
 
-            if(val.length == 10 || val.length == 11 ){
+        console.log(val.length)
 
-                    ref.removeClass('has-error')
-                ref.addClass('has-success')
-
-            }
+        if (val.length == 10 || val.length == 11) {
+          ref.removeClass('has-error')
+          ref.addClass('has-success')
         }
-
-
+      }
     },
     isValid: function(type) {
       switch (type) {
         case 'name':
-
           return this.name == ''
             ? ''
             : this.regex_name.test(this.name)
@@ -492,7 +487,6 @@ export default {
 
           break
         case 'mobile':
-
           return this.mobile == null
             ? ''
             : this.regex_mobile.test(this.mobile)
@@ -501,7 +495,6 @@ export default {
 
           break
         case 'email':
-
           return this.email == ''
             ? ''
             : this.regex_email.test(this.email)
@@ -530,3 +523,5 @@ export default {
   display: none !important;
 }
 </style>
+
+

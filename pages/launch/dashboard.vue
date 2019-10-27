@@ -2259,8 +2259,10 @@ export default {
     axios({
       method: 'GET',
       url:
-        this.$store.state.api.getCompany_name +
-        localStorage.getItem('phone_number'),
+        this.$store.state.api.getCompany_name,
+        headers: {
+                    Authorization: 'Bearer ' + this.$cookies.get('access_token')
+                  },
       contentType: 'application/json'
     })
       .then(res => {

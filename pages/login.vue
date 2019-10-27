@@ -101,7 +101,7 @@
                                   tabindex="3"
                                   href="https://sellercentral.WENS Link.in/ap/forgotpassword?showRememberMe=true&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;marketPlaceId=A21TJRUUN4KGV&amp;pageId=amzn_sw_signup_in&amp;openid.return_to=https%3A%2F%2Fsellercentral.WENS Link.in%2Fsw%2Fin%2FINSSR%2Fstep%2FSignUp%3Fpassthrough%252Faccount%3Dsoa%26passthrough%252FsuperSource%3DOAR%26ref_%3Das_in_soa_hp%26passthrough%252FmarketplaceID%3DA21TJRUUN4KGV%26passthrough%252F%26productTier%3DSILVER%26productType%3DSellOnWENS Link%26marketplaceId%3DA21TJRUUN4KGV%26passthrough%252Ftag%3DREDIRECTT1%26redirectAP%3D1&amp;prevRID=CYNRM35MQCJC1BR99Y6D&amp;openid.assoc_handle=amzn_sw_signup_in&amp;openid.mode=checkid_setup&amp;prepopulatedLoginId=&amp;failedSignInCount=0&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0"
                                 >Forgot Password</a>
-                              </div> -->
+                              </div>-->
                             </div>
 
                             <input
@@ -258,8 +258,19 @@ export default {
 
           switch (res.data.status) {
             case 200:
-              localStorage.setItem('phone_number', $('#ap_email').val())
-              localStorage.setItem('user_id', res.data.user_info.id)
+              this.$cookies.set('access_token', res.data.access, {
+                path: '/',
+                // httpOnly : true,
+                // secure: true,
+                maxAge: 60 * 60 * 24 * 7
+              })
+
+              this.$cookies.set('refresh_token', res.data.refresh, {
+                path: '/',
+                // httpOnly : true,
+                // secure: true,
+                maxAge: 60 * 60 * 24 * 7
+              })
 
               if (res.data.user_info.isVerified == 1) {
                 switch (res.data.user_info.step) {
@@ -295,23 +306,19 @@ export default {
           console.log(err.response)
         })
     },
-    checkLength : function(field, maxChar){
-
-      
+    checkLength: function(field, maxChar) {
       var ref = $(field),
-        val = ref.val();
+        val = ref.val()
 
-        console.log(/^(\+\d{1,3}[- ]?)?\d{10}$/.test(val) )
-        console.log(/^(\+\d{1,3}[- ]?)?\d{10}$/.test(val) )
-        if ( !/^(\+\d{1,3}[- ]?)?\d{10}$/.test(val) ){
-          ref.val(function() {
-              console.log(val)
-                console.log(val.substr(0, maxChar))
-                return val.substr(0, maxChar);       
-            });
-        }
-
-
+      console.log(/^(\+\d{1,3}[- ]?)?\d{10}$/.test(val))
+      console.log(/^(\+\d{1,3}[- ]?)?\d{10}$/.test(val))
+      if (!/^(\+\d{1,3}[- ]?)?\d{10}$/.test(val)) {
+        ref.val(function() {
+          console.log(val)
+          console.log(val.substr(0, maxChar))
+          return val.substr(0, maxChar)
+        })
+      }
     }
   }
 }
