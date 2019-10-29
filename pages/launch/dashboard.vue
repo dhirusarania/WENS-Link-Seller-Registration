@@ -2293,7 +2293,7 @@ export default {
         .then(res => {
           console.log(res.data)
           console.log('response')
-          this.order_id = res.data.data.order_id
+          this.order_id = res.data.order_id
           console.log(this.order_id)
           setTimeout(function() {
             $('#payment_form').submit()

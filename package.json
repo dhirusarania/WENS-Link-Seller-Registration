@@ -27,6 +27,7 @@
     "@vue/test-utils": "^1.0.0-beta.27",
     "babel-jest": "^24.1.0",
     "jest": "^24.1.0",
+    "postcss-color-mod-function": "^3.0.3",
     "vue-jest": "^3.0.3"
   },
   "jest": {

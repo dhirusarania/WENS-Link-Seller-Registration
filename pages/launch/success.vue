@@ -2,19 +2,21 @@
   <div>
 
 
-        <div class="container">
-    <h3 class="tax-invoice">TAX INVOICE</h3>
+          <div class="container">
+    <div class="center-align">
+      <h3 class="tax-invoice">TAX INVOICE</h3>
+      <p class="logo_name">WENSLink</p>
+    </div>
     <div class="row">
       <div class="col-6 bold-font">
-        WENS Link
+        <img class="logo" src="images/LOGO.png" alt="logo">
       </div>
       <div class="col-6">
         <div class="top-right-address" style="text-align:right">
-          <h6 class="address-para margin-0">WENS Link Pvt. Ltd.</h6>
+          <h6 class="address-para margin-0">WENSLink Pvt. Ltd.</h6>
           <p class="margin-0">Milan Path, 11 Bylane, House No. 13A</p>
           <p class=" margin-0">Zoo Road Tiliali</p>
           <p class="margin-0">Guwahati, Assam, 781024</p>
-          <p class="margin-0">India</p>
           <p class="margin-0">GSTIN:18AACCW4881E1Z4</p>
           <p class="margin-0">Phone: +91-XXXXXXXXXX</p>
           <p class="margin-0">Email:XXXX@YYYYYY.com</p>
@@ -22,7 +24,7 @@
       </div>
     </div>
     <div class="invoice-date">
-      <h5 class="bold-font ">Tax Invoice-BFRS-315498</h5>
+      <h5 class="bold-font ">Tax Invoice-WL-1001</h5>
       <p class="margin-0">Invoice date:16/10/2019</p>
       <p class="margin-0">Due date:16/10/2019</p>
     </div>
@@ -32,11 +34,11 @@
     <div class="">
       <div class="bold-font">Invoiced To</div>
       <div class="">
-        <h6 class="margin-0">WENS Link Pvt. Ltd.</h6>
-        <h6 class="margin-0">ATTN: WENS Link</h6>
-        <p class="margin-0">Milan Path, 11 Bylane, House No. 13A</p>
-        <p class="margin-0">Zoo Road, Tiliali</p>
-        <p class="margin-0">Guwahati, Assam, 781024</p>
+        <h6 class="margin-0">TecMeadows</h6>
+        <!-- <h6 class="margin-0">ATTN: WENS Link</h6> -->
+        <p class="margin-0">Mainaak Green Apartment</p>
+        <p class="margin-0">GS Road, Christian Basti</p>
+        <p class="margin-0">Guwahati, Assam, 781005</p>
         <p>India</p>
       </div>
       <div class="">
@@ -49,7 +51,7 @@
       <table>
         <thead>
           <tr class="hex-bg">
-            <th class="center-align table-rborder">HSN</th>
+            <th class="center-align table-rborder">Transaction ID</th>
             <th class="center-align table-rborder">Description</th>
             <th class="center-align ">Total</th>
           </tr>
@@ -57,28 +59,28 @@
         <tbody>
           <tr>
             <td class="table-rborder center-align">998313</td>
-            <td class="table-rborder"></td>
-            <td class="center-align">Rs. 10800.00</td>
-          </tr>
-          <tr class="hex-bg">
-            <td class="table-rborder"></td>
-            <td class="table-rborder right-align bold-font table-pad">Total Taxable Value of Supply</td>
-            <td class="center-align">Rs. 10800.00</td>
+            <td class="table-rborder center-align">Seller Registration Fees</td>
+            <td class="center-align">Rs. 1000.00</td>
           </tr>
           <tr class="hex-bg">
             <td class="table-rborder"></td>
             <td class="table-rborder right-align bold-font table-pad">18.00% IGST</td>
-            <td class="center-align">Rs. 1944.00</td>
+            <td class="center-align">Rs. 180.00</td>
           </tr>
           <tr class="hex-bg">
             <td class="table-rborder"></td>
-            <td class="table-rborder right-align bold-font table-pad">Total Value of Supply Including GST</td>
-            <td class="center-align">Rs. 12744.00</td>
+            <td class="table-rborder right-align bold-font table-pad">Internet Charge</td>
+            <td class="center-align">Rs. 30.00</td>
+          </tr>
+          <tr class="hex-bg">
+            <td class="table-rborder"></td>
+            <td class="table-rborder right-align bold-font table-pad">Total Charge Including GST</td>
+            <td class="center-align bold-font">Rs. 1210.00</td>
           </tr>
         </tbody>
       </table>
     </div>
-    <div class="">
+    <!-- <div class="">
       <h4>Payments</h4>
       <table>
         <tr class="hex-bg">
@@ -106,7 +108,7 @@
           <th class="center-align">Rs.0.00</th>
         </tr>
       </table>
-    </div>
+    </div> -->
     <!--
     <div class="">
       <div class="">
