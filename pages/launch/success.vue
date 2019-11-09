@@ -34,7 +34,7 @@
     <div class="">
       <div class="bold-font">Invoiced To</div>
       <div class="">
-        <h4 class="margin-0 padding-0 bold-font">TecMeadows</h4>
+        <h4 class="margin-0 padding-0 bold-font">{{invoice.company_name}}</h4>
         <!-- <h6 class="margin-0">ATTN: WENS Link</h6> -->
         <p class="margin-0">{{invoice.address1}}</p>
         <p class="margin-0">{{invoice.address2}}</p>
