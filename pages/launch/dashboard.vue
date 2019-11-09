@@ -2089,7 +2089,7 @@
             name="callback_url"
             value="https://seller.wenslink.com/backend/api/payments/verify"
           />
-          <input type="hidden" name="cancel_url" value="https://seller.wenslink.com/launch/failed" />
+          <input type="hidden" name="cancel_url" :value="'https://seller.wenslink.com/backend/api/payments/cancelled/' + order_id" />
           <button
             id="goToGateway"
             class="hide a-button a-spacing-top-medium a-button-primary launch-submit"

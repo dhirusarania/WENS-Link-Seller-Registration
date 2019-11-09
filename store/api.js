@@ -41,5 +41,7 @@ export const state = () => ({
 
     createOrder:  url +  "payments/create/order", //phone_number
 
+    invoice_success:  url +  "payments/invoice", //phone_number
+
 
 })

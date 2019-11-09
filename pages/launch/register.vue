@@ -878,7 +878,7 @@ export default {
      payload.append('addressline1', this.addressline_1)
      payload.append('addressline2', this.addressline_2)
      payload.append('city', this.city)
-     payload.append('state', this.state)
+     payload.append('state', $("#state option:selected").text())
 
 
 

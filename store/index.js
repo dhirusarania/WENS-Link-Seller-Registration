@@ -162,6 +162,9 @@ export const actions = {
                         case 4:
                           this.$router.push('/launch/dashboard')
                           break
+                        case 5:
+                          this.$router.push('/launch/success')
+                          break
                       }
 
                     resolve(res)
@@ -554,6 +557,32 @@ export const actions = {
                 // headers: {
                 //     'Authorization': "Bearer " + this.$cookies.get('access_token')
                 // }
+            })
+                .then(res => {
+                    console.log(res.data)
+                    console.log('response')
+                    resolve(res)
+                })
+                .catch(err => {
+                    console.log('error in request', err)
+                })
+        })
+    },
+
+
+    invoice_success({ commit, state }, payload) {
+
+
+        return new Promise((resolve, reject) => {
+
+            axios({
+                method: 'GET',
+                data: payload,
+                url: state.api.invoice_success ,
+                contentType: 'application/json',
+                headers: {
+                    'Authorization': "Bearer " + this.$cookies.get('access_token')
+                }
             })
                 .then(res => {
                     console.log(res.data)

@@ -5,14 +5,14 @@
           <div class="container">
     <div class="center-align">
       <h3 class="tax-invoice">TAX INVOICE</h3>
-      <p class="logo_name">WENSLink</p>
+      <!-- <p class="logo_name">WENSLink</p> -->
     </div>
-    <div class="row">
-      <div class="col-6 bold-font">
-        <img class="logo" src="images/LOGO.png" alt="logo">
+    <div style="display:flex; justify-content: space-between">
+      <div class="bold-font">
+        <img class="logo" style="width: 90px;" src="~static/dashboard-icon-black.png" alt="logo">
       </div>
-      <div class="col-6">
-        <div class="top-right-address" style="text-align:right">
+      <div class="">
+        <div class="" style="text-align:right">
           <h6 class="address-para margin-0">WENSLink Pvt. Ltd.</h6>
           <p class="margin-0">Milan Path, 11 Bylane, House No. 13A</p>
           <p class=" margin-0">Zoo Road Tiliali</p>
@@ -24,26 +24,26 @@
       </div>
     </div>
     <div class="invoice-date">
-      <h5 class="bold-font ">Tax Invoice-WL-1001</h5>
-      <p class="margin-0">Invoice date:16/10/2019</p>
-      <p class="margin-0">Due date:16/10/2019</p>
+      <h5 class="bold-font ">Tax Invoice-{{invoice.invoice_id}}</h5>
+      <p class="margin-0">Invoice date:{{invoice.created_date}}</p>
+      <!-- <p class="margin-0">Due date:16/10/2019</p> -->
     </div>
     <div class="billing-ID">
-      Billing Client ID:411434
+      <!-- Billing Client ID:411434 -->
     </div>
     <div class="">
       <div class="bold-font">Invoiced To</div>
       <div class="">
-        <h6 class="margin-0">TecMeadows</h6>
+        <h4 class="margin-0 padding-0 bold-font">TecMeadows</h4>
         <!-- <h6 class="margin-0">ATTN: WENS Link</h6> -->
-        <p class="margin-0">Mainaak Green Apartment</p>
-        <p class="margin-0">GS Road, Christian Basti</p>
-        <p class="margin-0">Guwahati, Assam, 781005</p>
-        <p>India</p>
+        <p class="margin-0">{{invoice.address1}}</p>
+        <p class="margin-0">{{invoice.address2}}</p>
+        <p class="margin-0">{{invoice.city}}, {{invoice.state}}, {{invoice.pincode}}</p>
+        <p>{{invoice.country}}</p>
       </div>
       <div class="">
-        <p class="margin-0">State Code:18</p>
-        <p>GSTIN:18AACCW4881E1Z4</p>
+        <!-- <p class="margin-0">State Code:18</p> -->
+        <p v-if="invoice.gstin != ''"> GSTIN:{{invoice.gstin}}</p>
       </div>
     </div>
 
@@ -53,14 +53,14 @@
           <tr class="hex-bg">
             <th class="center-align table-rborder">Transaction ID</th>
             <th class="center-align table-rborder">Description</th>
-            <th class="center-align ">Total</th>
+            <th class="center-align table-rborder">Total</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td class="table-rborder center-align">998313</td>
-            <td class="table-rborder center-align">Seller Registration Fees</td>
-            <td class="center-align">Rs. 1000.00</td>
+            <td class="table-rborder center-align" style="line-height: 60px;">{{invoice.order_id}}</td>
+            <td class="table-rborder center-align" style="line-height: 60px;">Seller Registration Fees</td>
+            <td class="center-align" style="line-height: 60px;">Rs. 1000.00</td>
           </tr>
           <tr class="hex-bg">
             <td class="table-rborder"></td>
@@ -74,8 +74,8 @@
           </tr>
           <tr class="hex-bg">
             <td class="table-rborder"></td>
-            <td class="table-rborder right-align bold-font table-pad">Total Charge Including GST</td>
-            <td class="center-align bold-font">Rs. 1210.00</td>
+            <td class="table-rborder right-align bold-font table-pad" style="line-height: 60px;">Total Charge Including GST</td>
+            <td class="center-align bold-font" style="line-height: 60px;">Rs. 1210.00</td>
           </tr>
         </tbody>
       </table>
@@ -124,7 +124,12 @@
       <p>Disclaimer: Please ignore thus invoice if you have already upgraded to a ShipRocket SaaS plan through Shopify</p>
 
     </div>-->
+      <div>
+    <button type="button" class="hide-print" @click="print">Print</button>
   </div>
+
+  </div>
+
 
     <!-- <div class="bg">
       <div class="card">
@@ -140,6 +145,32 @@
     </div> -->
   </div>
 </template>
+
+
+<script>
+export default {
+  data(){
+    return{
+      invoice: []
+    }
+  },
+  mounted(){
+
+    this.$store.dispatch('getStep')
+
+    this.$store.dispatch('invoice_success').then( res => {
+      // console.log(res)
+      this.invoice = res.data
+    })
+
+  },
+  methods:{
+    print: function(){
+      window.print()
+    }
+  }
+}
+</script>
 
 
 <style scoped>
@@ -335,9 +366,10 @@
     }
 
     .invoice-date {
-      background-color: #edeff3;
+      background-color: #edeff3!important;
       margin: 14px 0 5px;
       padding: 7px 3px;
+      -webkit-print-color-adjust: exact;
     }
 
     .billing-ID {
@@ -346,7 +378,8 @@
     }
 
     .hex-bg {
-      background: #edeff3;
+      background: #edeff3!important;
+      -webkit-print-color-adjust: exact;
     }
 
     tbody,
@@ -361,6 +394,7 @@
 
     .table-rborder {
       border-right: 1px solid #d4d4d4;
+      border-bottom: 1px solid #d4d4d4;
     }
     .table-pad{
       padding-right:7px;
@@ -396,7 +430,7 @@ td {
 }
 
 table > tbody > tr > td:nth-child(even) {
-  text-align: right;
+  /* text-align: right; */
 }
 
 thead tr {

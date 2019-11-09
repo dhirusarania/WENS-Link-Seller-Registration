@@ -76,6 +76,12 @@ body {
   font-weight: bold;
 }
 
+@media print {
+  .hide-print {
+    display: none;
+  }
+}
+
 .font-10 {
   font-size: 10px;
 }
