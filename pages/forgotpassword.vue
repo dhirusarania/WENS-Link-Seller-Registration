@@ -7,7 +7,7 @@
             <img style="height: 100%;width: 45px;" src="~static/dashboard-icon-black.png" />
             <p
               style="margin-left: 15px;font-size:19px;font-weight: bold"
-            >WENS Link Seller Registration</p>
+            >WENSLink Seller Registration</p>
           </div>
         </div>
       </div>
@@ -59,7 +59,7 @@
       </h1>
 
       <p>
-        Enter the email address or mobile phone number associated with your WENS Link account.
+        Enter the email address or mobile phone number associated with your WENSLink account.
 
         
       </p>
@@ -108,7 +108,7 @@
       Has your email address or mobile phone number changed?
     </h4>
     <p id="ap_forgotpassword1A_footer_string_paragraph">
-      If you no longer use the e-mail address associated with your WENS Link account, you may contact <a href="/gp/help/customer/account-issues/ref=ap_cs_forgot_pwd?ie=UTF8">Customer Service</a> for help restoring access to your account.
+      If you no longer use the e-mail address associated with your WENSLink account, you may contact <a href="/gp/help/customer/account-issues/ref=ap_cs_forgot_pwd?ie=UTF8">Customer Service</a> for help restoring access to your account.
     </p>
   </div>
 
@@ -134,7 +134,7 @@
         <div class="a-section a-spacing-none a-text-center">
           <span
             class="a-size-mini a-color-secondary"
-          >© 1996-2019, WENS Link.com, Inc. or its affiliates</span>
+          >© 1996-2019, WENSLink.com, Inc. or its affiliates</span>
         </div>
       </div>
     </div>

@@ -11,7 +11,7 @@
                 style="height: 75px;padding-bottom: 10px; object-fit:contain"
                 class="company_logo"
               />
-              <h4 style="padding-left: 10px" class="margin-top-10">WENS Link Seller Registration</h4>
+              <h4 style="padding-left: 10px" class="margin-top-10">WENSLink Seller Registration</h4>
             </div>
           </div>
         </div>

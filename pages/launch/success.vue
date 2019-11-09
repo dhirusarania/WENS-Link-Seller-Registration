@@ -24,8 +24,8 @@
       </div>
     </div>
     <div class="invoice-date">
-      <h5 class="bold-font ">Tax Invoice-{{invoice.invoice_id}}</h5>
-      <p class="margin-0">Invoice date:{{invoice.created_date}}</p>
+      <h5 class="bold-font ">Tax Invoice - {{invoice.id}}</h5>
+      <h5 class="margin-0 bold-font ">Invoice date : {{date}}</h5>
       <!-- <p class="margin-0">Due date:16/10/2019</p> -->
     </div>
     <div class="billing-ID">
@@ -35,7 +35,7 @@
       <div class="bold-font">Invoiced To</div>
       <div class="">
         <h4 class="margin-0 padding-0 bold-font">{{invoice.company_name}}</h4>
-        <!-- <h6 class="margin-0">ATTN: WENS Link</h6> -->
+        <!-- <h6 class="margin-0">ATTN: WENSLink</h6> -->
         <p class="margin-0">{{invoice.address1}}</p>
         <p class="margin-0">{{invoice.address2}}</p>
         <p class="margin-0">{{invoice.city}}, {{invoice.state}}, {{invoice.pincode}}</p>
@@ -44,6 +44,7 @@
       <div class="">
         <!-- <p class="margin-0">State Code:18</p> -->
         <p v-if="invoice.gstin != ''"> GSTIN:{{invoice.gstin}}</p>
+        <p v-if="invoice.gstin == ''">Please Update your GSTIN to enable Dashboard Features</p>
       </div>
     </div>
 
@@ -58,7 +59,7 @@
         </thead>
         <tbody>
           <tr>
-            <td class="table-rborder center-align" style="line-height: 60px;">{{invoice.order_id}}</td>
+            <td class="table-rborder center-align" style="line-height: 60px;">{{invoice.invoice_id}}</td>
             <td class="table-rborder center-align" style="line-height: 60px;">Seller Registration Fees</td>
             <td class="center-align" style="line-height: 60px;">Rs. 1000.00</td>
           </tr>
@@ -69,7 +70,7 @@
           </tr>
           <tr class="hex-bg">
             <td class="table-rborder"></td>
-            <td class="table-rborder right-align bold-font table-pad">Internet Charge</td>
+            <td class="table-rborder right-align bold-font table-pad">Transaction Charge</td>
             <td class="center-align">Rs. 30.00</td>
           </tr>
           <tr class="hex-bg">
@@ -109,9 +110,9 @@
         </tr>
       </table>
     </div> -->
-    <!--
+    
     <div class="">
-      <div class="">
+      <!-- <div class="">
         <p>All payments by transfer/cheque/ DD should be drawn locally in favour of BigFoot Retail Solutions Pvt. Ltd.</p>
       </div>
       <p>Bank and Other Commercial Details</p>
@@ -120,11 +121,14 @@
         <li>Bank:Kotak Mahindra Bank:Saket, New Delhi</li>
         <li>RTGS/NEFT Code:KKBK0000187</li>
         <li>GSTIN No: 07AAECB7131Q1ZC | PAN Number: AAECB7131Q | CIN Number: U72900DL2011PTC225614</li>
-      </ul>
-      <p>Disclaimer: Please ignore thus invoice if you have already upgraded to a ShipRocket SaaS plan through Shopify</p>
+      </ul> -->
+      <p style="    font-size: 15px;
+    margin-top: 40px;">Disclaimer: This is computer generated invoice no signature required.</p>
 
-    </div>-->
-      <div>
+    </div>
+      <div style="display: flex;
+    justify-content: center;
+    margin-top: 30px;">
     <button type="button" class="hide-print" @click="print">Print</button>
   </div>
 
@@ -138,7 +142,7 @@
         </span>
 
         <h1 class="card__msg">Payment Complete</h1>
-        <h2 class="card__submsg">Welcome to WENS Link</h2>
+        <h2 class="card__submsg">Welcome to WENSLink</h2>
         <nuxt-link to="/login">HOME</nuxt-link>
       </div>
       
@@ -151,21 +155,24 @@
 export default {
   data(){
     return{
-      invoice: []
+      invoice: [],
+      date: ""
     }
   },
   mounted(){
-
+    document.title = 'WENSLink Seller Registration Invoice'
     this.$store.dispatch('getStep')
 
     this.$store.dispatch('invoice_success').then( res => {
       // console.log(res)
       this.invoice = res.data
+      this.date = this.invoice['created_date'].split('T')[0].split('-').reverse().join('-')
     })
 
   },
   methods:{
     print: function(){
+      document.title = 'My new title'
       window.print()
     }
   }

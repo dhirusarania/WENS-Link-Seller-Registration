@@ -42,7 +42,7 @@
               </div>
             </div>
             <div class="a-section auth-pagelet-container">
-              <!-- show a warning modal dialog when the third party account is connected with WENS Link -->
+              <!-- show a warning modal dialog when the third party account is connected with WENSLink -->
 
               <div class="a-section auth-pagelet-container">
                 <form
@@ -50,7 +50,7 @@
                   name="register"
                   method="post"
                   novalidate
-                  action="https://sellercentral.WENS Link.in/ap/register"
+                  action="https://sellercentral.WENSLink.in/ap/register"
                   class="ap_ango_default auth-validate-form-moa fwcim-form"
                   data-fwcim-id="078d6cd3"
                 >
@@ -377,7 +377,7 @@
           <div class="a-section a-spacing-none a-text-center">
             <span
               class="a-size-mini a-color-secondary"
-            >© 1996-2019, WENS Link.com, Inc. or its affiliates</span>
+            >© 1996-2019, WENSLink.com, Inc. or its affiliates</span>
           </div>
         </div>
       </div>

@@ -10,7 +10,7 @@
                 style="height: 45px;padding-bottom: 10px"
                 class="company_logo"
               />
-              <p class="margin-top-10">WENS Link Seller Registration</p>
+              <p class="margin-top-10">WENSLink Seller Registration</p>
             </div>
           </div>
         </div>
@@ -43,7 +43,7 @@
 
               <!-- Set cross domain sso variables to be used for making Ajax calls to central Identity domain -->
 
-              <!-- show a warning modal dialog when the third party account is connected with WENS Link -->
+              <!-- show a warning modal dialog when the third party account is connected with WENSLink -->
 
               <div class="a-section a-spacing-base">
                 <div class="a-section">
@@ -51,7 +51,7 @@
                     name="signIn"
                     method="post"
                     novalidate
-                    action="https://sellercentral.WENS Link.in/ap/signin"
+                    action="https://sellercentral.WENSLink.in/ap/signin"
                     class="a-spacing-none fwcim-form"
                     data-fwcim-id="dd379249"
                   >
@@ -99,7 +99,7 @@
                                   id="auth-fpp-link-bottom"
                                   class="a-link-normal"
                                   tabindex="3"
-                                  href="https://sellercentral.WENS Link.in/ap/forgotpassword?showRememberMe=true&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;marketPlaceId=A21TJRUUN4KGV&amp;pageId=amzn_sw_signup_in&amp;openid.return_to=https%3A%2F%2Fsellercentral.WENS Link.in%2Fsw%2Fin%2FINSSR%2Fstep%2FSignUp%3Fpassthrough%252Faccount%3Dsoa%26passthrough%252FsuperSource%3DOAR%26ref_%3Das_in_soa_hp%26passthrough%252FmarketplaceID%3DA21TJRUUN4KGV%26passthrough%252F%26productTier%3DSILVER%26productType%3DSellOnWENS Link%26marketplaceId%3DA21TJRUUN4KGV%26passthrough%252Ftag%3DREDIRECTT1%26redirectAP%3D1&amp;prevRID=CYNRM35MQCJC1BR99Y6D&amp;openid.assoc_handle=amzn_sw_signup_in&amp;openid.mode=checkid_setup&amp;prepopulatedLoginId=&amp;failedSignInCount=0&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0"
+                                  href="https://sellercentral.WENSLink.in/ap/forgotpassword?showRememberMe=true&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;marketPlaceId=A21TJRUUN4KGV&amp;pageId=amzn_sw_signup_in&amp;openid.return_to=https%3A%2F%2Fsellercentral.WENSLink.in%2Fsw%2Fin%2FINSSR%2Fstep%2FSignUp%3Fpassthrough%252Faccount%3Dsoa%26passthrough%252FsuperSource%3DOAR%26ref_%3Das_in_soa_hp%26passthrough%252FmarketplaceID%3DA21TJRUUN4KGV%26passthrough%252F%26productTier%3DSILVER%26productType%3DSellOnWENSLink%26marketplaceId%3DA21TJRUUN4KGV%26passthrough%252Ftag%3DREDIRECTT1%26redirectAP%3D1&amp;prevRID=CYNRM35MQCJC1BR99Y6D&amp;openid.assoc_handle=amzn_sw_signup_in&amp;openid.mode=checkid_setup&amp;prepopulatedLoginId=&amp;failedSignInCount=0&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0"
                                 >Forgot Password</a>
                               </div>-->
                             </div>
@@ -170,7 +170,7 @@
                           </div>
 
                           <div class="a-divider a-divider-break">
-                            <h5>New to WENS Link?</h5>
+                            <h5>New to WENSLink?</h5>
                           </div>
                           <span
                             id="auth-create-account-link"
@@ -180,7 +180,7 @@
                               <nuxt-link
                                 to="/register_account"
                                 class="a-button-text"
-                              >Create your WENS Link account</nuxt-link>
+                              >Create your WENSLink account</nuxt-link>
                             </span>
                           </span>
                         </div>
@@ -207,7 +207,7 @@
           <div class="a-section a-spacing-none a-text-center">
             <span
               class="a-size-mini a-color-secondary"
-            >© 1996-2019, WENS Link.com, Inc. or its affiliates</span>
+            >© 1996-2019, WENSLink.com, Inc. or its affiliates</span>
           </div>
         </div>
       </div>

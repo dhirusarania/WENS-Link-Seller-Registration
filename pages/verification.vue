@@ -7,7 +7,7 @@
             <img style="height: 100%;width: 45px;" src="~static/dashboard-icon-black.png" />
             <p
               style="margin-left: 15px;font-size:19px;font-weight: bold"
-            >WENS Link Seller Registration</p>
+            >WENSLink Seller Registration</p>
           </div>
         </div>
       </div>
@@ -140,13 +140,13 @@
                           class="a-button-text"
                           aria-hidden="true"
                           id="a-autoid-0-announce"
-                        >Create your WENS Link account</span>
+                        >Create your WENSLink account</span>
                       </span>
                     </span>
 
                     <div class="a-section a-spacing-base">
                       <div id="legalTextRow" class="a-row a-spacing-top-medium a-size-small">
-                        By creating an account or logging in, you agree to WENS Link’s
+                        By creating an account or logging in, you agree to WENSLink’s
                         <a
                           href="/gp/help/customer/display.html/ref=ap_phoneverification_notification_condition_of_use?ie=UTF8&amp;nodeId=200545940"
                         >Conditions of Use</a> and
@@ -177,7 +177,7 @@
         <div class="a-section a-spacing-none a-text-center">
           <span
             class="a-size-mini a-color-secondary"
-          >© 1996-2019, WENS Link.com, Inc. or its affiliates</span>
+          >© 1996-2019, WENSLink.com, Inc. or its affiliates</span>
         </div>
       </div>
     </div>

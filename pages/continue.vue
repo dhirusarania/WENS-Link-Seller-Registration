@@ -11,7 +11,7 @@
                 style="height: 75px;padding-bottom: 10px; object-fit:contain"
                 class="company_logo"
               />
-              <h4 style="padding-left: 10px" class="margin-top-10">WENS Link Seller Registration</h4>
+              <h4 style="padding-left: 10px" class="margin-top-10">WENSLink Seller Registration</h4>
             </div>
           </div>
         </div>
@@ -22,7 +22,7 @@
             <p class="seller_message_p"></p>
             <p>Please have the following ready before you begin:</p>
             <ul>
-              <li>Your bank account details for receiving payments from WENS Link</li>
+              <li>Your bank account details for receiving payments from WENSLink</li>
               <li>Tax (GST/PAN) details of your business</li>
             </ul>
             <br />
@@ -98,16 +98,11 @@
                                       data-ng-show="true"
                                       class
                                     >
-                                      <nuxt-link
-                                        target="_blank"
-                                        to="/legal/selleragreement"
+                                      <a @click="openLink('/legal/returnpolicy')"
                                         class="ng-binding"
-                                      >WENS Link Seller Agreement</nuxt-link>and
-                                      <nuxt-link
-                                        target="_blank"
-                                        to="/legal/returnpolicy"
-                                        class="ng-binding"
-                                      >WENS Link Return Policy</nuxt-link>
+                                      >WENSLink Seller Agreement</a> and
+                                      <a @click="openLink('/legal/returnpolicy')"
+                                      >WENSLink Return Policy</a>
                                     </span>
                                   </span>
                                 </span>
@@ -206,6 +201,9 @@ export default {
   },
 
   methods: {
+    openLink: function(url) {
+      window.open(url, 'newwindow', 'width=500,height=500')
+    },
     verify: function() {
       if (this.regex.test(this.email) && this.isSelected == true) {
         this.isAllowed = true
@@ -216,7 +214,7 @@ export default {
     changeCompany: function() {
       if (this.regex.test(this.email) && this.isSelected == true) {
         var payload = new FormData()
-        
+
         payload.append('company_name', this.email)
 
         axios({

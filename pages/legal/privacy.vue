@@ -11,7 +11,7 @@
                 style="height: 75px;padding-bottom: 10px; object-fit:contain"
                 class="company_logo"
               />
-              <h4 style="padding-left: 10px" class="margin-top-10">WENS Link Seller Registration</h4>
+              <h4 style="padding-left: 10px" class="margin-top-10">WENSLink Seller Registration</h4>
             </div>
           </div>
         </div>
@@ -47,7 +47,7 @@ The expressions "We"/"Us"/"Our" independently and all in all allude to every sub
 
         <div class="a-box seller_message_box">
           <div class="a-box-inner">
-            <h1>WENS Link has given this Privacy Policy to acclimate you with:</h1>
+            <h1>WENSLink has given this Privacy Policy to acclimate you with:</h1>
           </div>
         </div>
 

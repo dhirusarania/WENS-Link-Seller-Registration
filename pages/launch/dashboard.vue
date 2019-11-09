@@ -18,7 +18,7 @@
                 <img style="height: 100%;width: 35px;" src="~static/dashboard-icon-black.png" />
                 <p
                   style="margin-left: 15px;font-size:14px;font-weight: bold"
-                >WENS Link Seller Registration</p>
+                >WENSLink Seller Registration</p>
               </div>
             </a>
             <ul
@@ -123,8 +123,8 @@
             <div data-ng-show="onPostLaunchPage" class="a-section ng-hide">
               <h1
                 id="post-launch-heading-id"
-                class="a-spacing-none post-launch-font-WENS Link-ember-light a-text-normal hide"
-              >You are now an active seller on WENS Link.in</h1>
+                class="a-spacing-none post-launch-font-WENSLink-ember-light a-text-normal hide"
+              >You are now an active seller on WENSLink.in</h1>
               <h1
                 class="a-size-extra-large a-spacing-none a-text-normal ng-binding"
               >Hi {{business_name}}, You are almost there</h1>
@@ -184,22 +184,22 @@
           >
             <!-- <div class="a-popover-preload" id="a-popover-modalBody">
         <div class="a-section overlay ng-binding">
-            <img alt="" src="https://m.media-WENS Link.com/images/G/31/INSSRSWIPE/Check_green.png" data-ng-src="https://m.media-WENS Link.com/images/G/31/INSSRSWIPE/Check_green.png" class="fragment-logo"><br><br>
+            <img alt="" src="https://m.media-WENSLink.com/images/G/31/INSSRSWIPE/Check_green.png" data-ng-src="https://m.media-WENSLink.com/images/G/31/INSSRSWIPE/Check_green.png" class="fragment-logo"><br><br>
             <span class="a-text-bold ng-binding">
                 Congratulations!
             </span>
-            <br>You are ready to sell on WENS Link<br><br>
+            <br>You are ready to sell on WENSLink<br><br>
             <span class="a-button a-button-primary" id="a-autoid-1"><span class="a-button-inner"><input id="modal-launch-button" class="a-button-input" type="submit" aria-labelledby="a-autoid-1-announce"><span class="a-button-text ng-binding" aria-hidden="true" id="a-autoid-1-announce">
                 Start Selling
             </span></span></span>
             <br><br>
-            <a class="a-link-normal ng-binding" href="/hz/m/cuoption?callSource=registration&amp;callBackUrl=/sw/in/Launch/dashboard&amp;categoryId=40000&amp;category=mobi_support_cu_c_your_account&amp;typeId=50004&amp;type=mobi_support_cu_t_other_issues&amp;attributes={&quot;attributes&quot;:{&quot;reftag&quot;:&quot;mscuotis&quot;,&quot;MobilePhoneTemplate&quot;:&quot;3d02e045-412e-44d1-82c2-4ab949e3c4e5&quot;,&quot;MobileCaseSeverity&quot;:&quot;4&quot;,&quot;Mobile911Exists&quot;:&quot;N&quot;,&quot;MobileQueue&quot;:&quot;tam-general@WENS Link.in&quot;,&quot;MobilePhoneExists&quot;:&quot;Y&quot;,&quot;MobileChatExists&quot;:&quot;N&quot;}}&amp;ref_=overlay_url"> Need Help? </a>
+            <a class="a-link-normal ng-binding" href="/hz/m/cuoption?callSource=registration&amp;callBackUrl=/sw/in/Launch/dashboard&amp;categoryId=40000&amp;category=mobi_support_cu_c_your_account&amp;typeId=50004&amp;type=mobi_support_cu_t_other_issues&amp;attributes={&quot;attributes&quot;:{&quot;reftag&quot;:&quot;mscuotis&quot;,&quot;MobilePhoneTemplate&quot;:&quot;3d02e045-412e-44d1-82c2-4ab949e3c4e5&quot;,&quot;MobileCaseSeverity&quot;:&quot;4&quot;,&quot;Mobile911Exists&quot;:&quot;N&quot;,&quot;MobileQueue&quot;:&quot;tam-general@WENSLink.in&quot;,&quot;MobilePhoneExists&quot;:&quot;Y&quot;,&quot;MobileChatExists&quot;:&quot;N&quot;}}&amp;ref_=overlay_url"> Need Help? </a>
         </div>
             </div>-->
 
             <!-- 
     <div data-ng-show="showLaunchFragment" class="a-section quick-launch ng-hide">
-        <div class="a-box a-alert a-alert-info"><div class="a-box-inner a-alert-container"><h4 class="a-alert-heading ng-binding">Congrats, You are now ready to start selling on WENS Link.in</h4><i class="a-icon a-icon-alert"></i><div class="a-alert-content ng-binding">
+        <div class="a-box a-alert a-alert-info"><div class="a-box-inner a-alert-container"><h4 class="a-alert-heading ng-binding">Congrats, You are now ready to start selling on WENSLink.in</h4><i class="a-icon a-icon-alert"></i><div class="a-alert-content ng-binding">
             Click on the button to go live
             
                 
@@ -241,16 +241,16 @@
                 <span class="a-expander-prompt">
                   <img
                     alt
-                    src="https://m.media-WENS Link.com/images/G/31/INSSRSWIPE/Check_green.png"
+                    src="https://m.media-WENSLink.com/images/G/31/INSSRSWIPE/Check_green.png"
                     data-ng-show="listingStatus"
-                    data-ng-src="https://m.media-WENS Link.com/images/G/31/INSSRSWIPE/Check_green.png"
+                    data-ng-src="https://m.media-WENSLink.com/images/G/31/INSSRSWIPE/Check_green.png"
                     class="fragment-logo ng-hide"
                   />
                   <img
                     alt
-                    src="https://m.media-WENS Link.com/images/G/31/INSSRSWIPE/Check_Gray.png"
+                    src="https://m.media-WENSLink.com/images/G/31/INSSRSWIPE/Check_Gray.png"
                     data-ng-hide="listingStatus"
-                    data-ng-src="https://m.media-WENS Link.com/images/G/31/INSSRSWIPE/Check_Gray.png"
+                    data-ng-src="https://m.media-WENSLink.com/images/G/31/INSSRSWIPE/Check_Gray.png"
                     class="fragment-logo"
                   />
                   <span
@@ -287,7 +287,7 @@
                             </span>
                           </div>
                         </div>
-                        <span class="ng-binding">List the products you wish to sell on WENS Link.in</span>
+                        <span class="ng-binding">List the products you wish to sell on WENSLink.in</span>
                         <hr class="a-spacing-top-small a-divider-normal listing-divider" />
                         <div class="a-section a-spacing-top-base listing-margin-bottom">
                           <span
@@ -354,8 +354,8 @@
                         <a data-ng-click="openLightBox()" class="a-link-normal" href="#su-content">
                           <img
                             alt
-                            src="https://m.media-WENS Link.com/images/G/31/INSSRSWIPE/Dashboard/openContentThumbnail.jpg"
-                            data-ng-src="https://m.media-WENS Link.com/images/G/31/INSSRSWIPE/Dashboard/openContentThumbnail.jpg"
+                            src="https://m.media-WENSLink.com/images/G/31/INSSRSWIPE/Dashboard/openContentThumbnail.jpg"
+                            data-ng-src="https://m.media-WENSLink.com/images/G/31/INSSRSWIPE/Dashboard/openContentThumbnail.jpg"
                             class="su-listing-video-thumb"
                           />
                         </a>
@@ -503,8 +503,8 @@
                     class="a-size-base-plus a-link-normal ng-binding"
                     target="_blank"
                     rel="noopener"
-                    href="https://services.WENS Link.in/landing/pricing-calculator.html?ref_=profit_url_listing&amp;ld=ASINSOADirect"
-                  >Learn more about WENS Link's charges</a>
+                    href="https://services.WENSLink.in/landing/pricing-calculator.html?ref_=profit_url_listing&amp;ld=ASINSOADirect"
+                  >Learn more about WENSLink's charges</a>
                 </div>
 
                 <div class="a-section a-spacing-base">
@@ -563,16 +563,16 @@
                   <span class="a-expander-prompt">
                     <img
                       alt
-                      src="https://m.media-WENS Link.com/images/G/31/INSSRSWIPE/Check_green.png"
+                      src="https://m.media-WENSLink.com/images/G/31/INSSRSWIPE/Check_green.png"
                       data-ng-show="shippingStatus"
-                      data-ng-src="https://m.media-WENS Link.com/images/G/31/INSSRSWIPE/Check_green.png"
+                      data-ng-src="https://m.media-WENSLink.com/images/G/31/INSSRSWIPE/Check_green.png"
                       class="fragment-logo ng-hide"
                     />
                     <img
                       alt
-                      src="https://m.media-WENS Link.com/images/G/31/INSSRSWIPE/Check_Gray.png"
+                      src="https://m.media-WENSLink.com/images/G/31/INSSRSWIPE/Check_Gray.png"
                       data-ng-hide="shippingStatus"
-                      data-ng-src="https://m.media-WENS Link.com/images/G/31/INSSRSWIPE/Check_Gray.png"
+                      data-ng-src="https://m.media-WENSLink.com/images/G/31/INSSRSWIPE/Check_Gray.png"
                       class="fragment-logo"
                     />
                     <span
@@ -633,15 +633,15 @@
                       class="a-row profit-calculator"
                     >
                       <a
-                        data-ng-href="https://services.WENS Link.in/landing/pricing-calculator.html?ref_=profit_url_shipping"
+                        data-ng-href="https://services.WENSLink.in/landing/pricing-calculator.html?ref_=profit_url_shipping"
                         class="a-link-normal"
                         target="_blank"
                         rel="noopener"
-                        href="https://services.WENS Link.in/landing/pricing-calculator.html?ref_=profit_url_shipping&amp;ld=ASINSOADirect"
+                        href="https://services.WENSLink.in/landing/pricing-calculator.html?ref_=profit_url_shipping&amp;ld=ASINSOADirect"
                       >
                         <span
                           class="a-size-base ng-binding"
-                        >Learn more about WENS Link's shipping charges</span>
+                        >Learn more about WENSLink's shipping charges</span>
                       </a>
                     </div>
 
@@ -655,15 +655,15 @@
                       class="a-row profit-calculator ng-hide"
                     >
                       <a
-                        data-ng-href="https://services.WENS Link.in/landing/pricing-calculator.html?ref_=profit_url_shipping"
+                        data-ng-href="https://services.WENSLink.in/landing/pricing-calculator.html?ref_=profit_url_shipping"
                         class="a-link-normal"
                         target="_blank"
                         rel="noopener"
-                        href="https://services.WENS Link.in/landing/pricing-calculator.html?ref_=profit_url_shipping&amp;ld=ASINSOADirect"
+                        href="https://services.WENSLink.in/landing/pricing-calculator.html?ref_=profit_url_shipping&amp;ld=ASINSOADirect"
                       >
                         <span
                           class="a-size-base ng-binding"
-                        >Learn more about WENS Link's shipping charges</span>
+                        >Learn more about WENSLink's shipping charges</span>
                       </a>
                     </div>
 
@@ -963,16 +963,16 @@
                 <span class="a-expander-prompt">
                   <img
                     alt
-                    src="https://m.media-WENS Link.com/images/G/31/INSSRSWIPE/Check_green.png"
+                    src="https://m.media-WENSLink.com/images/G/31/INSSRSWIPE/Check_green.png"
                     data-ng-show="isFragmentComplete"
-                    data-ng-src="https://m.media-WENS Link.com/images/G/31/INSSRSWIPE/Check_green.png"
+                    data-ng-src="https://m.media-WENSLink.com/images/G/31/INSSRSWIPE/Check_green.png"
                     class="bank-account-in-logo ng-hide"
                   />
                   <img
                     alt
-                    src="https://m.media-WENS Link.com/images/G/31/INSSRSWIPE/Check_Gray.png"
+                    src="https://m.media-WENSLink.com/images/G/31/INSSRSWIPE/Check_Gray.png"
                     data-ng-hide="isFragmentComplete"
-                    data-ng-src="https://m.media-WENS Link.com/images/G/31/INSSRSWIPE/Check_Gray.png"
+                    data-ng-src="https://m.media-WENSLink.com/images/G/31/INSSRSWIPE/Check_Gray.png"
                     class="bank-account-in-logo"
                   />
                   <span
@@ -1009,8 +1009,8 @@
                                 class="a-declarative"
                               >
                                 <img
-                                  data-ng-src="https://images-na.ssl-images-WENS Link.com/images/G/01/swipertol/u368._V279572601_.png"
-                                  src="https://images-na.ssl-images-WENS Link.com/images/G/01/swipertol/u368._V279572601_.png"
+                                  data-ng-src="https://images-na.ssl-images-WENSLink.com/images/G/01/swipertol/u368._V279572601_.png"
+                                  src="https://images-na.ssl-images-WENSLink.com/images/G/01/swipertol/u368._V279572601_.png"
                                 />
                                 <div class="a-popover-preload" id="a-popover-"></div>
                               </span>
@@ -1126,8 +1126,8 @@
                                 class="a-declarative"
                               >
                                 <img
-                                  data-ng-src="https://images-na.ssl-images-WENS Link.com/images/G/01/swipertol/u368._V279572601_.png"
-                                  src="https://images-na.ssl-images-WENS Link.com/images/G/01/swipertol/u368._V279572601_.png"
+                                  data-ng-src="https://images-na.ssl-images-WENSLink.com/images/G/01/swipertol/u368._V279572601_.png"
+                                  src="https://images-na.ssl-images-WENSLink.com/images/G/01/swipertol/u368._V279572601_.png"
                                 />
                                 <div class="a-popover-preload" id="a-popover-"></div>
                               </span>
@@ -1182,8 +1182,8 @@
                                 class="a-declarative"
                               >
                                 <img
-                                  data-ng-src="https://images-na.ssl-images-WENS Link.com/images/G/01/swipertol/u368._V279572601_.png"
-                                  src="https://images-na.ssl-images-WENS Link.com/images/G/01/swipertol/u368._V279572601_.png"
+                                  data-ng-src="https://images-na.ssl-images-WENSLink.com/images/G/01/swipertol/u368._V279572601_.png"
+                                  src="https://images-na.ssl-images-WENSLink.com/images/G/01/swipertol/u368._V279572601_.png"
                                 />
                                 <div class="a-popover-preload" id="a-popover-"></div>
                               </span>
@@ -1265,7 +1265,7 @@
                   To update the bank account details, please
                   <a
                     class="a-link-normal"
-                    href="https://sellercentral.WENS Link.in/sw/AccountInfo/DepositMethodView/step/DepositMethodView?ref_=swipe_LD"
+                    href="https://sellercentral.WENSLink.in/sw/AccountInfo/DepositMethodView/step/DepositMethodView?ref_=swipe_LD"
                   >click here</a>
                 </div>
               </div>
@@ -1300,16 +1300,16 @@
                   <span class="a-expander-prompt">
                     <img
                       alt
-                      src="https://m.media-WENS Link.com/images/G/31/INSSRSWIPE/Check_green.png"
+                      src="https://m.media-WENSLink.com/images/G/31/INSSRSWIPE/Check_green.png"
                       data-ng-show="showSuccessIconTax"
-                      data-ng-src="https://m.media-WENS Link.com/images/G/31/INSSRSWIPE/Check_green.png"
+                      data-ng-src="https://m.media-WENSLink.com/images/G/31/INSSRSWIPE/Check_green.png"
                       class="fragment-logo ng-hide"
                     />
                     <img
                       alt
-                      src="https://m.media-WENS Link.com/images/G/31/INSSRSWIPE/Check_Gray.png"
+                      src="https://m.media-WENSLink.com/images/G/31/INSSRSWIPE/Check_Gray.png"
                       data-ng-hide="showSuccessIconTax"
-                      data-ng-src="https://m.media-WENS Link.com/images/G/31/INSSRSWIPE/Check_Gray.png"
+                      data-ng-src="https://m.media-WENSLink.com/images/G/31/INSSRSWIPE/Check_Gray.png"
                       class="fragment-logo"
                     />
                     <span
@@ -1497,16 +1497,16 @@
                   <span class="a-expander-prompt">
                     <img
                       alt
-                      src="https://m.media-WENS Link.com/images/G/31/INSSRSWIPE/Check_green.png"
+                      src="https://m.media-WENSLink.com/images/G/31/INSSRSWIPE/Check_green.png"
                       data-ng-show="isPTCFilled"
-                      data-ng-src="https://m.media-WENS Link.com/images/G/31/INSSRSWIPE/Check_green.png"
+                      data-ng-src="https://m.media-WENSLink.com/images/G/31/INSSRSWIPE/Check_green.png"
                       class="fragment-logo ng-hide"
                     />
                     <img
                       alt
-                      src="https://m.media-WENS Link.com/images/G/31/INSSRSWIPE/Check_Gray.png"
+                      src="https://m.media-WENSLink.com/images/G/31/INSSRSWIPE/Check_Gray.png"
                       data-ng-hide="isPTCFilled"
-                      data-ng-src="https://m.media-WENS Link.com/images/G/31/INSSRSWIPE/Check_Gray.png"
+                      data-ng-src="https://m.media-WENSLink.com/images/G/31/INSSRSWIPE/Check_Gray.png"
                       class="fragment-logo"
                     />
                     <span
@@ -1662,9 +1662,9 @@
                                 data-ng-bind-html="checkboxAgreementDescription"
                                 class="ng-binding"
                               >
-                                I have reviewed and agree to WENS Link's
+                                I have reviewed and agree to WENSLink's
                                 <a
-                                  href="https://services.WENS Link.in/landing/gst-tax-methodology.htm?ld=ASINSOADirect"
+                                  href="https://services.WENSLink.in/landing/gst-tax-methodology.htm?ld=ASINSOADirect"
                                   target="_blank"
                                 >Tax Calculation Methodology</a>
                               </span>
@@ -1740,7 +1740,7 @@
                           class="a-size-base a-link-normal ng-binding"
                           target="_blank"
                           rel="noopener"
-                          href="https://images-eu.ssl-images-WENS Link.com/images/G/31/WENS Linkservices/sellercentral/GST_PTC._V507871356_.jpg?ld=ASINSOADirect"
+                          href="https://images-eu.ssl-images-WENSLink.com/images/G/31/WENSLinkservices/sellercentral/GST_PTC._V507871356_.jpg?ld=ASINSOADirect"
                         >View all Product Tax Codes</a>
                       </div>
                       <div class="a-section a-spacing-small">
@@ -1749,7 +1749,7 @@
                           class="a-size-base a-link-normal ng-binding"
                           target="_blank"
                           rel="noopener"
-                          href="https://sellercentral.WENS Link.in/learn/courses?ref_=gst_page_PTC&amp;courseId=134&amp;moduleId=528&amp;modLanguage=English"
+                          href="https://sellercentral.WENSLink.in/learn/courses?ref_=gst_page_PTC&amp;courseId=134&amp;moduleId=528&amp;modLanguage=English"
                         >Learn more about PTC</a>
                       </div>
                     </div>
@@ -1798,16 +1798,16 @@
                   <span class="a-expander-prompt">
                     <img
                       alt
-                      src="https://m.media-WENS Link.com/images/G/31/INSSRSWIPE/Check_green.png"
+                      src="https://m.media-WENSLink.com/images/G/31/INSSRSWIPE/Check_green.png"
                       data-ng-show="digitalSignatureUploadedAndApproved"
-                      data-ng-src="https://m.media-WENS Link.com/images/G/31/INSSRSWIPE/Check_green.png"
+                      data-ng-src="https://m.media-WENSLink.com/images/G/31/INSSRSWIPE/Check_green.png"
                       class="fragment-logo ng-hide"
                     />
                     <img
                       alt
-                      src="https://m.media-WENS Link.com/images/G/31/INSSRSWIPE/Check_Gray.png"
+                      src="https://m.media-WENSLink.com/images/G/31/INSSRSWIPE/Check_Gray.png"
                       data-ng-hide="digitalSignatureUploadedAndApproved"
-                      data-ng-src="https://m.media-WENS Link.com/images/G/31/INSSRSWIPE/Check_Gray.png"
+                      data-ng-src="https://m.media-WENSLink.com/images/G/31/INSSRSWIPE/Check_Gray.png"
                       class="fragment-logo"
                     />
                     <span class="a-size-base-plus fragment-heading a-text-bold ng-binding">Signature</span>
@@ -1838,8 +1838,8 @@
                           >
                             <img
                               alt
-                              src="https://m.media-WENS Link.com/images/G/31/INSSRSWIPE/reset.png"
-                              data-ng-src="https://m.media-WENS Link.com/images/G/31/INSSRSWIPE/reset.png"
+                              src="https://m.media-WENSLink.com/images/G/31/INSSRSWIPE/reset.png"
+                              data-ng-src="https://m.media-WENSLink.com/images/G/31/INSSRSWIPE/reset.png"
                             />
                             Reset
                           </span>
@@ -1850,8 +1850,8 @@
                           >
                             <img
                               alt
-                              src="https://m.media-WENS Link.com/images/G/31/INSSRSWIPE/rotate-left.png"
-                              data-ng-src="https://m.media-WENS Link.com/images/G/31/INSSRSWIPE/rotate-left.png"
+                              src="https://m.media-WENSLink.com/images/G/31/INSSRSWIPE/rotate-left.png"
+                              data-ng-src="https://m.media-WENSLink.com/images/G/31/INSSRSWIPE/rotate-left.png"
                             />
                             Rotate Left
                           </span>
@@ -1862,8 +1862,8 @@
                           >
                             <img
                               alt
-                              src="https://m.media-WENS Link.com/images/G/31/INSSRSWIPE/rotate-right.png"
-                              data-ng-src="https://m.media-WENS Link.com/images/G/31/INSSRSWIPE/rotate-right.png"
+                              src="https://m.media-WENSLink.com/images/G/31/INSSRSWIPE/rotate-right.png"
+                              data-ng-src="https://m.media-WENSLink.com/images/G/31/INSSRSWIPE/rotate-right.png"
                             />
                             Rotate Right
                           </span>
@@ -1926,7 +1926,7 @@
                             <div class="a-section a-spacing-none ds-preview-container">
                               <img
                                 alt
-                                src="https://images-na.ssl-images-WENS Link.com/images/G/01/x-locale/common/transparent-pixel._V192234675_.gif"
+                                src="https://images-na.ssl-images-WENSLink.com/images/G/01/x-locale/common/transparent-pixel._V192234675_.gif"
                                 data-ng-show="showImagePreview"
                                 data-ng-src
                                 class="ds-preview ng-hide"
@@ -2073,7 +2073,7 @@
         >
           <input type="hidden" name="key_id" value="rzp_test_WQij2Xeq6EW9Ty" />
           <input type="hidden" name="order_id" :value="order_id" />
-          <input type="hidden" name="name" value="WENS Link" />
+          <input type="hidden" name="name" value="WENSLink" />
           <input type="hidden" name="description" value="Seller Registration Payment" />
           <input type="hidden" name="image" value="https://wenslink.com/dashboard-icon-black.png" />
           <input type="hidden" name="prefill[name]" :value="business_name" />
@@ -2136,7 +2136,7 @@
         <div class="a-box a-alert a-alert-info"><div class="a-box-inner a-alert-container"><h4 class="a-alert-heading ng-binding">Get Ready for GST</h4><i class="a-icon a-icon-alert"></i><div class="a-alert-content">
             <div class="a-section a-spacing-none upload-gst-container">
                 <p class="a-spacing-none upload-gst-text ng-binding">
-                    Goods and Services Tax ("GST") is proposed to be implemented from 1st July, 2017. Accordingly, WENS Link requires you to provide your details such as GSTIN, Digital Image Signature to seamlessly continue selling on WENS Link.in
+                    Goods and Services Tax ("GST") is proposed to be implemented from 1st July, 2017. Accordingly, WENSLink requires you to provide your details such as GSTIN, Digital Image Signature to seamlessly continue selling on WENSLink.in
                 </p>
                 <span class="a-button a-spacing-none dashboard-banner-fragment-update-now aok-align-right aok-float-right" id="a-autoid-23"><span class="a-button-inner"><a href="/account-info/tax-details/home?ref=sw_in_dashboard_gst" class="a-button-text a-text-center ng-binding" role="button" id="a-autoid-23-announce">
                     Update Now
@@ -2155,18 +2155,18 @@
           >
             <img
               alt
-              src="https://images-na.ssl-images-WENS Link.com/images/G/31/WENS Linkservices/sellercentral/video-tutorials-logo._V294240950_.png"
-              data-ng-src="https://images-na.ssl-images-WENS Link.com/images/G/31/WENS Linkservices/sellercentral/video-tutorials-logo._V294240950_.png"
+              src="https://images-na.ssl-images-WENSLink.com/images/G/31/WENSLinkservices/sellercentral/video-tutorials-logo._V294240950_.png"
+              data-ng-src="https://images-na.ssl-images-WENSLink.com/images/G/31/WENSLinkservices/sellercentral/video-tutorials-logo._V294240950_.png"
               class="video-tutorials-logo"
             />
 
             <div class="a-section a-spacing-small a-spacing-top-small video-container">
               <h2
                 class="a-spacing-none a-color-secondary a-text-normal ng-binding"
-              >Learn how to sell on WENS Link</h2>
+              >Learn how to sell on WENSLink</h2>
               <p
                 class="a-spacing-none a-size-base a-color-secondary ng-binding"
-              >Seller university helps you gain insights on how to sell on WENS Link, policies etc.</p>
+              >Seller university helps you gain insights on how to sell on WENSLink, policies etc.</p>
 
               <!-- ngRepeat: video in videoIds track by $index -->
               <div
@@ -2174,14 +2174,14 @@
                 class="a-section a-spacing-small a-spacing-top-small video ng-scope"
               >
                 <iframe
-                  ng-src="https://images-eu.ssl-images-WENS Link.com/images/G/01/x-locale/common/transparent-pixel.gif"
+                  ng-src="https://images-eu.ssl-images-WENSLink.com/images/G/01/x-locale/common/transparent-pixel.gif"
                   id="player0"
                   class="video-youtube-iframe"
                   width="340"
                   height="240"
                   scrolling="no"
                   allowfullscreen="true"
-                  src="https://images-eu.ssl-images-WENS Link.com/images/G/01/x-locale/common/transparent-pixel.gif"
+                  src="https://images-eu.ssl-images-WENSLink.com/images/G/01/x-locale/common/transparent-pixel.gif"
                 ></iframe>
               </div>
               <!-- end ngRepeat: video in videoIds track by $index -->
@@ -2190,14 +2190,14 @@
                 class="a-section a-spacing-small a-spacing-top-small video ng-scope"
               >
                 <iframe
-                  ng-src="https://images-eu.ssl-images-WENS Link.com/images/G/01/x-locale/common/transparent-pixel.gif"
+                  ng-src="https://images-eu.ssl-images-WENSLink.com/images/G/01/x-locale/common/transparent-pixel.gif"
                   id="player1"
                   class="video-youtube-iframe"
                   width="340"
                   height="240"
                   scrolling="no"
                   allowfullscreen="true"
-                  src="https://images-eu.ssl-images-WENS Link.com/images/G/01/x-locale/common/transparent-pixel.gif"
+                  src="https://images-eu.ssl-images-WENSLink.com/images/G/01/x-locale/common/transparent-pixel.gif"
                 ></iframe>
               </div>
               <!-- end ngRepeat: video in videoIds track by $index -->

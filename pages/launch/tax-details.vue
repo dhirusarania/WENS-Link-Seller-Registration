@@ -14,7 +14,7 @@
           <img style="height: 100%;width: 35px;"
             src="~static/dashboard-icon-black.png"
           />
-          <p style="margin-left: 15px;font-size:14px;font-weight: bold">WENS Link Seller Registration</p>
+          <p style="margin-left: 15px;font-size:14px;font-weight: bold">WENSLink Seller Registration</p>
         </div>
         </a>
         <ul data-ng-mouseout="offFocus()" data-ng-mouseover="onFocus('settings')" class="a-unordered-list a-nostyle a-vertical header-settings-tab">
