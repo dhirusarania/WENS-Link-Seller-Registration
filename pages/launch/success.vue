@@ -18,8 +18,8 @@
           <p class=" margin-0">Zoo Road Tiliali</p>
           <p class="margin-0">Guwahati, Assam, 781024</p>
           <p class="margin-0">GSTIN:18AACCW4881E1Z4</p>
-          <p class="margin-0">Phone: +91-XXXXXXXXXX</p>
-          <p class="margin-0">Email:XXXX@YYYYYY.com</p>
+          <p class="margin-0">Toll Free: 1800-121-3578</p>
+          <p class="margin-0">Email: sales@wenslink.com</p>
         </div>
       </div>
     </div>
