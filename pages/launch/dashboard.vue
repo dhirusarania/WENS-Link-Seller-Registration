@@ -2071,14 +2071,14 @@
           method="POST"
           action="https://api.razorpay.com/v1/checkout/embedded"
         >
-          <input type="hidden" name="key_id" value="rzp_live_HJReoA5ynZU33U" />
+          <input type="hidden" name="key_id" :value="api_key" />
           <input type="hidden" name="order_id" :value="order_id" />
           <input type="hidden" name="name" value="WENSLink" />
           <input type="hidden" name="description" value="Seller Registration Payment" />
           <input type="hidden" name="image" value="https://wenslink.com/dashboard-icon-black.png" />
           <input type="hidden" name="prefill[name]" :value="business_name" />
-          <input type="hidden" name="prefill[contact]" value="9123456780" />
-          <input type="hidden" name="prefill[email]" value="gaurav.kumar@example.com" />
+          <input type="hidden" name="prefill[contact]" :value="phone_number" />
+          <input type="hidden" name="prefill[email]" :value="email" />
           <input
             type="hidden"
             name="notes[shipping address]"
@@ -2249,7 +2249,10 @@ export default {
     return {
       business_name: '',
       amount: 1210,
-      order_id: ''
+      order_id: '',
+      phone_number: '',
+      email: '',
+      api_key: ''
     }
   },
 
@@ -2269,6 +2272,9 @@ export default {
         console.log(res.data)
         console.log('response')
         this.business_name = res.data.company_name
+        this.phone_number = res.data.phone_number
+        this.email = res.data.email
+        this.api_key = res.data.api_key
       })
       .catch(err => {
         console.log('error in request', err)

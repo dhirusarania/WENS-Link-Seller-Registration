@@ -155,17 +155,17 @@
                   </div>
                 </div>
 
-                <div class="form-group margin-top-20">
+                <div class="form-group margin-top-20" v-if="gst == '' || pan == ''">
                   <input id="email" type="radio" name="GST" value="2" v-model="GST_selection" />
                   I sell in GST Exempted Category
                 </div>
 
-                <div class="form-group margin-top-20">
+                <div class="form-group margin-top-20" v-if="gst == '' || pan == ''">
                   <input id="email" type="radio" name="GST" value="3" v-model="GST_selection" />
                   I don't have it handy and will update later
                 </div>
 
-                <div class="form-group margin-top-20">
+                <div class="form-group margin-top-20" v-if="gst == '' || pan == ''">
                   <input id="email" type="radio" name="GST" value="4" v-model="GST_selection" />
                   I have never registered for GST
                 </div>

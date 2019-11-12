@@ -1,82 +1,120 @@
 <template>
   <div>
-<div data-ng-controller="in-ssr-header-controller" data-ng-init="init('Header_BC_a1r2j3u4-n5s6-b7h8-a9r0-a1d2w3a4j567')" class="ng-scope">
-    
-        
-  
-<div class="a-section">
-    <div class="a-box a-box-normal a-color-offset-background"><div class="a-box-inner a-padding-base" style="    display: flex;
+    <div
+      data-ng-controller="in-ssr-header-controller"
+      data-ng-init="init('Header_BC_a1r2j3u4-n5s6-b7h8-a9r0-a1d2w3a4j567')"
+      class="ng-scope"
+    >
+      <div class="a-section">
+        <div class="a-box a-box-normal a-color-offset-background">
+          <div
+            class="a-box-inner a-padding-base"
+            style="    display: flex;
     justify-content: space-between;
-    align-items: center;">
-        <a data-ng-href="" class="a-link-normal" href="#">
-           <div style="display: flex;align-items: center;">
-          <img style="height: 100%;width: 35px;"
-            src="~static/dashboard-icon-black.png"
-          />
-          <p style="margin-left: 15px;font-size:14px;font-weight: bold">WENSLink Seller Registration</p>
+    align-items: center;"
+          >
+            <a data-ng-href class="a-link-normal" href="#">
+              <div style="display: flex;align-items: center;">
+                <img style="height: 100%;width: 35px;" src="~static/dashboard-icon-black.png" />
+                <p
+                  style="margin-left: 15px;font-size:14px;font-weight: bold"
+                >WENSLink Seller Registration</p>
+              </div>
+            </a>
+            <ul
+              data-ng-mouseout="offFocus()"
+              data-ng-mouseover="onFocus('settings')"
+              class="a-unordered-list a-nostyle a-vertical header-settings-tab"
+            >
+              <nuxt-link class="a-link-normal ng-binding" to="/login">Logout</nuxt-link>
+            </ul>
+          </div>
         </div>
-        </a>
-        <ul data-ng-mouseout="offFocus()" data-ng-mouseover="onFocus('settings')" class="a-unordered-list a-nostyle a-vertical header-settings-tab">
-         <nuxt-link class="a-link-normal ng-binding" to="/login">Logout</nuxt-link>
-      
-        </ul>
-    </div></div>
-</div>
-            
-        
-    
-</div>
-
-
-<div class="a-box a-box-normal page-nav"><div class="a-box-inner a-padding-base">
-  <div class="stepRow">
-    <!-- ngRepeat: step in navigation.Steps --><div ng-class="['step', getStepClass(step.currentStep ,step.stepCompletionStatus)]" ng-repeat="step in navigation.Steps" class="ng-scope step stepCompleted">
-
-
-      <div data-ng-hide="isLinkAllowed(step)" class="stepLinkBox" title="Phone Verification">
-        <img class="stepImg" ng-src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/completedStepA._CB295853638_.png" src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/completedStepA._CB295853638_.png">
-        <span class="step-text ng-binding">Phone Verification</span>
       </div>
+    </div>
 
-    </div><!-- end ngRepeat: step in navigation.Steps --><div ng-class="['step', getStepClass(step.currentStep ,step.stepCompletionStatus)]" ng-repeat="step in navigation.Steps" class="ng-scope step stepActive">
-
-
-
-      <div data-ng-hide="isLinkAllowed(step)" class="stepLinkBox" title="Seller Information">
-        <img class="stepImg" ng-src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/currentStepA._CB295853638_.png" src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/currentStepA._CB295853638_.png">
-        <span class="step-text ng-binding">Seller Information</span>
+    <div class="a-box a-box-normal page-nav">
+      <div class="a-box-inner a-padding-base">
+        <div class="stepRow">
+          <!-- ngRepeat: step in navigation.Steps -->
+          <div
+            ng-class="['step', getStepClass(step.currentStep ,step.stepCompletionStatus)]"
+            ng-repeat="step in navigation.Steps"
+            class="ng-scope step stepCompleted"
+          >
+            <div data-ng-hide="isLinkAllowed(step)" class="stepLinkBox" title="Phone Verification">
+              <img
+                class="stepImg"
+                ng-src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/completedStepA._CB295853638_.png"
+                src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/completedStepA._CB295853638_.png"
+              />
+              <span class="step-text ng-binding">Phone Verification</span>
+            </div>
+          </div>
+          <!-- end ngRepeat: step in navigation.Steps -->
+          <div
+            ng-class="['step', getStepClass(step.currentStep ,step.stepCompletionStatus)]"
+            ng-repeat="step in navigation.Steps"
+            class="ng-scope step stepActive"
+          >
+            <div data-ng-hide="isLinkAllowed(step)" class="stepLinkBox" title="Seller Information">
+              <img
+                class="stepImg"
+                ng-src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/currentStepA._CB295853638_.png"
+                src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/currentStepA._CB295853638_.png"
+              />
+              <span class="step-text ng-binding">Seller Information</span>
+            </div>
+          </div>
+          <!-- end ngRepeat: step in navigation.Steps -->
+          <div
+            ng-class="['step', getStepClass(step.currentStep ,step.stepCompletionStatus)]"
+            ng-repeat="step in navigation.Steps"
+            class="ng-scope step stepNotReady"
+          >
+            <div data-ng-hide="isLinkAllowed(step)" class="stepLinkBox" title="Tax Details">
+              <img
+                class="stepImg"
+                ng-src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/notReadyStep._CB295853632_.png"
+                src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/notReadyStep._CB295853632_.png"
+              />
+              <span class="step-text ng-binding">Tax Details</span>
+            </div>
+          </div>
+          <!-- end ngRepeat: step in navigation.Steps -->
+          <div
+            ng-class="['step', getStepClass(step.currentStep ,step.stepCompletionStatus)]"
+            ng-repeat="step in navigation.Steps"
+            class="ng-scope step stepNotReady"
+          >
+            <div data-ng-hide="isLinkAllowed(step)" class="stepLinkBox" title="Seller Interview">
+              <img
+                class="stepImg"
+                ng-src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/notReadyStep._CB295853632_.png"
+                src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/notReadyStep._CB295853632_.png"
+              />
+              <span class="step-text ng-binding">Seller Interview</span>
+            </div>
+          </div>
+          <!-- end ngRepeat: step in navigation.Steps -->
+          <div
+            ng-class="['step', getStepClass(step.currentStep ,step.stepCompletionStatus)]"
+            ng-repeat="step in navigation.Steps"
+            class="ng-scope step stepNotReady"
+          >
+            <div data-ng-hide="isLinkAllowed(step)" class="stepLinkBox" title="Dashboard">
+              <img
+                class="stepImg"
+                ng-src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/notReadyStep._CB295853632_.png"
+                src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/notReadyStep._CB295853632_.png"
+              />
+              <span class="step-text ng-binding">Payment</span>
+            </div>
+          </div>
+          <!-- end ngRepeat: step in navigation.Steps -->
+        </div>
       </div>
-
-    </div><!-- end ngRepeat: step in navigation.Steps --><div ng-class="['step', getStepClass(step.currentStep ,step.stepCompletionStatus)]" ng-repeat="step in navigation.Steps" class="ng-scope step stepNotReady">
-
-
-
-      <div data-ng-hide="isLinkAllowed(step)" class="stepLinkBox" title="Tax Details">
-        <img class="stepImg" ng-src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/notReadyStep._CB295853632_.png" src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/notReadyStep._CB295853632_.png">
-        <span class="step-text ng-binding">Tax Details</span>
-      </div>
-
-    </div><!-- end ngRepeat: step in navigation.Steps --><div ng-class="['step', getStepClass(step.currentStep ,step.stepCompletionStatus)]" ng-repeat="step in navigation.Steps" class="ng-scope step stepNotReady">
-
-
-
-      <div data-ng-hide="isLinkAllowed(step)" class="stepLinkBox" title="Seller Interview">
-        <img class="stepImg" ng-src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/notReadyStep._CB295853632_.png" src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/notReadyStep._CB295853632_.png">
-        <span class="step-text ng-binding">Seller Interview</span>
-      </div>
-
-    </div><!-- end ngRepeat: step in navigation.Steps --><div ng-class="['step', getStepClass(step.currentStep ,step.stepCompletionStatus)]" ng-repeat="step in navigation.Steps" class="ng-scope step stepNotReady">
-
-   
-
-      <div data-ng-hide="isLinkAllowed(step)" class="stepLinkBox" title="Dashboard">
-        <img class="stepImg" ng-src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/notReadyStep._CB295853632_.png" src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/notReadyStep._CB295853632_.png">
-        <span class="step-text ng-binding">Payment</span>
-      </div>
-
-    </div><!-- end ngRepeat: step in navigation.Steps -->
-  </div>
-</div></div>
+    </div>
 
     <!-- <div class="tabbed-layout" style="overflow: auto;">
       <div class="flex container justify-between" style="height: 63px;align-items: center;">
@@ -101,7 +139,7 @@
           <p class="padding-left-10">Dashboard</p>
         </div>
       </div>
-    </div> -->
+    </div>-->
 
     <div class="container section seller___interview" v-if="currentOption == 1">
       <div class="a-section main">
@@ -118,12 +156,10 @@
                   data-ng-if="fragmentData.dn_fragment_heading.visibility"
                   class="a-section a-spacing-none ng-scope"
                 >
-                <h2 class="a-spacing-small a-color-state a-text-normal">
-                Tell us about your business
-            </h2>
-                  <span class="a-text-bold ng-binding">
-                    Store Name
-                  </span>
+                  <h2
+                    class="a-spacing-small a-color-state a-text-normal"
+                  >Tell us about your business</h2>
+                  <span class="a-text-bold ng-binding">Store Name</span>
                 </div>
                 <!-- end ngIf: fragmentData.dn_fragment_heading.visibility -->
                 <!-- ngIf: fragmentData.dn_fragment_display_name.visibility -->
@@ -149,7 +185,7 @@
                     <!-- <span
                       data-ng-click="checkDisplayName()"
                       class="a-color-link dn_verifyLink ng-binding"
-                    >Check Availability</span> -->
+                    >Check Availability</span>-->
                   </span>
                   <div class="dn_messageDiv"></div>
                 </div>
@@ -172,7 +208,6 @@
                 <option v-for="p in product_category" :key="p.id" :value="p.name">{{p.name}}</option>
               </select>
             </div>
-
           </div>
         </div>
 
@@ -290,7 +325,8 @@
                         data-ng-class="{'a-form-error': fragmentData.errors.state,'dropdown-disabled': addressDisable}"
                         class="a-section a-spacing-none address-dropdown"
                       >
-                        <select
+
+                          <select
                           class="address-dropdown-select ng-pristine ng-animate ng-valid-remove ng-invalid-add ng-valid-required-remove ng-valid-remove-active ng-invalid ng-invalid-add-active ng-valid-required-remove-active ng-invalid-required"
                           id="state"
                           v-model="state"
@@ -299,47 +335,44 @@
                           ng-options="key as key for key in stateList"
                           data-ng-required="true"
                           data-ng-disabled="addressDisable||fragmentData.editDisable"
-                          required="required"
-                          style
-                        >
-                          <option class value>Select State</option>
-                          <option value="0">MAHARASHTRA</option>
-                          <option value="1">GOA</option>
-                          <option value="2">KERALA</option>
-                          <option value="3">LAKSHADWEEP</option>
-                          <option value="4">DADRA &amp; NAGAR HAVELI</option>
-                          <option value="5">HIMACHAL PRADESH</option>
-                          <option value="6">ANDAMAN &amp; NICOBAR ISLANDS</option>
-                          <option value="7">ANDHRA PRADESH</option>
-                          <option value="8">UTTAR PRADESH</option>
-                          <option value="9">HARYANA</option>
-                          <option value="10" selected="selected">ASSAM</option>
-                          <option value="11">ODISHA</option>
-                          <option value="12">CHANDIGARH</option>
-                          <option value="13">MADHYA PRADESH</option>
-                          <option value="14">WEST BENGAL</option>
-                          <option value="15">MEGHALAYA</option>
-                          <option value="16">PUDUCHERRY</option>
-                          <option value="17">RAJASTHAN</option>
-                          <option value="18">NAGALAND</option>
-                          <option value="19">SIKKIM</option>
-                          <option value="20">GUJARAT</option>
-                          <option value="21">KARNATAKA</option>
-                          <option value="22">MIZORAM</option>
-                          <option value="23">DAMAN &amp; DIU</option>
-                          <option value="24">ARUNACHAL PRADESH</option>
-                          <option value="25">BIHAR</option>
-                          <option value="26">CHHATTISGARH</option>
-                          <option value="27">PUNJAB</option>
-                          <option value="28">JAMMU &amp; KASHMIR</option>
-                          <option value="29">TAMIL NADU</option>
-                          <option value="30">UTTARAKHAND</option>
-                          <option value="31">DELHI</option>
-                          <option value="32">JHARKHAND</option>
-                          <option value="33">MANIPUR</option>
-                          <option value="34">TRIPURA</option>
-                          <option value="35">TELANGANA</option>
-                        </select>
+                          required="required">
+                            <option value>Select State</option>
+                            <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                            <option value="Assam">Assam</option>
+                            <option value="Bihar">Bihar</option>
+                            <option value="Chandigarh">Chandigarh</option>
+                            <option value="Chhattisgarh">Chhattisgarh</option>
+                            <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+                            <option value="Daman and Diu">Daman and Diu</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Goa">Goa</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Haryana">Haryana</option>
+                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                            <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                            <option value="Jharkhand">Jharkhand</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Kerala">Kerala</option>
+                            <option value="Lakshadweep">Lakshadweep</option>
+                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Manipur">Manipur</option>
+                            <option value="Meghalaya">Meghalaya</option>
+                            <option value="Mizoram">Mizoram</option>
+                            <option value="Nagaland">Nagaland</option>
+                            <option value="Orissa">Orissa</option>
+                            <option value="Pondicherry">Pondicherry</option>
+                            <option value="Punjab">Punjab</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                            <option value="Sikkim">Sikkim</option>
+                            <option value="Tamil Nadu">Tamil Nadu</option>
+                            <option value="Tripura">Tripura</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="Uttaranchal">Uttaranchal</option>
+                            <option value="West Bengal">West Bengal</option>
+                          </select>
                       </div>
                     </div>
                     <div
@@ -380,7 +413,11 @@
                       id="a-autoid-1"
                     >
                       <span class="a-button-inner">
-                        <div @click="changeCompany" class="a-button-text" to="/launch/tax-details">Continue</div>
+                        <div
+                          @click="changeCompany"
+                          class="a-button-text"
+                          to="/launch/tax-details"
+                        >Continue</div>
                       </span>
                     </span>
                   </div>
@@ -391,7 +428,7 @@
           </div>
         </div>
       </div>
-      <Aside/>
+      <Aside />
     </div>
 
     <div class="container section tax_details" v-if="currentOption == 2">
@@ -514,7 +551,6 @@
 
 
 <script>
-
 import Aside from '@/components/aside'
 
 import axios from 'axios'
@@ -522,7 +558,6 @@ import axios from 'axios'
 export default {
   data: function() {
     return {
-
       product_category: [
         {
           id: 1,
@@ -835,17 +870,17 @@ export default {
       email: '',
       currentOption: 1,
       product_cat: 0,
-      store_name: "",
+      store_name: '',
       pincode: null,
-      addressline_1: "",
-      addressline_2: "",
-      city: "",
+      addressline_1: '',
+      addressline_2: '',
+      city: '',
       state: 0,
       regex_store_name: /^(?!\s)(?!.*\s$)(?=.*[a-zA-Z0-9])[a-zA-Z0-9 '~?!]{3,}$/,
-      regex_pincode: /^[1-9][0-9]{5}$/,
+      regex_pincode: /^[1-9][0-9]{5}$/
     }
   },
-  components:{
+  components: {
     Aside
   },
   mounted() {
@@ -856,70 +891,58 @@ export default {
     selectThis: function(id) {
       this.currentOption = id
     },
-        changeCompany: function(){
+    changeCompany: function() {
+      $('input').each(function(index) {
+        $(this).removeClass('has-error')
+      })
 
-                  $( "input" ).each(function( index ) {
-            
-            $(this).removeClass('has-error')
+      if (
+        this.regex_store_name.test(this.store_name) &&
+        this.regex_pincode.test(this.pincode) &&
+        this.addressline_1 != '' &&
+        this.addressline_2 != '' &&
+        this.city != ''
+      ) {
+        var payload = new FormData()
 
-      
-      });
+        payload.append('phone_number', localStorage.getItem('phone_number'))
+        payload.append('store_name', this.store_name)
+        payload.append('product_category', this.product_cat)
+        payload.append('pincode', this.pincode)
+        payload.append('addressline1', this.addressline_1)
+        payload.append('addressline2', this.addressline_2)
+        payload.append('city', this.city)
+        payload.append('state', $('#state option:selected').text())
 
-
-      if (this.regex_store_name.test(this.store_name) && this.regex_pincode.test(this.pincode) && this.addressline_1 != "" && this.addressline_2 != "" && this.city != "") {     
-
-
-     var payload = new FormData()
-
-     payload.append('phone_number', localStorage.getItem('phone_number'))
-     payload.append('store_name', this.store_name)
-     payload.append('product_category', this.product_cat)
-     payload.append('pincode',this.pincode)
-     payload.append('addressline1', this.addressline_1)
-     payload.append('addressline2', this.addressline_2)
-     payload.append('city', this.city)
-     payload.append('state', $("#state option:selected").text())
-
-
-
-            axios({
-                method: 'PUT',
-                data: payload,
-                url: this.$store.state.api.seller_info,
-                contentType: 'application/json',
-                headers: {
-                    Authorization: 'Bearer ' + this.$cookies.get('access_token')
-                },
-                data: payload
-            })
-                .then(res => {
-                    console.log(res.data)
-                    console.log('response')
-                    this.$router.push('/launch/tax-details')
-                })
-                .catch(err => {
-                    console.log('error in request', err)
-                })
-
-      }else{
-
-        $( "input" ).each(function( index ) {
-          if($(this).val() == ""){
-            
+        axios({
+          method: 'PUT',
+          data: payload,
+          url: this.$store.state.api.seller_info,
+          contentType: 'application/json',
+          headers: {
+            Authorization: 'Bearer ' + this.$cookies.get('access_token')
+          },
+          data: payload
+        })
+          .then(res => {
+            console.log(res.data)
+            console.log('response')
+            this.$router.push('/launch/tax-details')
+          })
+          .catch(err => {
+            console.log('error in request', err)
+          })
+      } else {
+        $('input').each(function(index) {
+          if ($(this).val() == '') {
             $(this).addClass('has-error')
-
           }
-      });
-
+        })
       }
-
-
-
     },
-        isValid: function(type) {
+    isValid: function(type) {
       switch (type) {
         case 'store_name':
-
           return this.store_name == ''
             ? ''
             : this.regex_store_name.test(this.store_name)
@@ -928,7 +951,6 @@ export default {
 
           break
         case 'pincode':
-
           return this.pincode == null
             ? ''
             : this.regex_pincode.test(this.pincode)
@@ -937,7 +959,6 @@ export default {
 
           break
         case 'addressline1':
-
           return this.addressline_1 == ''
             ? ''
             : this.regex_addressline_1.test(this.addressline_1)

@@ -98,7 +98,7 @@
                                       data-ng-show="true"
                                       class
                                     >
-                                      <a @click="openLink('/legal/returnpolicy')"
+                                      <a @click="openLink('/legal/selleragreement')"
                                         class="ng-binding"
                                       >WENSLink Seller Agreement</a> and
                                       <a @click="openLink('/legal/returnpolicy')"

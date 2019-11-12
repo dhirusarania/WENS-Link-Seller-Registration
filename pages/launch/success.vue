@@ -172,7 +172,7 @@ export default {
   },
   methods:{
     print: function(){
-      document.title = 'My new title'
+      document.title = 'WENSLink Seller Registration Invoice'
       window.print()
     }
   }

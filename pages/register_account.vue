@@ -203,6 +203,7 @@
                           <label for="ap_email" class="a-form-label">Email</label>
                           <input
                             type="email"
+                            tabindex="3"
                             maxlength="64"
                             v-model="email"
                             :class="['input-group', isValid('email')]"

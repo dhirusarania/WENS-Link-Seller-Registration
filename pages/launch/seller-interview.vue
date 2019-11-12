@@ -384,81 +384,6 @@
           <hr class="a-spacing-base a-divider-normal" />
         </div>
       </div>
-
-      <div class="a-section a-spacing-base a-spacing-top-base">
-        <div
-          data-ng-controller="seller-interview-radio-controller"
-          data-ng-init="init('Seller_Interview_Other_Platform_BC_67635828-f378-41af-bc81-b6c1b3b8b032')"
-          class="a-section interview-fragment ng-scope"
-        >
-          <input type="hidden" name data-ng-init="isBrowser = true" />
-
-          <!-- ngRepeat: (key, value) in sellerInterviewConfig -->
-          <div
-            data-ng-repeat="(key, value) in sellerInterviewConfig"
-            class="a-section a-spacing-none radio-question-container ng-scope"
-          >
-            <p
-              class="a-spacing-top-small a-size-base a-color-secondary a-text-bold ng-binding"
-            >Do you sell in other websites ?</p>
-
-            <fieldset class="a-spacing-small a-form-horizontal">
-              <!-- ngRepeat: option in renderOptions[key] -->
-              <span data-ng-repeat="option in renderOptions[key]" class="radio-option ng-scope">
-                <div class="a-radio a-radio-fancy ng-scope">
-                  <label for="yes">
-                    <input
-                      id="yes"
-                      type="radio"
-                      name="sellerOtherPlatformInfo"
-                      value="yes"
-                      data-a-input-name="sellerOtherPlatformInfo"
-                      data-ng-model="radioButtonModel[value.renderConfig.id]"
-                      class="ng-pristine ng-valid"
-                    />
-                    <span class="a-label a-radio-label ng-binding">Yes</span>
-                  </label>
-                </div>
-              </span>
-              <!-- end ngRepeat: option in renderOptions[key] -->
-              <span data-ng-repeat="option in renderOptions[key]" class="radio-option ng-scope">
-                <div class="a-radio a-radio-fancy ng-scope">
-                  <label for="no">
-                    <input
-                      id="no"
-                      type="radio"
-                      name="sellerOtherPlatformInfo"
-                      value="no"
-                      data-a-input-name="sellerOtherPlatformInfo"
-                      data-ng-model="radioButtonModel[value.renderConfig.id]"
-                      class="ng-pristine ng-valid"
-                    />
-                    <span class="a-label a-radio-label ng-binding">No</span>
-                  </label>
-                </div>
-              </span>
-              <!-- end ngRepeat: option in renderOptions[key] -->
-            </fieldset>
-
-            <div data-ng-show="sellerOtherPlatformInfo" class="a-section a-spacing-mini ng-hide">
-              <div
-                class="a-box a-alert-inline a-alert-inline-error"
-                aria-live="assertive"
-                role="alert"
-                v-show="showError5"
-              >
-                <div class="a-box-inner a-alert-container">
-                  <i class="a-icon a-icon-alert"></i>
-                  <div class="a-alert-content ng-binding">Please choose any one of the option</div>
-                </div>
-              </div>
-            </div>
-            <!-- ngIf: value.renderConfig.showDivider === 'true' -->
-          </div>
-          <!-- end ngRepeat: (key, value) in sellerInterviewConfig -->
-        </div>
-      </div>
-
      
       <div class="a-section a-spacing-base a-spacing-top-base">
         <div
@@ -704,7 +629,6 @@ data(){
       showError2: false,
       showError3: false,
       showError4: false,
-      showError5: false,
     }
 },
 
@@ -764,13 +688,9 @@ data(){
                       vm.showError4 = false
     }
 
-                    if($('input[name=sellerOtherPlatformInfo]').is(':checked') == false){
-                      vm.showError5 = true
-                    }else{
-                      vm.showError5 = false
-    }
 
-      if(this.showError1 == false && this.showError2 == false && this.showError3 == false && this.showError4 == false && this.showError5 == false){
+
+      if(this.showError1 == false && this.showError2 == false && this.showError3 == false && this.showError4 == false){
 
 
       var checklist = {}
