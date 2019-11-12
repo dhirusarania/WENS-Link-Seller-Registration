@@ -2071,7 +2071,7 @@
           method="POST"
           action="https://api.razorpay.com/v1/checkout/embedded"
         >
-          <input type="hidden" name="key_id" value="rzp_test_WQij2Xeq6EW9Ty" />
+          <input type="hidden" name="key_id" value="rzp_live_HJReoA5ynZU33U" />
           <input type="hidden" name="order_id" :value="order_id" />
           <input type="hidden" name="name" value="WENSLink" />
           <input type="hidden" name="description" value="Seller Registration Payment" />

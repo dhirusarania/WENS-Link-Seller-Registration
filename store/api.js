@@ -17,27 +17,27 @@ export const state = () => ({
 
 
 
-    login: url + "login/",
+    login: url + "login/vendors",
 
-    register: url + "vendors/create/",
+    register: url + "users/create/",
 
-    seller_info: url + "vendors/seller_info/",
+    seller_info: url + "users/seller_info/",
 
-    seller_interview: url + "vendors/seller_interview/",
+    seller_interview: url + "users/seller_interview/",
 
-    getCompany_name: url + "vendors/company_name/get/", //phone_number
+    getCompany_name: url + "users/company_name/get/", //phone_number
 
-    tax: url + "vendors/tax/",
+    tax: url + "users/tax/",
 
     otp: "http://weberleads.in/http-jsonapi.php?",
 
-    otp_verify: url + 'vendors/otp_verify/',
+    otp_verify: url + 'users/otp_verify/',
 
-    resendOTP: url + 'vendors/resendOTP/',
+    resendOTP: url + 'users/resendOTP/',
 
-    company_name:  url +  "vendors/company_name/",
+    company_name:  url +  "users/company_name/",
 
-    getStep:  url +  "vendors/getStep/", //phone_number
+    getStep:  url +  "users/getStep/", //phone_number
 
     createOrder:  url +  "payments/create/order", //phone_number
 
