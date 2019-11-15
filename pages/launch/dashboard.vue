@@ -2075,7 +2075,7 @@
           <input type="hidden" name="order_id" :value="order_id" />
           <input type="hidden" name="name" value="WENSLink" />
           <input type="hidden" name="description" value="Seller Registration Payment" />
-          <input type="hidden" name="image" value="https://wenslink.com/dashboard-icon-black.png" />
+          <input type="hidden" name="image" value="https://seller.wenslink.com/dashboard-icon-black.png" />
           <input type="hidden" name="prefill[name]" :value="business_name" />
           <input type="hidden" name="prefill[contact]" :value="phone_number" />
           <input type="hidden" name="prefill[email]" :value="email" />
