@@ -2212,7 +2212,7 @@
           </div>
         </div>
 
-        <div class="a-section a-spacing-medium a-spacing-top-large text-center">
+        <!-- <div class="a-section a-spacing-medium a-spacing-top-large text-center">
           <a
             class="a-size-base-plus a-link-normal"
             target="_blank"
@@ -2220,7 +2220,7 @@
             title="Continue to Seller Central"
             href="/hz/home?ref=sw_in_sc_home"
           >Continue to Seller Central</a>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

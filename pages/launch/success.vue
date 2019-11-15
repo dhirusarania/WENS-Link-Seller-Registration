@@ -126,10 +126,11 @@
     margin-top: 40px;">Disclaimer: This is computer generated invoice no signature required.</p>
 
     </div>
-      <div style="display: flex;
-    justify-content: center;
+      <div style="display: flex; align-items:center;
+    justify-content: center; flex-direction: column;
     margin-top: 30px;">
-    <button type="button" class="hide-print" @click="print">Print</button>
+    <button type="button" style="width: 90px" class="hide-print" @click="print">Print</button>
+    <button type="button" @click="goToSeller" style="width: 180px;margin-top: 20px" class="hide-print btn btn-green">Go to Seller Dashboard</button>
   </div>
 
   </div>
@@ -174,6 +175,11 @@ export default {
     print: function(){
       document.title = 'WENSLink Seller Registration Invoice'
       window.print()
+    },
+    goToSeller: function(){
+
+        window.location.href = "/vendors"
+
     }
   }
 }
