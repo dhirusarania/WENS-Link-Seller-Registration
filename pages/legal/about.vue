@@ -4,14 +4,16 @@
       <div class="a-box-inner">
         <div class="a-box header_logo_desk">
           <div class="a-box-inner">
-            <div style="    display: flex;
+            <div style="display: flex;
     align-items: center;">
+          <a href="https://www.wenslink.com">
               <img
                 src="~static/dashboard-icon-black.png"
                 style="height: 75px;padding-bottom: 10px; object-fit:contain"
                 class="company_logo"
               />
-              <h4 style="padding-left: 10px" class="margin-top-10">WENSLink Seller Registration</h4>
+          </a>
+              <!-- <h4 style="padding-left: 10px" class="margin-top-10">WENSLink </h4> -->
             </div>
           </div>
         </div>
