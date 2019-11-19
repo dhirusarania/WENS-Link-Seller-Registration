@@ -98,10 +98,10 @@
                                       data-ng-show="true"
                                       class
                                     >
-                                      <a @click="openLink('/legal/selleragreement')"
+                                      <a target="_blank" href="https://www.wenslink.com/legal/selleragreement"
                                         class="ng-binding"
                                       >WENSLink Seller Agreement</a> and
-                                      <a @click="openLink('/legal/returnpolicy')"
+                                      <a target="_blank" href="https://www.wenslink.com/legal/returnpolicy"
                                       >WENSLink Return Policy</a>
                                     </span>
                                   </span>
@@ -156,13 +156,13 @@
             </div>
 
             <div class="a-section a-spacing-medium a-spacing-top-large text-center">
-              <nuxt-link
+              <a
                 class="a-size-base-plus a-link-normal link_color_legal"
                 target="_blank"
                 rel="noopener"
                 title="Privacy Notice"
-                to="/legal/privacy"
-              >Privacy Notice</nuxt-link>
+                href="https://www.wenslink.com/legal/privacy"
+              >Privacy Notice</a>
             </div>
           </div>
         </div>
