@@ -25,7 +25,7 @@ export const state = () => ({
 
     seller_interview: url + "users/seller_interview/",
 
-    getCompany_name: url + "users/company_name/get/", //phone_number
+    getCompany_name: url + "users/company_name/get/",
 
     tax: url + "users/tax/",
 
@@ -37,11 +37,13 @@ export const state = () => ({
 
     company_name:  url +  "users/company_name/",
 
-    getStep:  url +  "users/getStep/", //phone_number
+    getStep:  url +  "users/getStep/",
 
-    createOrder:  url +  "payments/create/order", //phone_number
+    createOrder:  url +  "payments/create/order",
 
-    invoice_success:  url +  "payments/invoice", //phone_number
+    invoice_success:  url +  "payments/invoice",
+
+    nocost:  url +  "payments/nocost", 
 
 
 })
