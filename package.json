@@ -1,7 +1,7 @@
 {
-  "name": "new-dashboard",
+  "name": "WENSLink",
   "version": "0.0.1",
-  "description": "New Universal Dashboard Design for TecMeadows Vue Application",
+  "description": "WENSLink Seller Registration",
   "author": "dhiru sarania",
   "private": true,
   "scripts": {
