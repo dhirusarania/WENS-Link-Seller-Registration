@@ -19,7 +19,7 @@ export const state = () => ({
 
     login: url + "login/vendors",
 
-    register: url + "users/create/",
+    register: url + "users/create/vendor",
 
     seller_info: url + "users/seller_info/",
 
