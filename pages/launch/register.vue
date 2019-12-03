@@ -694,6 +694,10 @@ export default {
         {
           id: 34,
           name: 'Watches'
+        },
+        {
+          id: 35,
+          name: 'Ayurvedic'
         }
       ],
       interview_data: [
