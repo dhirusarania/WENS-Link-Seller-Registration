@@ -54,29 +54,41 @@
                     data-fwcim-id="cc18bfc4"
                   >
                     <h1>
-                      Password assistance
+                      Set New Password
                     </h1>
-
-                    <p>
-                      Enter your mobile phone number associated
-                      with your WENSLink account.
-                    </p>
-
                     <div class="a-section a-spacing-large">
                       <label
                         for="ap_email"
                         class="a-form-label"
                         style="padding-top: 10px"
                       >
-                        Enter your Phone number
+                        New Password
                       </label>
 
                       <input
-                        v-model="phone_number"
-                        :class="['input-group', isValid('mobile')]"
-                        type="number"
+                        v-model="password"
+                        type="text"
                         maxlength="128"
                         id="ap_email"
+                        name="email"
+                        autocomplete="off"
+                        tabindex="1"
+                        class="a-input-text a-span12 auth-required-field"
+                      />
+                      <label
+                        for="ap_email"
+                        class="a-form-label"
+                        style="padding-top: 10px"
+                      >
+                        Confirm Password
+                      </label>
+
+                      <input
+                        v-model="conf_password"
+                        type="text"
+                        maxlength="128"
+                        id="ap_email"
+                        autocomplete="off"
                         name="email"
                         tabindex="1"
                         class="a-input-text a-span12 auth-required-field"
@@ -101,13 +113,13 @@
                     <span
                       class="a-button a-button-span12 a-button-primary"
                       id="a-autoid-0"
-                      ><span class="a-button-inner" @click="resendOTP"
+                      ><span class="a-button-inner" @click="setnewpassword"
                         ><span
                           class="a-button-text"
                           aria-hidden="true"
                           id="a-autoid-0-announce"
                         >
-                          Continue
+                          Change Password
                         </span></span
                       ></span
                     >
@@ -162,38 +174,30 @@ export default {
   data() {
     return {
       mobile: null,
+      conf_password: '',
+      password: '',
       missing_field: false,
       is_otp_sent: false,
-      phone_number: null,
+      phone_number: localStorage.getItem('phone_number'),
       regex_mobile: /\+?\d[\d -]{8,8}\d/
     }
   },
   methods: {
-    createAccount: function() {
-      if (this.otp != '') {
-        var payload = new FormData()
+    setnewpassword: function() {
+      if (this.password == this.conf_password) {
+        if (this.otp != '') {
+          var payload = new FormData()
 
-        payload.append('phone_number', this.phone_number)
-        payload.append('OTP', this.otp)
+          payload.append('phone_number', this.phone_number)
+          payload.append('password', this.password)
 
-        axios({
-          method: 'PUT',
-          data: payload,
-          url: this.$store.state.api.otp_verify,
-          contentType: 'application/json',
-          data: payload
-        })
-          .then(res => {
-            console.log(res.data)
-            console.log('response')
-            if (res.data.status == 200) {
-              localStorage.setItem('phone_number', this.phone_number)
-              this.$router.push('/new-password')
-            }
+          this.$store.dispatch('changepassword', payload).then(res => {
+            alert('Password Changed. Please login')
+            this.$router.push('/')
           })
-          .catch(err => {
-            console.log('error in request', err)
-          })
+        }
+      } else {
+        alert("Password Doesn't Match")
       }
     },
     resendOTP: function() {
@@ -210,7 +214,7 @@ export default {
         .then(res => {
           console.log(res.data)
           console.log('response')
-          if(res.data.status == '200'){
+          if (res.data.status == '200') {
             this.$router.push('/forget_verify')
           }
           this.is_otp_sent = true

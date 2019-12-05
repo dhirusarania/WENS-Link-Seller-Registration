@@ -94,14 +94,14 @@
                                 <label for="ap_password" class="a-form-label">Password</label>
                               </div>
 
-                              <!-- <div class="a-column a-span7 a-text-right a-span-last">
-                                <a
+                              <div class="a-column a-span7 a-text-right a-span-last">
+                                <nuxt-link
                                   id="auth-fpp-link-bottom"
                                   class="a-link-normal"
                                   tabindex="3"
-                                  href="https://sellercentral.WENSLink.in/ap/forgotpassword?showRememberMe=true&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;marketPlaceId=A21TJRUUN4KGV&amp;pageId=amzn_sw_signup_in&amp;openid.return_to=https%3A%2F%2Fsellercentral.WENSLink.in%2Fsw%2Fin%2FINSSR%2Fstep%2FSignUp%3Fpassthrough%252Faccount%3Dsoa%26passthrough%252FsuperSource%3DOAR%26ref_%3Das_in_soa_hp%26passthrough%252FmarketplaceID%3DA21TJRUUN4KGV%26passthrough%252F%26productTier%3DSILVER%26productType%3DSellOnWENSLink%26marketplaceId%3DA21TJRUUN4KGV%26passthrough%252Ftag%3DREDIRECTT1%26redirectAP%3D1&amp;prevRID=CYNRM35MQCJC1BR99Y6D&amp;openid.assoc_handle=amzn_sw_signup_in&amp;openid.mode=checkid_setup&amp;prepopulatedLoginId=&amp;failedSignInCount=0&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0"
-                                >Forgot Password</a>
-                              </div>-->
+                                  to="/forgotpassword"
+                                >Forgot Password</nuxt-link>
+                              </div>
                             </div>
 
                             <input
@@ -255,6 +255,8 @@ export default {
         .then(res => {
           console.log(res.data)
           console.log('response')
+
+          this.$cookies.removeAll()
 
           switch (res.data.status) {
             case 200:

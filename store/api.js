@@ -35,6 +35,8 @@ export const state = () => ({
 
     resendOTP: url + 'users/resendOTP/',
 
+    changepassword: url + 'users/changepassword',
+
     company_name:  url +  "users/company_name/",
 
     getStep:  url +  "users/getStep/",

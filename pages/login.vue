@@ -256,6 +256,8 @@ export default {
           console.log(res.data)
           console.log('response')
 
+          this.$cookies.removeAll()
+
           switch (res.data.status) {
             case 200:
               this.$cookies.set('access_token', res.data.access, {

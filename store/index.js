@@ -622,6 +622,30 @@ export const actions = {
 
 
 
+    changepassword({ commit, state }, payload) {
+
+
+        return new Promise((resolve, reject) => {
+
+            axios({
+                method: 'PUT',
+                data: payload,
+                url: state.api.changepassword ,
+                contentType: 'application/json',
+            })
+                .then(res => {
+                    console.log(res.data)
+                    console.log('response')
+                    resolve(res)
+                })
+                .catch(err => {
+                    console.log('error in request', err)
+                })
+        })
+    },
+
+
+
 
 
 
