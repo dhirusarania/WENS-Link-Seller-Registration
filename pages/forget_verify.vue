@@ -211,25 +211,7 @@ export default {
           console.log(res.data)
           console.log('response')
           if (res.data.status == 200) {
-
-            this.$cookies.set('access_token', res.data.access, {
-            path: '/',
-            // httpOnly : true,
-            // secure: true,
-            maxAge: 60 * 60 * 24 * 7
-          })
-
-            this.$cookies.set('refresh_token', res.data.refresh, {
-            path: '/',
-            // httpOnly : true,
-            // secure: true,
-            maxAge: 60 * 60 * 24 * 7
-          })
-
-
-            localStorage.setItem('phone_number', this.phone_number)
-            localStorage.setItem('user_id', res.data.user_id)
-            this.$router.push('/continue')
+            this.$router.push('/new-password')
           }
         })
         .catch(err => {

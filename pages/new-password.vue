@@ -67,7 +67,7 @@
 
                       <input
                         v-model="password"
-                        type="text"
+                        type="password"
                         maxlength="128"
                         id="ap_email"
                         name="email"
@@ -85,7 +85,7 @@
 
                       <input
                         v-model="conf_password"
-                        type="text"
+                        type="password"
                         maxlength="128"
                         id="ap_email"
                         autocomplete="off"

@@ -198,6 +198,7 @@ export default {
     },
     resendOTP: function() {
       var payload = new FormData()
+      
 
       payload.append('phone_number', this.phone_number)
       axios({
@@ -211,6 +212,8 @@ export default {
           console.log(res.data)
           console.log('response')
           if(res.data.status == '200'){
+            this.$cookies.removeAll()
+             localStorage.setItem('phone_number', this.phone_number)
             this.$router.push('/forget_verify')
           }
           this.is_otp_sent = true
