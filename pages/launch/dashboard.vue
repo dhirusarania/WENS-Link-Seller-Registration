@@ -15,10 +15,13 @@
           >
             <a data-ng-href class="a-link-normal" href="#">
               <div style="display: flex;align-items: center;">
-                <img style="height: 100%;width: 35px;" src="~static/dashboard-icon-black.png" />
-                <p
-                  style="margin-left: 15px;font-size:14px;font-weight: bold"
-                >WENSLink Seller Registration</p>
+                <img
+                  style="height: 100%;width: 35px;"
+                  src="~static/dashboard-icon-black.png"
+                />
+                <p style="margin-left: 15px;font-size:14px;font-weight: bold">
+                  WENSLink Seller Registration
+                </p>
               </div>
             </a>
             <ul
@@ -26,7 +29,9 @@
               data-ng-mouseover="onFocus('settings')"
               class="a-unordered-list a-nostyle a-vertical header-settings-tab"
             >
-              <nuxt-link class="a-link-normal ng-binding" to="/login">Logout</nuxt-link>
+              <nuxt-link class="a-link-normal ng-binding" to="/login"
+                >Logout</nuxt-link
+              >
             </ul>
           </div>
         </div>
@@ -42,7 +47,11 @@
             ng-repeat="step in navigation.Steps"
             class="ng-scope step stepCompleted"
           >
-            <div data-ng-hide="isLinkAllowed(step)" class="stepLinkBox" title="Phone Verification">
+            <div
+              data-ng-hide="isLinkAllowed(step)"
+              class="stepLinkBox"
+              title="Phone Verification"
+            >
               <img
                 class="stepImg"
                 ng-src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/completedStepA._CB295853638_.png"
@@ -57,7 +66,11 @@
             ng-repeat="step in navigation.Steps"
             class="ng-scope step stepCompleted"
           >
-            <div data-ng-hide="isLinkAllowed(step)" class="stepLinkBox" title="Seller Information">
+            <div
+              data-ng-hide="isLinkAllowed(step)"
+              class="stepLinkBox"
+              title="Seller Information"
+            >
               <img
                 class="stepImg"
                 ng-src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/completedStepA._CB295853638_.png"
@@ -72,7 +85,11 @@
             ng-repeat="step in navigation.Steps"
             class="ng-scope step stepCompleted"
           >
-            <div data-ng-hide="isLinkAllowed(step)" class="stepLinkBox" title="Seller Information">
+            <div
+              data-ng-hide="isLinkAllowed(step)"
+              class="stepLinkBox"
+              title="Seller Information"
+            >
               <img
                 class="stepImg"
                 ng-src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/completedStepA._CB295853638_.png"
@@ -87,7 +104,11 @@
             ng-repeat="step in navigation.Steps"
             class="ng-scope step stepCompleted"
           >
-            <div data-ng-hide="isLinkAllowed(step)" class="stepLinkBox" title="Tax Details">
+            <div
+              data-ng-hide="isLinkAllowed(step)"
+              class="stepLinkBox"
+              title="Tax Details"
+            >
               <img
                 class="stepImg"
                 ng-src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/completedStepA._CB295853638_.png"
@@ -102,7 +123,11 @@
             ng-repeat="step in navigation.Steps"
             class="ng-scope step stepActive"
           >
-            <div data-ng-hide="isLinkAllowed(step)" class="stepLinkBox" title="Dashboard">
+            <div
+              data-ng-hide="isLinkAllowed(step)"
+              class="stepLinkBox"
+              title="Dashboard"
+            >
               <img
                 class="stepImg"
                 ng-src="https://images-eu.ssl-images-amazon.com/images/G/31/rainier/nav/currentStepA._CB295853638_.png"
@@ -124,26 +149,41 @@
               <h1
                 id="post-launch-heading-id"
                 class="a-spacing-none post-launch-font-WENSLink-ember-light a-text-normal hide"
-              >You are now an active seller on WENSLink.in</h1>
+              >
+                You are now an active seller on WENSLink.in
+              </h1>
               <h1
                 class="a-size-extra-large a-spacing-none a-text-normal ng-binding"
-              >Hi {{business_name}}, You are almost there</h1>
+              >
+                Hi {{ business_name }}, You are almost there
+              </h1>
               <p
                 class="a-spacing-mini a-spacing-top-mini a-size-small a-color-tertiary ng-binding"
-              >Please complete the payment to Activate your account.</p>
+              >
+                Please complete the payment to Activate your account.
+              </p>
             </div>
             <div data-ng-show="!onPostLaunchPage" class="a-section">
               <div data-ng-show="!isLaunched" class="a-section row">
                 <div data-ng-show="!isLaunched" class="a-section col-sm-6">
-                  <h4 style="padding-top: 40px">You will be Charged a Fee of</h4>
-                  <h3 style="font-size: 50px!important;color: #006000;">₹ {{amount}}</h3>
+                  <h4 style="padding-top: 40px">
+                    You will be Charged a Fee of
+                  </h4>
+                  <h3 style="font-size: 50px!important;color: #006000;">
+                    ₹ {{ amount }}
+                  </h3>
                   <p>including GST + Gateway charge</p>
                 </div>
                 <div class="col-sm-6">
                   <table class="table">
                     <thead class="thead-light">
                       <tr>
-                        <th class="alignment font-weight font-size" style="font-size: 20px;">Invoice Summary</th>
+                        <th
+                          class="alignment font-weight font-size"
+                          style="font-size: 20px;"
+                        >
+                          Invoice Summary
+                        </th>
                         <th class="alignment font-weight font-size"></th>
                       </tr>
                     </thead>
@@ -164,8 +204,14 @@
                         <td
                           class="font-weight"
                           style="font-size: 20px;font-weight: bold;color: #006000;"
-                        >Total Amount</td>
-                        <td style="font-size: 20px;font-weight: bold;color: #006000;">Rs. 1210.00</td>
+                        >
+                          Total Amount
+                        </td>
+                        <td
+                          style="font-size: 20px;font-weight: bold;color: #006000;"
+                        >
+                          Rs. 1210.00
+                        </td>
                       </tr>
                     </tbody>
                   </table>
@@ -235,7 +281,7 @@
                 href="javascript:void(0)"
                 data-action="a-expander-toggle"
                 class="a-expander-header a-declarative a-expander-section-header a-link-section-expander a-size-medium"
-                data-a-expander-toggle="{&quot;allowLinkDefault&quot;:true, &quot;expand_prompt&quot;:&quot;&quot;, &quot;collapse_prompt&quot;:&quot;&quot;}"
+                data-a-expander-toggle='{"allowLinkDefault":true, "expand_prompt":"", "collapse_prompt":""}'
               >
                 <i class="a-icon a-icon-section-collapse"></i>
                 <span class="a-expander-prompt">
@@ -255,7 +301,8 @@
                   />
                   <span
                     class="a-size-base-plus fragment-heading a-text-bold ng-binding"
-                  >Products to sell</span>
+                    >Products to sell</span
+                  >
                 </span>
               </a>
               <div
@@ -266,33 +313,48 @@
               >
                 <div class="a-box listing-box listing-category">
                   <div class="a-box-inner a-padding-none">
-                    <div class="a-section a-spacing-mini a-spacing-top-small listing-container">
+                    <div
+                      class="a-section a-spacing-mini a-spacing-top-small listing-container"
+                    >
                       <div class="a-section listing-margin-bottom">
                         <div class="a-section a-spacing-none listing-heading">
                           <div
                             data-ng-show="listingStatus"
                             class="a-section listing-align-left listing-margin-top ng-hide"
                           >
-                            <i class="a-icon a-icon-success listing-success-icon"></i>
-                            <span class="a-size-medium a-text-normal ng-binding">
+                            <i
+                              class="a-icon a-icon-success listing-success-icon"
+                            ></i>
+                            <span
+                              class="a-size-medium a-text-normal ng-binding"
+                            >
                               0
                               <span
                                 data-ng-hide="productNumStatus"
                                 class="ng-binding"
-                              >product added</span>
+                                >product added</span
+                              >
                               <span
                                 data-ng-hide="!productNumStatus"
                                 class="ng-binding ng-hide"
-                              >products added</span>
+                                >products added</span
+                              >
                             </span>
                           </div>
                         </div>
-                        <span class="ng-binding">List the products you wish to sell on WENSLink.in</span>
-                        <hr class="a-spacing-top-small a-divider-normal listing-divider" />
-                        <div class="a-section a-spacing-top-base listing-margin-bottom">
-                          <span
-                            class="a-size-base-plus a-text-bold ng-binding"
-                          >Start selling in these categories:</span>
+                        <span class="ng-binding"
+                          >List the products you wish to sell on
+                          WENSLink.in</span
+                        >
+                        <hr
+                          class="a-spacing-top-small a-divider-normal listing-divider"
+                        />
+                        <div
+                          class="a-section a-spacing-top-base listing-margin-bottom"
+                        >
+                          <span class="a-size-base-plus a-text-bold ng-binding"
+                            >Start selling in these categories:</span
+                          >
                         </div>
                       </div>
                       <div class="a-section a-spacing-mini listing-overflow">
@@ -301,19 +363,22 @@
                           <span
                             data-ng-if="openCategoryValuesWithJoin !== ''"
                             class="a-size-base-plus a-color-tertiary listing-open-category-list listing-truncate ng-scope ng-binding"
-                          >Books</span>
+                            >Books</span
+                          >
                           <!-- end ngIf: openCategoryValuesWithJoin !== '' -->
                         </div>
                         <div class="a-section a-spacing-none listing-overflow">
                           <span
                             data-ng-show="listingStatus"
                             class="a-size-base a-color-success listing-count ng-binding ng-hide"
-                          >Listing Count</span>
+                            >Listing Count</span
+                          >
                           <span class="a-letter-space"></span>
                           <span
                             data-ng-show="listingStatus"
                             class="a-size-base listing-count a-text-normal ng-binding ng-hide"
-                          >0</span>
+                            >0</span
+                          >
                           <a
                             data-ng-href="/hz/productsearch?ref=sw_in_listing"
                             class="a-link-normal listing-align-right"
@@ -321,7 +386,10 @@
                             rel="noopener"
                             href="/hz/productsearch?ref=sw_in_listing"
                           >
-                            <span class="a-button a-spacing-none a-button-primary" id="a-autoid-3">
+                            <span
+                              class="a-button a-spacing-none a-button-primary"
+                              id="a-autoid-3"
+                            >
                               <span class="a-button-inner">
                                 <input
                                   class="a-button-input"
@@ -332,7 +400,8 @@
                                   class="a-button-text a-text-center ng-binding"
                                   aria-hidden="true"
                                   id="a-autoid-3-announce"
-                                >Start Listing</span>
+                                  >Start Listing</span
+                                >
                               </span>
                             </span>
                           </a>
@@ -347,11 +416,15 @@
                         data-ng-if="showSuHelper"
                         class="a-section ng-scope"
                       >
-                        <p
-                          class="a-size-base-plus a-text-bold ng-binding"
-                        >Learn how to list your products</p>
+                        <p class="a-size-base-plus a-text-bold ng-binding">
+                          Learn how to list your products
+                        </p>
 
-                        <a data-ng-click="openLightBox()" class="a-link-normal" href="#su-content">
+                        <a
+                          data-ng-click="openLightBox()"
+                          class="a-link-normal"
+                          href="#su-content"
+                        >
                           <img
                             alt
                             src="https://m.media-WENSLink.com/images/G/31/INSSRSWIPE/Dashboard/openContentThumbnail.jpg"
@@ -379,19 +452,28 @@
                       </div>
                       <!-- end ngIf: showSuHelper -->
 
-                      <hr class="a-spacing-none a-divider-normal listing-divider" />
+                      <hr
+                        class="a-spacing-none a-divider-normal listing-divider"
+                      />
                     </div>
                   </div>
                 </div>
 
-                <div data-ng-show="showGatedCategory" class="a-box listing-box ng-hide">
+                <div
+                  data-ng-show="showGatedCategory"
+                  class="a-box listing-box ng-hide"
+                >
                   <div class="a-box-inner a-padding-none">
                     <div class="a-section a-spacing-mini listing-container">
                       <div class="a-section a-spacing-none">
+                        <span class="a-size-base-plus a-text-bold ng-binding"
+                          >Categories listed below require approval</span
+                        >
                         <span
-                          class="a-size-base-plus a-text-bold ng-binding"
-                        >Categories listed below require approval</span>
-                        <span class="a-declarative" data-action="a-popover" data-a-popover="{}">
+                          class="a-declarative"
+                          data-action="a-popover"
+                          data-a-popover="{}"
+                        >
                           <a
                             id="gatedCategoryPopoverTrigger"
                             href="javascript:void(0)"
@@ -416,7 +498,8 @@
                     data-ng-href="/sw/in/Launch/step/Seller+Interview?ref=sw_in_listing"
                     class="a-size-base-plus a-link-normal ng-binding"
                     href="/sw/in/Launch/step/Seller+Interview?ref=sw_in_listing"
-                  >Edit categories</a>
+                    >Edit categories</a
+                  >
                 </div>
                 <!-- end ngIf: !shouldSkipSellerInterview -->
                 <!-- ngIf: shouldSkipSellerInterview -->
@@ -430,21 +513,38 @@
                   <div class="a-box-inner a-padding-none">
                     <div class="a-section a-spacing-none listing-container">
                       <hr class="a-divider-normal listing-divider" />
-                      <div data-ng-show="showBrandInitialView" class="a-section a-spacing-none">
-                        <span class="a-size-base-plus a-text-bold ng-binding">UPC Exemption</span>
-                        <span class data-action data-a-popover id="upcx-popover">
+                      <div
+                        data-ng-show="showBrandInitialView"
+                        class="a-section a-spacing-none"
+                      >
+                        <span class="a-size-base-plus a-text-bold ng-binding"
+                          >UPC Exemption</span
+                        >
+                        <span
+                          class
+                          data-action
+                          data-a-popover
+                          id="upcx-popover"
+                        >
                           <span
                             id="brandRegistryJITATrigger"
                             class="a-color-link jita-trigger jita-text-normal"
                           >
                             What's this?
-                            <span class="arrow-down a-color-link jita-trigger"></span>
+                            <span
+                              class="arrow-down a-color-link jita-trigger"
+                            ></span>
                           </span>
                         </span>
-                        <div class="a-section a-spacing-mini a-spacing-top-mini listing-overflow">
+                        <div
+                          class="a-section a-spacing-mini a-spacing-top-mini listing-overflow"
+                        >
                           <span
                             class="a-size-base listing-inline-block ng-binding"
-                          >If your products do not have a standard ID such as a barcode, UPC, EAN, or ISBN, apply for UPC exemption</span>
+                            >If your products do not have a standard ID such as
+                            a barcode, UPC, EAN, or ISBN, apply for UPC
+                            exemption</span
+                          >
                           <a
                             class="a-link-normal"
                             target="_blank"
@@ -465,7 +565,8 @@
                                   class="a-button-text a-text-center ng-binding"
                                   aria-hidden="true"
                                   id="a-autoid-6-announce"
-                                >Apply Now</span>
+                                  >Apply Now</span
+                                >
                               </span>
                             </span>
                           </a>
@@ -475,8 +576,14 @@
                         data-ng-hide="showBrandInitialView"
                         class="a-section a-spacing-small ng-hide"
                       >
-                        <span class="a-size-base-plus a-text-bold ng-binding">UPC Exemption</span>
-                        <span class="a-declarative" data-action="a-popover" data-a-popover="{}">
+                        <span class="a-size-base-plus a-text-bold ng-binding"
+                          >UPC Exemption</span
+                        >
+                        <span
+                          class="a-declarative"
+                          data-action="a-popover"
+                          data-a-popover="{}"
+                        >
                           <a
                             id="brandPopoverTrigger"
                             href="javascript:void(0)"
@@ -498,13 +605,16 @@
                   data-ng-show="showProfitCalculator"
                   class="a-section a-spacing-small listing-container"
                 >
-                  <hr class="a-spacing-top-small a-divider-normal listing-divider" />
+                  <hr
+                    class="a-spacing-top-small a-divider-normal listing-divider"
+                  />
                   <a
                     class="a-size-base-plus a-link-normal ng-binding"
                     target="_blank"
                     rel="noopener"
                     href="https://services.WENSLink.in/landing/pricing-calculator.html?ref_=profit_url_listing&amp;ld=ASINSOADirect"
-                  >Learn more about WENSLink's charges</a>
+                    >Learn more about WENSLink's charges</a
+                  >
                 </div>
 
                 <div class="a-section a-spacing-base">
@@ -515,7 +625,8 @@
                     target="_blank"
                     rel="noopener"
                     href="/gtinx?ref_=SW_Dashboard?referrer=sw&amp;ref_=SW_in_upc"
-                  >Add more brands</a>
+                    >Add more brands</a
+                  >
                 </div>
 
                 <div class="a-section a-spacing-none">
@@ -527,7 +638,9 @@
                   >
                     <div class="a-box-inner a-alert-container">
                       <i class="a-icon a-icon-alert"></i>
-                      <div class="a-alert-content ng-binding">Add some listings before launch</div>
+                      <div class="a-alert-content ng-binding">
+                        Add some listings before launch
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -557,7 +670,7 @@
                   href="javascript:void(0)"
                   data-action="a-expander-toggle"
                   class="a-expander-header a-declarative a-expander-section-header a-link-section-expander a-size-medium"
-                  data-a-expander-toggle="{&quot;allowLinkDefault&quot;:true, &quot;expand_prompt&quot;:&quot;&quot;, &quot;collapse_prompt&quot;:&quot;&quot;}"
+                  data-a-expander-toggle='{"allowLinkDefault":true, "expand_prompt":"", "collapse_prompt":""}'
                 >
                   <i class="a-icon a-icon-section-collapse"></i>
                   <span class="a-expander-prompt">
@@ -577,7 +690,8 @@
                     />
                     <span
                       class="a-size-base-plus fragment-heading a-text-bold ng-binding"
-                    >Shipping Fee Details</span>
+                      >Shipping Fee Details</span
+                    >
                   </span>
                 </a>
                 <div
@@ -585,15 +699,23 @@
                   class="a-expander-content expander-shipping a-expander-inline-content a-expander-inner a-expander-content-expanded"
                   style="overflow: hidden;"
                 >
-                  <div data-ng-show="shippingStatus" class="a-section a-spacing-mini ng-hide">
-                    <div class="a-section a-spacing-mini shipping-rate-container">
+                  <div
+                    data-ng-show="shippingStatus"
+                    class="a-section a-spacing-mini ng-hide"
+                  >
+                    <div
+                      class="a-section a-spacing-mini shipping-rate-container"
+                    >
                       <p
                         class="a-spacing-mini a-size-small a-color-tertiary shipping-rate-info ng-binding"
                       ></p>
-                      <div class="a-section a-padding-mini set-button-container">
-                        <span
-                          class="a-size-base-plus"
-                        >To edit the shipping rates, visit the Shipping Settings page.</span>
+                      <div
+                        class="a-section a-padding-mini set-button-container"
+                      >
+                        <span class="a-size-base-plus"
+                          >To edit the shipping rates, visit the Shipping
+                          Settings page.</span
+                        >
                         <a
                           data-ng-href="/sbr#easy_ship_template"
                           class="a-link-normal"
@@ -601,7 +723,10 @@
                           rel="noopener"
                           href="/sbr#easy_ship_template"
                         >
-                          <span class="a-button a-spacing-none set-rates-button" id="a-autoid-9">
+                          <span
+                            class="a-button a-spacing-none set-rates-button"
+                            id="a-autoid-9"
+                          >
                             <span class="a-button-inner">
                               <input
                                 class="a-button-input"
@@ -612,7 +737,8 @@
                                 class="a-button-text a-text-center"
                                 aria-hidden="true"
                                 id="a-autoid-9-announce"
-                              >Edit</span>
+                                >Edit</span
+                              >
                             </span>
                           </span>
                         </a>
@@ -621,10 +747,15 @@
                   </div>
                   <div data-ng-hide="shippingStatus" class="a-section">
                     <!-- ngIf: isEasyShipSeller -->
-                    <div data-ng-if="isEasyShipSeller" class="a-row mobile-text-detail ng-scope">
-                      <span
-                        class="ng-binding"
-                      >Easy Ship charges ₹27 for local, ₹45 for regional and ₹65 for national shipping for standard size items less than 500 gms.</span>
+                    <div
+                      data-ng-if="isEasyShipSeller"
+                      class="a-row mobile-text-detail ng-scope"
+                    >
+                      <span class="ng-binding"
+                        >Easy Ship charges ₹27 for local, ₹45 for regional and
+                        ₹65 for national shipping for standard size items less
+                        than 500 gms.</span
+                      >
                     </div>
                     <!-- end ngIf: isEasyShipSeller -->
 
@@ -639,16 +770,17 @@
                         rel="noopener"
                         href="https://services.WENSLink.in/landing/pricing-calculator.html?ref_=profit_url_shipping&amp;ld=ASINSOADirect"
                       >
-                        <span
-                          class="a-size-base ng-binding"
-                        >Learn more about WENSLink's shipping charges</span>
+                        <span class="a-size-base ng-binding"
+                          >Learn more about WENSLink's shipping charges</span
+                        >
                       </a>
                     </div>
 
                     <div class="a-row mobile-text-detail">
-                      <span
-                        class="a-text-bold ng-binding"
-                      >Set shipping fee you want to charge your customers</span>
+                      <span class="a-text-bold ng-binding"
+                        >Set shipping fee you want to charge your
+                        customers</span
+                      >
                     </div>
                     <div
                       data-ng-show="!isEasyShipSeller &amp;&amp; showProfitCalculator"
@@ -661,9 +793,9 @@
                         rel="noopener"
                         href="https://services.WENSLink.in/landing/pricing-calculator.html?ref_=profit_url_shipping&amp;ld=ASINSOADirect"
                       >
-                        <span
-                          class="a-size-base ng-binding"
-                        >Learn more about WENSLink's shipping charges</span>
+                        <span class="a-size-base ng-binding"
+                          >Learn more about WENSLink's shipping charges</span
+                        >
                       </a>
                     </div>
 
@@ -683,10 +815,15 @@
                                 />
                                 <i class="a-icon a-icon-radio"></i>
                                 <span class="a-label a-radio-label">
-                                  <div class="a-row multi-line ng-binding">Offer free Shipping</div>
+                                  <div class="a-row multi-line ng-binding">
+                                    Offer free Shipping
+                                  </div>
                                   <div
                                     class="a-row a-size-small a-color-secondary multi-line ng-binding"
-                                  >Free shipping will be highlighted on your offer</div>
+                                  >
+                                    Free shipping will be highlighted on your
+                                    offer
+                                  </div>
                                 </span>
                               </label>
                             </div>
@@ -706,7 +843,9 @@
                                   class="ng-pristine ng-valid"
                                 />
                                 <i class="a-icon a-icon-radio"></i>
-                                <span class="a-label a-radio-label ng-binding">Set custom fee</span>
+                                <span class="a-label a-radio-label ng-binding"
+                                  >Set custom fee</span
+                                >
                               </label>
                             </div>
                           </div>
@@ -727,7 +866,10 @@
                             data-ng-show="radioButtonData.option == 'customFee'"
                             class="ng-scope ng-hide"
                           >
-                            <div id="LocalTextForFormRate" class="a-column form-text-unit a-span4">
+                            <div
+                              id="LocalTextForFormRate"
+                              class="a-column form-text-unit a-span4"
+                            >
                               <span class="a-text-bold ng-binding">Local</span>
                             </div>
                           </span>
@@ -742,7 +884,9 @@
                               id="RegionalTextForFormRate"
                               class="a-column form-text-unit a-span4"
                             >
-                              <span class="a-text-bold ng-binding">Regional</span>
+                              <span class="a-text-bold ng-binding"
+                                >Regional</span
+                              >
                             </div>
                           </span>
                           <!-- end ngRepeat: label in formLabelsList -->
@@ -756,7 +900,9 @@
                               id="NationalTextForFormRate"
                               class="a-column form-text-unit a-span4"
                             >
-                              <span class="a-text-bold ng-binding">National</span>
+                              <span class="a-text-bold ng-binding"
+                                >National</span
+                              >
                             </div>
                           </span>
                           <!-- end ngRepeat: label in formLabelsList -->
@@ -770,7 +916,10 @@
                             data-ng-show="radioButtonData.option == 'customFee'"
                             class="ng-scope ng-hide"
                           >
-                            <div id="LocalFormRate" class="a-column form-text-unit a-span4">
+                            <div
+                              id="LocalFormRate"
+                              class="a-column form-text-unit a-span4"
+                            >
                               <div id="LocalBox" class="a-box box-input-form">
                                 <div class="a-box-inner">
                                   <div class="text-form ng-binding">₹</div>
@@ -794,8 +943,14 @@
                             data-ng-show="radioButtonData.option == 'customFee'"
                             class="ng-scope ng-hide"
                           >
-                            <div id="RegionalFormRate" class="a-column form-text-unit a-span4">
-                              <div id="RegionalBox" class="a-box box-input-form">
+                            <div
+                              id="RegionalFormRate"
+                              class="a-column form-text-unit a-span4"
+                            >
+                              <div
+                                id="RegionalBox"
+                                class="a-box box-input-form"
+                              >
                                 <div class="a-box-inner">
                                   <div class="text-form ng-binding">₹</div>
                                   <div class="text-input-form">
@@ -818,8 +973,14 @@
                             data-ng-show="radioButtonData.option == 'customFee'"
                             class="ng-scope ng-hide"
                           >
-                            <div id="NationalFormRate" class="a-column form-text-unit a-span4">
-                              <div id="NationalBox" class="a-box box-input-form">
+                            <div
+                              id="NationalFormRate"
+                              class="a-column form-text-unit a-span4"
+                            >
+                              <div
+                                id="NationalBox"
+                                class="a-box box-input-form"
+                              >
                                 <div class="a-box-inner">
                                   <div class="text-form ng-binding">₹</div>
                                   <div class="text-input-form">
@@ -846,10 +1007,14 @@
                             data-ng-show="radioButtonData.option == 'customFee'"
                             class="ng-scope ng-hide"
                           >
-                            <div id="LocalUnitForFormRate" class="a-column form-text-unit a-span4">
+                            <div
+                              id="LocalUnitForFormRate"
+                              class="a-column form-text-unit a-span4"
+                            >
                               <span
                                 class="a-size-small a-color-secondary a-text-italic ng-binding"
-                              >per order</span>
+                                >per order</span
+                              >
                             </div>
                           </span>
                           <!-- end ngRepeat: label in formLabelsList -->
@@ -865,7 +1030,8 @@
                             >
                               <span
                                 class="a-size-small a-color-secondary a-text-italic ng-binding"
-                              >per order</span>
+                                >per order</span
+                              >
                             </div>
                           </span>
                           <!-- end ngRepeat: label in formLabelsList -->
@@ -881,7 +1047,8 @@
                             >
                               <span
                                 class="a-size-small a-color-secondary a-text-italic ng-binding"
-                              >per order</span>
+                                >per order</span
+                              >
                             </div>
                           </span>
                           <!-- end ngRepeat: label in formLabelsList -->
@@ -905,7 +1072,8 @@
                             class="a-button-text ng-binding"
                             aria-hidden="true"
                             id="a-autoid-10-announce"
-                          >Save</span>
+                            >Save</span
+                          >
                         </span>
                       </span>
                     </div>
@@ -917,7 +1085,8 @@
                           id="redirectLink"
                           href="/sbr#easy_ship_template"
                           target="_blank"
-                        >click here</a>
+                          >click here</a
+                        >
                       </span>
                     </div>
                     <div
@@ -957,7 +1126,7 @@
                 href="javascript:void(0)"
                 data-action="a-expander-toggle"
                 class="a-expander-header a-declarative a-expander-section-header a-link-section-expander a-size-medium"
-                data-a-expander-toggle="{&quot;allowLinkDefault&quot;:true, &quot;expand_prompt&quot;:&quot;&quot;, &quot;collapse_prompt&quot;:&quot;&quot;}"
+                data-a-expander-toggle='{"allowLinkDefault":true, "expand_prompt":"", "collapse_prompt":""}'
               >
                 <i class="a-icon a-icon-section-collapse"></i>
                 <span class="a-expander-prompt">
@@ -977,7 +1146,8 @@
                   />
                   <span
                     class="a-size-base-plus bank-account-in-heading a-text-bold ng-binding"
-                  >Bank Account Details</span>
+                    >Bank Account Details</span
+                  >
                 </span>
               </a>
               <div
@@ -989,7 +1159,10 @@
               >
                 <span data-ng-init="addInputSetJSP('IN_BBAN')"></span>
                 <!-- ngIf: 'IN_BBAN' === visibleInputSet -->
-                <div data-ng-if="'IN_BBAN' === visibleInputSet" class="ng-scope">
+                <div
+                  data-ng-if="'IN_BBAN' === visibleInputSet"
+                  class="ng-scope"
+                >
                   <!-- ngIf: showForm() -->
                   <div data-ng-if="showForm()" class="ng-scope">
                     <div class="a-section">
@@ -1002,7 +1175,8 @@
                               <span
                                 data-ng-class="{euBankAccountLabel: (fragmentData.bankAccountFragment.renderConfig.useBlackLabels !== 'true'), blackBankAccountLabel: (fragmentData.bankAccountFragment.renderConfig.useBlackLabels === 'true')}"
                                 class="a-text-bold ng-binding blackBankAccountLabel"
-                              >Account holder name</span>
+                                >Account holder name</span
+                              >
                               <span
                                 id="inBBANAccountHolderName"
                                 data-ng-init="createPopover('inBBANAccountHolderName',fragmentData[fragmentData.bankCountry.value].ACCOUNT_HOLDER_NAME.renderConfig)"
@@ -1012,7 +1186,10 @@
                                   data-ng-src="https://images-na.ssl-images-WENSLink.com/images/G/01/swipertol/u368._V279572601_.png"
                                   src="https://images-na.ssl-images-WENSLink.com/images/G/01/swipertol/u368._V279572601_.png"
                                 />
-                                <div class="a-popover-preload" id="a-popover-"></div>
+                                <div
+                                  class="a-popover-preload"
+                                  id="a-popover-"
+                                ></div>
                               </span>
                             </div>
                           </div>
@@ -1066,7 +1243,8 @@
                                   <span
                                     data-ng-class="{euBankAccountLabel: (fragmentData.bankAccountFragment.renderConfig.useBlackLabels !== 'true'), blackBankAccountLabel: (fragmentData.bankAccountFragment.renderConfig.useBlackLabels === 'true')}"
                                     class="a-text-bold ng-binding blackBankAccountLabel"
-                                  >Account Type</span>
+                                    >Account Type</span
+                                  >
                                 </div>
                               </div>
                               <div class="a-row a-spacing-top-micro">
@@ -1083,10 +1261,18 @@
                                       data-ng-focus="clearError(fragmentData[fragmentData.bankCountry.value].ACCOUNT_TYPE)"
                                       data-cel_widget_id="BankAccount_bankCountryDropdown"
                                     >
-                                      <option value class="ng-binding">--Select Your Account Type--</option>
-                                      <option value="BUSINESS">Overdraft Account</option>
-                                      <option value="CHECKING">Current Account</option>
-                                      <option value="SAVINGS">Savings Account</option>
+                                      <option value class="ng-binding"
+                                        >--Select Your Account Type--</option
+                                      >
+                                      <option value="BUSINESS"
+                                        >Overdraft Account</option
+                                      >
+                                      <option value="CHECKING"
+                                        >Current Account</option
+                                      >
+                                      <option value="SAVINGS"
+                                        >Savings Account</option
+                                      >
                                     </select>
                                   </div>
                                 </div>
@@ -1101,7 +1287,9 @@
                                   >
                                     <div class="a-box-inner a-alert-container">
                                       <i class="a-icon a-icon-alert"></i>
-                                      <div class="a-alert-content ng-binding"></div>
+                                      <div
+                                        class="a-alert-content ng-binding"
+                                      ></div>
                                     </div>
                                   </div>
                                 </div>
@@ -1119,7 +1307,8 @@
                               <span
                                 data-ng-class="{euBankAccountLabel: (fragmentData.bankAccountFragment.renderConfig.useBlackLabels !== 'true'), blackBankAccountLabel: (fragmentData.bankAccountFragment.renderConfig.useBlackLabels === 'true')}"
                                 class="a-text-bold ng-binding blackBankAccountLabel"
-                              >Account number</span>
+                                >Account number</span
+                              >
                               <span
                                 id="inBBANAccountNumber"
                                 data-ng-init="createPopover('inBBANAccountNumber',fragmentData[fragmentData.bankCountry.value].ACCOUNT_NUMBER.renderConfig)"
@@ -1129,7 +1318,10 @@
                                   data-ng-src="https://images-na.ssl-images-WENSLink.com/images/G/01/swipertol/u368._V279572601_.png"
                                   src="https://images-na.ssl-images-WENSLink.com/images/G/01/swipertol/u368._V279572601_.png"
                                 />
-                                <div class="a-popover-preload" id="a-popover-"></div>
+                                <div
+                                  class="a-popover-preload"
+                                  id="a-popover-"
+                                ></div>
                               </span>
                             </div>
                           </div>
@@ -1175,7 +1367,8 @@
                               <span
                                 data-ng-class="{euBankAccountLabel: (fragmentData.bankAccountFragment.renderConfig.useBlackLabels !== 'true'), blackBankAccountLabel: (fragmentData.bankAccountFragment.renderConfig.useBlackLabels === 'true')}"
                                 class="a-text-bold ng-binding blackBankAccountLabel"
-                              >IFSC code</span>
+                                >IFSC code</span
+                              >
                               <span
                                 id="inBBANIfscCode"
                                 data-ng-init="createPopover('inBBANIfscCode',fragmentData[fragmentData.bankCountry.value].ROUTING_NUMBER.renderConfig)"
@@ -1185,12 +1378,18 @@
                                   data-ng-src="https://images-na.ssl-images-WENSLink.com/images/G/01/swipertol/u368._V279572601_.png"
                                   src="https://images-na.ssl-images-WENSLink.com/images/G/01/swipertol/u368._V279572601_.png"
                                 />
-                                <div class="a-popover-preload" id="a-popover-"></div>
+                                <div
+                                  class="a-popover-preload"
+                                  id="a-popover-"
+                                ></div>
                               </span>
                             </div>
                           </div>
                           <!-- ngIf: !verifyIfscButtonVisibility -->
-                          <div data-ng-if="!verifyIfscButtonVisibility" class="a-row ng-scope">
+                          <div
+                            data-ng-if="!verifyIfscButtonVisibility"
+                            class="a-row ng-scope"
+                          >
                             <div class="a-column a-span12">
                               <input
                                 type="text"
@@ -1233,7 +1432,10 @@
 
                 <!-- ngIf: !disableSaveButton -->
                 <div data-ng-if="!disableSaveButton" class="a-section ng-scope">
-                  <span class="a-button a-button-primary bank-account-save-button" id="a-autoid-12">
+                  <span
+                    class="a-button a-button-primary bank-account-save-button"
+                    id="a-autoid-12"
+                  >
                     <span class="a-button-inner">
                       <input
                         data-ng-click="submitBankAccount()"
@@ -1245,7 +1447,8 @@
                         class="a-button-text ng-binding"
                         aria-hidden="true"
                         id="a-autoid-12-announce"
-                      >Save</span>
+                        >Save</span
+                      >
                     </span>
                   </span>
                 </div>
@@ -1266,7 +1469,8 @@
                   <a
                     class="a-link-normal"
                     href="https://sellercentral.WENSLink.in/sw/AccountInfo/DepositMethodView/step/DepositMethodView?ref_=swipe_LD"
-                  >click here</a>
+                    >click here</a
+                  >
                 </div>
               </div>
             </div>
@@ -1294,7 +1498,7 @@
                   href="javascript:void(0)"
                   data-action="a-expander-toggle"
                   class="a-expander-header a-declarative a-expander-section-header a-link-section-expander a-size-medium"
-                  data-a-expander-toggle="{&quot;allowLinkDefault&quot;:true, &quot;expand_prompt&quot;:&quot;&quot;, &quot;collapse_prompt&quot;:&quot;&quot;}"
+                  data-a-expander-toggle='{"allowLinkDefault":true, "expand_prompt":"", "collapse_prompt":""}'
                 >
                   <i class="a-icon a-icon-section-collapse"></i>
                   <span class="a-expander-prompt">
@@ -1314,7 +1518,8 @@
                     />
                     <span
                       class="a-size-base-plus fragment-heading a-text-bold ng-binding"
-                    >Enter Tax Details</span>
+                      >Enter Tax Details</span
+                    >
                   </span>
                 </a>
                 <div
@@ -1322,7 +1527,9 @@
                   class="a-expander-content a-expander-inline-content a-expander-inner a-expander-content-expanded"
                   style="overflow: hidden;"
                 >
-                  <div class="a-section a-spacing-mini tax-registration-dashboard-container">
+                  <div
+                    class="a-section a-spacing-mini tax-registration-dashboard-container"
+                  >
                     <p class="a-spacing-mini ng-binding">
                       Update your Tax Details for ASSAM :
                       <span
@@ -1331,7 +1538,9 @@
                       ></span>
                     </p>
                     <hr class="a-divider-normal" />
-                    <div class="a-section a-spacing-top-mini set-button-container-dashboard">
+                    <div
+                      class="a-section a-spacing-top-mini set-button-container-dashboard"
+                    >
                       <form
                         id="dashboardTaxRegistrationForm"
                         name="dashboardTaxRegistrationFragment"
@@ -1340,10 +1549,16 @@
                         class="ng-pristine ng-invalid ng-invalid-required"
                       >
                         <div class="a-row">
-                          <div class="a-column a-span6 a-spacing-mini tax-registration-input">
+                          <div
+                            class="a-column a-span6 a-spacing-mini tax-registration-input"
+                          >
                             <div class="a-section a-spacing-none">
-                              <div class="a-section a-spacing-none dashboard-tax-value">
-                                <span class="a-text-bold ng-binding">PAN number</span>
+                              <div
+                                class="a-section a-spacing-none dashboard-tax-value"
+                              >
+                                <span class="a-text-bold ng-binding"
+                                  >PAN number</span
+                                >
                                 <span
                                   class="a-declarative"
                                   data-action="a-popover"
@@ -1384,8 +1599,12 @@
                           >
                             <span>
                               <div class="a-section a-spacing-none">
-                                <div class="a-section a-spacing-none dashboard-tax-value">
-                                  <span class="a-text-bold ng-binding">Provisional GSTIN</span>
+                                <div
+                                  class="a-section a-spacing-none dashboard-tax-value"
+                                >
+                                  <span class="a-text-bold ng-binding"
+                                    >Provisional GSTIN</span
+                                  >
                                   <span
                                     class="a-declarative"
                                     data-action="a-popover"
@@ -1432,12 +1651,16 @@
                       >
                         <div class="a-box-inner a-alert-container">
                           <i class="a-icon a-icon-alert"></i>
-                          <div
-                            class="a-alert-content ng-binding"
-                          >Your tax details are invalid. Please update the correct details.</div>
+                          <div class="a-alert-content ng-binding">
+                            Your tax details are invalid. Please update the
+                            correct details.
+                          </div>
                         </div>
                       </div>
-                      <span class="a-button a-spacing-none set-tax-details-button" id="a-autoid-14">
+                      <span
+                        class="a-button a-spacing-none set-tax-details-button"
+                        id="a-autoid-14"
+                      >
                         <span class="a-button-inner">
                           <input
                             data-ng-click="submitTax()"
@@ -1449,7 +1672,8 @@
                             class="a-button-text a-text-center ng-binding"
                             aria-hidden="true"
                             id="a-autoid-14-announce"
-                          >Save</span>
+                            >Save</span
+                          >
                         </span>
                       </span>
                     </div>
@@ -1462,9 +1686,9 @@
                   >
                     <div class="a-box-inner a-alert-container">
                       <i class="a-icon a-icon-alert"></i>
-                      <div
-                        class="a-alert-content ng-binding"
-                      >It is necessary to submit the Tax Details to proceed.</div>
+                      <div class="a-alert-content ng-binding">
+                        It is necessary to submit the Tax Details to proceed.
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1491,7 +1715,7 @@
                   href="javascript:void(0)"
                   data-action="a-expander-toggle"
                   class="a-expander-header a-declarative a-expander-section-header a-link-section-expander a-size-medium"
-                  data-a-expander-toggle="{&quot;allowLinkDefault&quot;:true, &quot;expand_prompt&quot;:&quot;&quot;, &quot;collapse_prompt&quot;:&quot;&quot;}"
+                  data-a-expander-toggle='{"allowLinkDefault":true, "expand_prompt":"", "collapse_prompt":""}'
                 >
                   <i class="a-icon a-icon-section-collapse"></i>
                   <span class="a-expander-prompt">
@@ -1511,7 +1735,8 @@
                     />
                     <span
                       class="a-size-base-plus fragment-heading a-text-bold ng-binding"
-                    >Default Product Tax Code</span>
+                      >Default Product Tax Code</span
+                    >
                   </span>
                 </a>
                 <div
@@ -1519,10 +1744,20 @@
                   class="a-expander-content mobile-right-margin a-expander-inline-content a-expander-inner a-expander-content-expanded"
                   style="overflow: hidden;"
                 >
-                  <div class="a-section a-spacing-mini product-tax-code-container">
-                    <p
-                      class="a-spacing-mini ng-binding"
-                    >PTC (Product Tax code) are codes which are mapped to GST rates notified by the government (i.e. the percentage of taxes which are applicable for the sale of products or services). Seller Central Account tax calculation system uses PTC to calculate the tax on the products or services a seller lists on the marketplace. This is the Tax amount which sellers will later have to remit to the GST authorities on the product or services sold/provided by them</p>
+                  <div
+                    class="a-section a-spacing-mini product-tax-code-container"
+                  >
+                    <p class="a-spacing-mini ng-binding">
+                      PTC (Product Tax code) are codes which are mapped to GST
+                      rates notified by the government (i.e. the percentage of
+                      taxes which are applicable for the sale of products or
+                      services). Seller Central Account tax calculation system
+                      uses PTC to calculate the tax on the products or services
+                      a seller lists on the marketplace. This is the Tax amount
+                      which sellers will later have to remit to the GST
+                      authorities on the product or services sold/provided by
+                      them
+                    </p>
                     <hr class="a-divider-normal" />
                     <div class="a-section">
                       <p
@@ -1535,7 +1770,9 @@
                           style="position:relative;right:-2px;"
                         >
                           What's this?
-                          <span class="arrow-down a-color-link jita-trigger"></span>
+                          <span
+                            class="arrow-down a-color-link jita-trigger"
+                          ></span>
                         </span>
                       </p>
                       <div class="a-section a-spacing-small">
@@ -1549,61 +1786,72 @@
                             tabindex="-1"
                             class="a-native-dropdown product-tax-code-dropdown"
                           >
-                            <option class="a-prompt ng-binding" value>Select Product Tax Code</option>
+                            <option class="a-prompt ng-binding" value
+                              >Select Product Tax Code</option
+                            >
                             <!-- ngRepeat: (key,value) in ptcMap -->
                             <option
                               data-ng-repeat="(key,value) in ptcMap"
                               value="A_GEN_EXEMPT"
                               class="ng-scope ng-binding"
-                            >A_GEN_EXEMPT (0%)</option>
+                              >A_GEN_EXEMPT (0%)</option
+                            >
                             <!-- end ngRepeat: (key,value) in ptcMap -->
                             <option
                               data-ng-repeat="(key,value) in ptcMap"
                               value="A_GEN_JEWELLERY"
                               class="ng-scope ng-binding"
-                            >A_GEN_JEWELLERY (3%)</option>
+                              >A_GEN_JEWELLERY (3%)</option
+                            >
                             <!-- end ngRepeat: (key,value) in ptcMap -->
                             <option
                               data-ng-repeat="(key,value) in ptcMap"
                               value="A_GEN_MINIMUM"
                               class="ng-scope ng-binding"
-                            >A_GEN_MINIMUM (0.25%)</option>
+                              >A_GEN_MINIMUM (0.25%)</option
+                            >
                             <!-- end ngRepeat: (key,value) in ptcMap -->
                             <option
                               data-ng-repeat="(key,value) in ptcMap"
                               value="A_GEN_PEAK"
                               class="ng-scope ng-binding"
-                            >A_GEN_PEAK (28%)</option>
+                              >A_GEN_PEAK (28%)</option
+                            >
                             <!-- end ngRepeat: (key,value) in ptcMap -->
                             <option
                               data-ng-repeat="(key,value) in ptcMap"
                               value="A_GEN_PEAK_CESS12"
                               class="ng-scope ng-binding"
-                            >A_GEN_PEAK_CESS12 (28% + 12%)</option>
+                              >A_GEN_PEAK_CESS12 (28% + 12%)</option
+                            >
                             <!-- end ngRepeat: (key,value) in ptcMap -->
                             <option
                               data-ng-repeat="(key,value) in ptcMap"
                               value="A_GEN_PEAK_CESS60"
                               class="ng-scope ng-binding"
-                            >A_GEN_PEAK_CESS60 (28% + 60%)</option>
+                              >A_GEN_PEAK_CESS60 (28% + 60%)</option
+                            >
                             <!-- end ngRepeat: (key,value) in ptcMap -->
                             <option
                               data-ng-repeat="(key,value) in ptcMap"
                               value="A_GEN_REDUCED"
                               class="ng-scope ng-binding"
-                            >A_GEN_REDUCED (12%)</option>
+                              >A_GEN_REDUCED (12%)</option
+                            >
                             <!-- end ngRepeat: (key,value) in ptcMap -->
                             <option
                               data-ng-repeat="(key,value) in ptcMap"
                               value="A_GEN_STANDARD"
                               class="ng-scope ng-binding"
-                            >A_GEN_STANDARD (18%)</option>
+                              >A_GEN_STANDARD (18%)</option
+                            >
                             <!-- end ngRepeat: (key,value) in ptcMap -->
                             <option
                               data-ng-repeat="(key,value) in ptcMap"
                               value="A_GEN_SUPERREDUCED"
                               class="ng-scope ng-binding"
-                            >A_GEN_SUPERREDUCED (5%)</option>
+                              >A_GEN_SUPERREDUCED (5%)</option
+                            >
                             <!-- end ngRepeat: (key,value) in ptcMap -->
                           </select>
                           <span
@@ -1621,7 +1869,9 @@
                                 aria-hidden="true"
                                 id="a-autoid-15-announce"
                               >
-                                <span class="a-dropdown-prompt ng-binding">Select Product Tax Code</span>
+                                <span class="a-dropdown-prompt ng-binding"
+                                  >Select Product Tax Code</span
+                                >
                               </span>
                               <i class="a-icon a-icon-dropdown"></i>
                             </span>
@@ -1639,9 +1889,9 @@
                         >
                           <div class="a-box-inner a-alert-container">
                             <i class="a-icon a-icon-alert"></i>
-                            <div
-                              class="a-alert-content ng-binding"
-                            >Please select a Product Tax Code.</div>
+                            <div class="a-alert-content ng-binding">
+                              Please select a Product Tax Code.
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -1666,7 +1916,8 @@
                                 <a
                                   href="https://services.WENSLink.in/landing/gst-tax-methodology.htm?ld=ASINSOADirect"
                                   target="_blank"
-                                >Tax Calculation Methodology</a>
+                                  >Tax Calculation Methodology</a
+                                >
                               </span>
                             </span>
                           </label>
@@ -1683,9 +1934,9 @@
                         >
                           <div class="a-box-inner a-alert-container">
                             <i class="a-icon a-icon-alert"></i>
-                            <div
-                              class="a-alert-content ng-binding"
-                            >Please accept the Terms and Conditions</div>
+                            <div class="a-alert-content ng-binding">
+                              Please accept the Terms and Conditions
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -1709,7 +1960,8 @@
                               class="a-button-text ng-binding"
                               aria-hidden="true"
                               id="a-autoid-16-announce"
-                            >Save</span>
+                              >Save</span
+                            >
                           </span>
                         </span>
                         <span
@@ -1728,9 +1980,10 @@
                         >
                           <div class="a-box-inner a-alert-container">
                             <i class="a-icon a-icon-alert"></i>
-                            <div
-                              class="a-alert-content ng-binding"
-                            >The was some problem in saving the PTC. Please try again later.</div>
+                            <div class="a-alert-content ng-binding">
+                              The was some problem in saving the PTC. Please try
+                              again later.
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -1741,7 +1994,8 @@
                           target="_blank"
                           rel="noopener"
                           href="https://images-eu.ssl-images-WENSLink.com/images/G/31/WENSLinkservices/sellercentral/GST_PTC._V507871356_.jpg?ld=ASINSOADirect"
-                        >View all Product Tax Codes</a>
+                          >View all Product Tax Codes</a
+                        >
                       </div>
                       <div class="a-section a-spacing-small">
                         <a
@@ -1750,7 +2004,8 @@
                           target="_blank"
                           rel="noopener"
                           href="https://sellercentral.WENSLink.in/learn/courses?ref_=gst_page_PTC&amp;courseId=134&amp;moduleId=528&amp;modLanguage=English"
-                        >Learn more about PTC</a>
+                          >Learn more about PTC</a
+                        >
                       </div>
                     </div>
                     <div
@@ -1764,7 +2019,9 @@
                       >
                         <div class="a-box-inner a-alert-container">
                           <i class="a-icon a-icon-alert"></i>
-                          <div class="a-alert-content ng-binding">Please select a Product Tax Code</div>
+                          <div class="a-alert-content ng-binding">
+                            Please select a Product Tax Code
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -1792,7 +2049,7 @@
                   href="javascript:void(0)"
                   data-action="a-expander-toggle"
                   class="a-expander-header a-declarative a-expander-section-header a-link-section-expander a-size-medium"
-                  data-a-expander-toggle="{&quot;allowLinkDefault&quot;:true, &quot;expand_prompt&quot;:&quot;&quot;, &quot;collapse_prompt&quot;:&quot;&quot;}"
+                  data-a-expander-toggle='{"allowLinkDefault":true, "expand_prompt":"", "collapse_prompt":""}'
                 >
                   <i class="a-icon a-icon-section-collapse"></i>
                   <span class="a-expander-prompt">
@@ -1810,7 +2067,10 @@
                       data-ng-src="https://m.media-WENSLink.com/images/G/31/INSSRSWIPE/Check_Gray.png"
                       class="fragment-logo"
                     />
-                    <span class="a-size-base-plus fragment-heading a-text-bold ng-binding">Signature</span>
+                    <span
+                      class="a-size-base-plus fragment-heading a-text-bold ng-binding"
+                      >Signature</span
+                    >
                   </span>
                 </a>
                 <div
@@ -1818,11 +2078,16 @@
                   class="a-expander-content a-expander-inline-content a-expander-inner a-expander-content-expanded"
                   style="overflow: hidden;"
                 >
-                  <div class="a-section a-spacing-mini ds-fragment-margin-right">
-                    <p
-                      class="a-spacing-mini ds-description ng-binding"
-                    >Upload a scan copy of your signature which will be used on the invoices sent to customers</p>
-                    <hr class="a-spacing-top-small a-divider-normal ds-divider" />
+                  <div
+                    class="a-section a-spacing-mini ds-fragment-margin-right"
+                  >
+                    <p class="a-spacing-mini ds-description ng-binding">
+                      Upload a scan copy of your signature which will be used on
+                      the invoices sent to customers
+                    </p>
+                    <hr
+                      class="a-spacing-top-small a-divider-normal ds-divider"
+                    />
 
                     <div class="a-section ds-editor-container">
                       <div
@@ -1877,7 +2142,8 @@
                             id="ds-select-other"
                             data-ng-click="openFileUploader($event)"
                             class="a-color-link ng-binding"
-                          >Select a different image</span>
+                            >Select a different image</span
+                          >
 
                           <span
                             class="a-button a-button-primary ds-button-width aok-float-right ds-done-button"
@@ -1894,7 +2160,8 @@
                                 class="a-button-text ng-binding"
                                 aria-hidden="true"
                                 id="a-autoid-17-announce"
-                              >Done</span>
+                                >Done</span
+                              >
                             </span>
                           </span>
                         </div>
@@ -1913,7 +2180,11 @@
                               accept="image/jpeg, image/jpg"
                               onchange="angular.element(this).scope().handleFileChange(this.files)"
                             />
-                            <input type="hidden" name="signature-id" id="signature-id" />
+                            <input
+                              type="hidden"
+                              name="signature-id"
+                              id="signature-id"
+                            />
 
                             <a
                               data-ng-click="openFileUploader($event)"
@@ -1921,9 +2192,12 @@
                               data-ng-title="renderData.uploadLinkText"
                               class="a-link-normal ds-image-upload-link ng-binding"
                               href="#"
-                            >Upload your signature</a>
+                              >Upload your signature</a
+                            >
 
-                            <div class="a-section a-spacing-none ds-preview-container">
+                            <div
+                              class="a-section a-spacing-none ds-preview-container"
+                            >
                               <img
                                 alt
                                 src="https://images-na.ssl-images-WENSLink.com/images/G/01/x-locale/common/transparent-pixel._V192234675_.gif"
@@ -1943,7 +2217,10 @@
                           data-ng-show="showImagePreview"
                           class="a-section a-spacing-none aok-align-center ng-hide"
                         >
-                          <span data-ng-show="showConfirmButton" class="ng-hide">
+                          <span
+                            data-ng-show="showConfirmButton"
+                            class="ng-hide"
+                          >
                             <span
                               class="a-button a-button-primary ds-button-width"
                               id="a-autoid-18"
@@ -1960,13 +2237,17 @@
                                   class="a-button-text ng-binding"
                                   aria-hidden="true"
                                   id="a-autoid-18-announce"
-                                >Confirm</span>
+                                  >Confirm</span
+                                >
                               </span>
                             </span>
                           </span>
 
                           <span data-ng-show="showChangeButton" class="ng-hide">
-                            <span class="a-button ds-button-width" id="a-autoid-19">
+                            <span
+                              class="a-button ds-button-width"
+                              id="a-autoid-19"
+                            >
                               <span class="a-button-inner">
                                 <input
                                   data-ng-click="openFileUploader($event)"
@@ -1979,7 +2260,8 @@
                                   class="a-button-text ng-binding"
                                   aria-hidden="true"
                                   id="a-autoid-19-announce"
-                                >Change</span>
+                                  >Change</span
+                                >
                               </span>
                             </span>
                           </span>
@@ -1992,9 +2274,9 @@
                         >
                           <div class="a-box-inner a-alert-container">
                             <i class="a-icon a-icon-alert"></i>
-                            <div
-                              class="a-alert-content ng-binding"
-                            >Please upload image less than 4mb size.</div>
+                            <div class="a-alert-content ng-binding">
+                              Please upload image less than 4mb size.
+                            </div>
                           </div>
                         </div>
                         <div
@@ -2005,7 +2287,9 @@
                         >
                           <div class="a-box-inner a-alert-container">
                             <i class="a-icon a-icon-alert"></i>
-                            <div class="a-alert-content ng-binding">Please upload jpeg image only.</div>
+                            <div class="a-alert-content ng-binding">
+                              Please upload jpeg image only.
+                            </div>
                           </div>
                         </div>
                         <div
@@ -2016,32 +2300,39 @@
                         >
                           <div class="a-box-inner a-alert-container">
                             <i class="a-icon a-icon-alert"></i>
-                            <div class="a-alert-content ng-binding">Please try again after sometime.</div>
+                            <div class="a-alert-content ng-binding">
+                              Please try again after sometime.
+                            </div>
                           </div>
                         </div>
                       </div>
 
                       <div class="a-section a-spacing-none ds-steps-container">
-                        <p class="a-spacing-micro a-text-bold ng-binding">What to upload ?</p>
+                        <p class="a-spacing-micro a-text-bold ng-binding">
+                          What to upload ?
+                        </p>
                         <ul class="a-unordered-list a-vertical ds-steps">
                           <li>
-                            <span
-                              class="a-list-item ng-binding"
-                            >Sign on a white paper, scan the signature and upload the image.</span>
+                            <span class="a-list-item ng-binding"
+                              >Sign on a white paper, scan the signature and
+                              upload the image.</span
+                            >
                           </li>
                           <li>
-                            <span
-                              class="a-list-item ng-binding"
-                            >Signature should be legible and in focus.</span>
+                            <span class="a-list-item ng-binding"
+                              >Signature should be legible and in focus.</span
+                            >
                           </li>
                           <li>
-                            <span
-                              class="a-list-item ng-binding"
-                            >Only upload JPEG or JPG image format</span>
+                            <span class="a-list-item ng-binding"
+                              >Only upload JPEG or JPG image format</span
+                            >
                           </li>
 
                           <li>
-                            <span class="a-list-item ng-binding">Image size should not exceed 2mb.</span>
+                            <span class="a-list-item ng-binding"
+                              >Image size should not exceed 2mb.</span
+                            >
                           </li>
                         </ul>
                       </div>
@@ -2054,7 +2345,9 @@
                     >
                       <div class="a-box-inner a-alert-container">
                         <i class="a-icon a-icon-alert"></i>
-                        <div class="a-alert-content ng-binding">Digital Signature not completed</div>
+                        <div class="a-alert-content ng-binding">
+                          Digital Signature not completed
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -2074,8 +2367,16 @@
           <input type="hidden" name="key_id" :value="api_key" />
           <input type="hidden" name="order_id" :value="order_id" />
           <input type="hidden" name="name" value="WENSLink" />
-          <input type="hidden" name="description" value="Seller Registration Payment" />
-          <input type="hidden" name="image" value="https://seller.wenslink.com/dashboard-icon-black.png" />
+          <input
+            type="hidden"
+            name="description"
+            value="Seller Registration Payment"
+          />
+          <input
+            type="hidden"
+            name="image"
+            value="https://seller.wenslink.com/dashboard-icon-black.png"
+          />
           <input type="hidden" name="prefill[name]" :value="business_name" />
           <input type="hidden" name="prefill[contact]" :value="phone_number" />
           <input type="hidden" name="prefill[email]" :value="email" />
@@ -2089,7 +2390,14 @@
             name="callback_url"
             value="https://seller.wenslink.com/backend/api/payments/verify"
           />
-          <input type="hidden" name="cancel_url" :value="'https://seller.wenslink.com/backend/api/payments/cancelled/' + order_id" />
+          <input
+            type="hidden"
+            name="cancel_url"
+            :value="
+              'https://seller.wenslink.com/backend/api/payments/cancelled/' +
+                order_id
+            "
+          />
           <button
             id="goToGateway"
             class="hide a-button a-spacing-top-medium a-button-primary launch-submit"
@@ -2105,7 +2413,8 @@
                 class="a-button-text"
                 aria-hidden="true"
                 id="a-autoid-22-announce"
-              >Pay ₹ {{amount}} & Launch your business</span>
+                >Pay ₹ {{ amount }} & Launch your business</span
+              >
             </span>
           </button>
         </form>
@@ -2125,7 +2434,8 @@
               class="a-button-text"
               aria-hidden="true"
               id="a-autoid-22-announce"
-            >Pay ₹ {{amount}} & Launch your business</span>
+              >Pay ₹ {{ amount }} & Launch your business</span
+            >
           </span>
         </span>
 
@@ -2160,13 +2470,20 @@
               class="video-tutorials-logo"
             />
 
-            <div class="a-section a-spacing-small a-spacing-top-small video-container">
+            <div
+              class="a-section a-spacing-small a-spacing-top-small video-container"
+            >
               <h2
                 class="a-spacing-none a-color-secondary a-text-normal ng-binding"
-              >Learn how to sell on WENSLink</h2>
+              >
+                Learn how to sell on WENSLink
+              </h2>
               <p
                 class="a-spacing-none a-size-base a-color-secondary ng-binding"
-              >Seller university helps you gain insights on how to sell on WENSLink, policies etc.</p>
+              >
+                Seller university helps you gain insights on how to sell on
+                WENSLink, policies etc.
+              </p>
 
               <!-- ngRepeat: video in videoIds track by $index -->
               <div
@@ -2207,7 +2524,8 @@
                 rel="noopener"
                 title="Explore more videos"
                 href="/learn?ref_=su_r2l_dashboard_widget"
-              >Explore more videos</a>
+                >Explore more videos</a
+              >
             </div>
           </div>
         </div>
@@ -2240,7 +2558,6 @@
 }
 </style>
 
-
 <script>
 import axios from 'axios'
 
@@ -2261,11 +2578,10 @@ export default {
 
     axios({
       method: 'GET',
-      url:
-        this.$store.state.api.getCompany_name,
-        headers: {
-                    Authorization: 'Bearer ' + this.$cookies.get('access_token')
-                  },
+      url: this.$store.state.api.getCompany_name,
+      headers: {
+        Authorization: 'Bearer ' + this.$cookies.get('access_token')
+      },
       contentType: 'application/json'
     })
       .then(res => {
@@ -2292,9 +2608,9 @@ export default {
         url: this.$store.state.api.createOrder,
         data: payload,
         contentType: 'application/json',
-                headers: {
-                    Authorization: 'Bearer ' + this.$cookies.get('access_token')
-                  },
+        headers: {
+          Authorization: 'Bearer ' + this.$cookies.get('access_token')
+        }
       })
         .then(res => {
           console.log(res.data)
@@ -2312,7 +2628,6 @@ export default {
   }
 }
 </script>
-
 
 <style scoped>
 .a-spacing-top-base {
